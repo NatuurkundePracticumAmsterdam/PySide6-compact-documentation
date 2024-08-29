@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+bibtex = mkdocs_bibtex.plugin:BibTexPlugin
