@@ -1,0 +1,16 @@
+site_name: PySide6 Compact Documentation
+
+theme:
+  name: null
+  custom_dir: 'docs/cinder'
+  logo: favicon.ico
+  site_favicon: favicon.ico
+
+plugins:
+  - search
+  - macros
+
+nav:
+  - index.md
+  - User_Guide.md
+  - API_reference.md

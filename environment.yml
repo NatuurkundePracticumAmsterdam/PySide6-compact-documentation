@@ -1,0 +1,9 @@
+name: PySide6 Compact Documentation
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+    - mkdocs
+    - mkdocs-material
+    - mkdocs-bibtex
+    - mkdocs-macros-plugin
