@@ -3,8 +3,8 @@ site_name: PySide6 Compact Documentation
 theme:
   name: null
   custom_dir: 'docs/cinder'
-  logo: figures/ECPC_logo_plain.svg
-  favicon: figures/ECPC_logo_simple.svg
+  logo: favicon.ico
+  site_favicon: favicon.ico
 
 plugins:
   - search
@@ -12,3 +12,5 @@ plugins:
 
 nav:
   - index.md
+  - User_Guide.md
+  - API_reference.md
