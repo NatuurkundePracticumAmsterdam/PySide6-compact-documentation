@@ -971,10 +971,25 @@ class QCheckBox(PySide6.QtWidgets.QAbstractButton):
 
 
 class QComboBox(PySide6.QtWidgets.QWidget):
-    """_summary_
+    """
+    A QComboBox is a button that provides a list of options to the user when clicked.
 
-    Args:
-        PySide6 (_type_): _description_
+    Examples:
+        >>> combo = QComboBox()
+        >>> combo.addItem("Option 1")
+        >>> combo.addItems("[Option 2, Option 3]")
+        >>> combo.currentText()
+        'Option 1'
+        >>> combo.currentIndex()
+        '0'
+        >>> combo.setCurrentIndex(2)
+        >>> combo.currentText()
+        'Option 3'
+        >>> combo.clear()
+        >>> combo.currentText()
+        ''
+        >>> combo.currentIndex()
+        '-1'
     """
 
     # activated                : ClassVar[Signal] = ... # activated(int)
@@ -985,44 +1000,72 @@ class QComboBox(PySide6.QtWidgets.QWidget):
     # textActivated            : ClassVar[Signal] = ... # textActivated(QString)
     # textHighlighted          : ClassVar[Signal] = ... # textHighlighted(QString)
 
-    class InsertPolicy(enum.Enum):
+    # class InsertPolicy(enum.Enum):
 
-        NoInsert: QComboBox.InsertPolicy = ...  # 0x0
-        InsertAtTop: QComboBox.InsertPolicy = ...  # 0x1
-        InsertAtCurrent: QComboBox.InsertPolicy = ...  # 0x2
-        InsertAtBottom: QComboBox.InsertPolicy = ...  # 0x3
-        InsertAfterCurrent: QComboBox.InsertPolicy = ...  # 0x4
-        InsertBeforeCurrent: QComboBox.InsertPolicy = ...  # 0x5
-        InsertAlphabetically: QComboBox.InsertPolicy = ...  # 0x6
+    #     NoInsert: QComboBox.InsertPolicy = ...  # 0x0
+    #     InsertAtTop: QComboBox.InsertPolicy = ...  # 0x1
+    #     InsertAtCurrent: QComboBox.InsertPolicy = ...  # 0x2
+    #     InsertAtBottom: QComboBox.InsertPolicy = ...  # 0x3
+    #     InsertAfterCurrent: QComboBox.InsertPolicy = ...  # 0x4
+    #     InsertBeforeCurrent: QComboBox.InsertPolicy = ...  # 0x5
+    #     InsertAlphabetically: QComboBox.InsertPolicy = ...  # 0x6
 
-    class SizeAdjustPolicy(enum.Enum):
+    # class SizeAdjustPolicy(enum.Enum):
 
-        AdjustToContents: QComboBox.SizeAdjustPolicy = ...  # 0x0
-        AdjustToContentsOnFirstShow: QComboBox.SizeAdjustPolicy = ...  # 0x1
-        AdjustToMinimumContentsLengthWithIcon: QComboBox.SizeAdjustPolicy = ...  # 0x2
+    #     AdjustToContents: QComboBox.SizeAdjustPolicy = ...  # 0x0
+    #     AdjustToContentsOnFirstShow: QComboBox.SizeAdjustPolicy = ...  # 0x1
+    #     AdjustToMinimumContentsLengthWithIcon: QComboBox.SizeAdjustPolicy = ...  # 0x2
 
-    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    @overload
-    def addItem(
-        self,
-        icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap],
-        text: str,
-        userData: Any = ...,
-    ) -> None: ...
-    @overload
-    def addItem(self, text: str, userData: Any = ...) -> None: ...
-    def addItems(self, texts: Sequence[str]) -> None: ...
+    # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+
+    # @overload
+    # def addItem(self,icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, userData: Any = ...,) -> None: ...
+    # @overload
+    def addItem(self, text: str) -> None:
+        """
+        Adds an item to the combo box with the given text.
+
+        Args:
+            text (str): The text to display in the combo box.
+        """
+
+    def addItems(self, texts: Sequence[str]) -> None:
+        """
+        Adds the items in the list texts to the combo box.
+
+        Args:
+            texts (Sequence[str]): The list of strings to add to the combo box.
+        """
 
     # def changeEvent(self, e: PySide6.QtCore.QEvent) -> None: ...
-    def clear(self) -> None: ...
+    def clear(self) -> None:
+        """
+        Clears the contents of the combo box, removing all items.
+        """
 
     # def clearEditText(self) -> None: ...
     # def completer(self) -> PySide6.QtWidgets.QCompleter: ...
     # def contextMenuEvent(self, e: PySide6.QtGui.QContextMenuEvent) -> None: ...
     # def count(self) -> int: ...
     # def currentData(self, role: int = ...) -> Any: ...
-    def currentIndex(self) -> int: ...
-    def currentText(self) -> str: ...
+    def currentIndex(self) -> int:
+        """
+        Gets the index of the currently selected item in the combo box. For
+        an empty combo box, returns -1. The current index can change when inserting
+        or removing items.
+
+        Returns:
+            int: The index of the currently selected item.
+        """
+
+    def currentText(self) -> str:
+        """
+        Gets the text of the currently selected item in the combo box. For an
+        empty combo box, returns an empty string.
+
+        Returns:
+            str: The text of the currently selected item.
+        """
 
     # def duplicatesEnabled(self) -> bool: ...
     # def event(self, event: PySide6.QtCore.QEvent) -> bool: ...
@@ -1065,14 +1108,34 @@ class QComboBox(PySide6.QtWidgets.QWidget):
     # def mouseReleaseEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
     # def paintEvent(self, e: PySide6.QtGui.QPaintEvent) -> None: ...
     # def placeholderText(self) -> str: ...
-    def removeItem(self, index: int) -> None: ...
+    def removeItem(self, index: int) -> None:
+        """
+        Removes the item at the given index from the combo box.
+
+        Args:
+            index (int): The index of the item to remove.
+        """
 
     # def resizeEvent(self, e: PySide6.QtGui.QResizeEvent) -> None: ...
     # def rootModelIndex(self) -> PySide6.QtCore.QModelIndex: ...
     # def setCompleter(self, c: PySide6.QtWidgets.QCompleter) -> None: ...
-    def setCurrentIndex(self, index: int) -> None: ...
-    def setCurrentText(self, text: str) -> None: ...
-    def setText(): ...
+    def setCurrentIndex(self, index: int) -> None:
+        """
+        Sets the current index of the combo box to the given index.
+
+        Args:
+            index (int): The index of the item to set as the current item.
+        """
+
+    def setCurrentText(self, text: str) -> None:
+        """
+        Sets the current text of the combo box to the given text.
+
+        Args:
+            text (str): The text to set as the current text.
+        """
+
+    # def setText(): ...
 
     # def setDuplicatesEnabled(self, enable: bool) -> None: ...
     # def setEditText(self, text: str) -> None: ...
