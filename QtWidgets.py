@@ -837,8 +837,11 @@ NoneType = type(None)
 #     def yearShown(self) -> int: ...
 
 
-class QCheckBox(PySide6.QtWidgets.QAbstractButton):
-    """A QCheckBox widget is a toggle button that can be checked or unchecked.
+class QCheckBox():
+    """
+    ![](assets/checkbox.png)
+
+    A QCheckBox widget is a toggle button that can be checked or unchecked.
     Checkboxes are typically used to represent features in an application that
     can be enabled or disabled without affecting others. By default, a checkbox
     is unchecked.
@@ -994,7 +997,7 @@ class QCheckBox(PySide6.QtWidgets.QAbstractButton):
 #     def visualRegionForSelection(self, selection: PySide6.QtCore.QItemSelection) -> PySide6.QtGui.QRegion: ...
 
 
-class QComboBox(PySide6.QtWidgets.QWidget):
+class QComboBox():
     """
     A QComboBox is a button that provides a list of options to the user when clicked.
 
@@ -1624,7 +1627,7 @@ class QComboBox(PySide6.QtWidgets.QWidget):
 #     def widget(self) -> PySide6.QtWidgets.QWidget: ...
 
 
-class QDoubleSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
+class QDoubleSpinBox():
     """
     QDoubleSpinBox allows the user to choose a value by clicking the up and down
     buttons to increment or decrement the value displayed. The value can also be
@@ -2027,7 +2030,7 @@ class QDoubleSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
 #     def testOption(self, option: PySide6.QtWidgets.QFontDialog.FontDialogOption) -> bool: ...
 
 
-class QFormLayout(PySide6.QtWidgets.QLayout):
+class QFormLayout():
     """_summary_
 
     Args:
@@ -3927,7 +3930,7 @@ class QFormLayout(PySide6.QtWidgets.QLayout):
 #     def verticalSpacing(self) -> int: ...
 
 
-class QGroupBox(PySide6.QtWidgets.QWidget):
+class QGroupBox():
     """_summary_
 
     Args:
@@ -3966,7 +3969,7 @@ class QGroupBox(PySide6.QtWidgets.QWidget):
     # def title(self) -> str: ...
 
 
-class QHBoxLayout(PySide6.QtWidgets.QBoxLayout):
+class QHBoxLayout():
     """_summary_
 
     Args:
@@ -4325,11 +4328,16 @@ class QHBoxLayout(PySide6.QtWidgets.QBoxLayout):
 #     def value(self) -> float: ...
 
 
-class QLabel(PySide6.QtWidgets.QFrame):
-    """_summary_
+class QLabel():
+    """
+    QLabel is used for displaying text or an image. No user interaction 
+    functionality is provided.
 
-    Args:
-        PySide6 (_type_): _description_
+    Examples:
+        >>> label = QLabel()
+        >>> label.setText("Hello World!")
+        >>> label.text()
+        'Hello World!'
     """
 
     # linkActivated            : ClassVar[Signal] = ... # linkActivated(QString)
@@ -4380,13 +4388,24 @@ class QLabel(PySide6.QtWidgets.QFrame):
     # def setPixmap(self, arg__1: Union[PySide6.QtGui.QPixmap, PySide6.QtGui.QImage, str]) -> None: ...
     # def setScaledContents(self, arg__1: bool) -> None: ...
     # def setSelection(self, arg__1: int, arg__2: int) -> None: ...
-    def setText(self, arg__1: str) -> None: ...
+    def setText(self, text: str) -> None:
+        """
+        Sets the label's text to the given text.
 
+        Args:
+            text (str): The text to set.
+        """
     # def setTextFormat(self, arg__1: PySide6.QtCore.Qt.TextFormat) -> None: ...
     # def setTextInteractionFlags(self, flags: PySide6.QtCore.Qt.TextInteractionFlag) -> None: ...
     # def setWordWrap(self, on: bool) -> None: ...
     # def sizeHint(self) -> PySide6.QtCore.QSize: ...
-    # def text(self) -> str: ...
+    def text(self) -> str: 
+        """
+        Returns the label's text.
+
+        Returns:
+            str: The label's text.
+        """
     # def textFormat(self) -> PySide6.QtCore.Qt.TextFormat: ...
     # def textInteractionFlags(self) -> PySide6.QtCore.Qt.TextInteractionFlag: ...
     # def wordWrap(self) -> bool: ...
@@ -4868,7 +4887,7 @@ class QLabel(PySide6.QtWidgets.QFrame):
 #     def write(self, out: PySide6.QtCore.QDataStream) -> None: ...
 
 
-class QMainWindow(PySide6.QtWidgets.QWidget):
+class QMainWindow():
     """_summary_
 
     Args:
@@ -5713,16 +5732,23 @@ class QMainWindow(PySide6.QtWidgets.QWidget):
 #     def unpolish(self, widget: PySide6.QtWidgets.QWidget) -> None: ...
 
 
-class QPushButton(PySide6.QtWidgets.QAbstractButton):
-    """_summary_
-
-    Args:
-        PySide6 (_type_): _description_
+class QPushButton():
+    """
+    The push button, or command button, is perhaps the most commonly used widget
+    in any graphical user interface. Push (click) a button to command the computer
+    to perform some action, or to answer a question. Typical buttons are OK, Apply, 
+    Cancel, Close, Yes, No and Help.
     """
 
     clicked: ClassVar[Signal] = ...  # clicked()
 
-    def setText(): ...
+    def setText(text: str) -> None: 
+        """
+        Sets the text to be displayed in the button.
+
+        Args:
+            text (str): The text to display in the button.
+        """
 
     # @overload
     # def __init__(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
@@ -6081,7 +6107,7 @@ class QPushButton(PySide6.QtWidgets.QAbstractButton):
 #     def spacerItem(self) -> PySide6.QtWidgets.QSpacerItem: ...
 
 
-class QSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
+class QSpinBox():
     """_summary_
 
     Args:
@@ -8180,7 +8206,7 @@ class QSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
 #     def sourceType(self) -> PySide6.QtGui.QTextDocument.ResourceType: ...
 
 
-class QTextEdit(PySide6.QtWidgets.QAbstractScrollArea):
+class QTextEdit():
     """_summary_
 
     Args:
@@ -8902,7 +8928,7 @@ class QTextEdit(PySide6.QtWidgets.QAbstractScrollArea):
 #     def stack(self) -> PySide6.QtGui.QUndoStack: ...
 
 
-class QVBoxLayout(PySide6.QtWidgets.QBoxLayout):
+class QVBoxLayout():
     """_summary_
 
     Args:
