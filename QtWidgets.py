@@ -838,13 +838,37 @@ NoneType = type(None)
 
 
 class QCheckBox(PySide6.QtWidgets.QAbstractButton):
-    """_summary_
+    """A QCheckBox widget is a toggle button that can be checked or unchecked.
+    Checkboxes are typically used to represent features in an application that
+    can be enabled or disabled without affecting others. By default, a checkbox
+    is unchecked.
 
-    Args:
-        PySide6 (_type_): _description_
+    Examples:
+        >>> checkbox = QCheckBox()
+        >>> checkbox.isChecked()
+        False
+        >>> checkbox.setChecked(True)
+        >>> checkbox.isChecked()
+        True
     """
 
-    def IsChecked(): ...
+    def IsChecked():
+        """
+        Returns True if the checkbox is checked; otherwise returns False.
+
+        Returns:
+            bool: True if the checkbox is checked; otherwise False.
+        """
+        ...
+
+    def setChecked(checked: bool):
+        """
+        Sets the checkbox to be checked if checked is True; otherwise sets it
+        to be unchecked.
+
+        Args:
+            checked (bool): True to check the checkbox; otherwise False.
+        """
 
     # stateChanged             : ClassVar[Signal] = ... # stateChanged(int)
 
@@ -1601,10 +1625,23 @@ class QComboBox(PySide6.QtWidgets.QWidget):
 
 
 class QDoubleSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
-    """_summary_
+    """
+    QDoubleSpinBox allows the user to choose a value by clicking the up and down
+    buttons to increment or decrement the value displayed. The value can also be
+    changed by typing in a value. The range of valid values and the number of
+    decimal places shown is configurable.
 
-    Args:
-        PySide6 (_type_): _description_
+    Examples:
+        >>> spin_box = QDoubleSpinBox()
+        >>> spin_box.setMaximum(100)
+        >>> spin_box.setMinimum(0)
+        >>> spin_box.setSingleStep(0.1)
+        >>> spin_box.setValue(50)
+        >>> spin_box.value()
+        50.0
+        >>> spin_box.setValue(200)
+        >>> spin_box.value()
+        100.0
     """
 
     textChanged: ClassVar[Signal] = ...  # textChanged(QString)
@@ -1619,23 +1656,56 @@ class QDoubleSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
     # def minimum(self) -> float: ...
     # def prefix(self) -> str: ...
     # def setDecimals(self, prec: int) -> None: ...
-    def setMaximum(self, max: float) -> None: ...
-    def setMinimum(self, min: float) -> None: ...
+    def setMaximum(self, max: float) -> None:
+        """
+        Sets the maximum value of the spin box to max. The default maximum value
+        is 99.99.
+
+        Args:
+            max: The new maximum value.
+        """
+
+    def setMinimum(self, min: float) -> None:
+        """
+        Sets the minimum value of the spin box to min. The default minimum value
+        is 0.0.
+
+        Args:
+            min: The new minimum value.
+        """
 
     # def setPrefix(self, prefix: str) -> None: ...
     # def setRange(self, min: float, max: float) -> None: ...
-    def setSingleStep(self, val: float) -> None: ...
+    def setSingleStep(self, val: float) -> None:
+        """
+        Sets the step value to val.
+
+        Args:
+            val: The new step value.
+        """
 
     # def setStepType(self, stepType: PySide6.QtWidgets.QAbstractSpinBox.StepType) -> None: ...
     # def setSuffix(self, suffix: str) -> None: ...
-    def setValue(self, val: float) -> None: ...
+    def setValue(self, val: float) -> None:
+        """
+        Sets the value of the spin box to val.
+
+        Args:
+            val: The new value.
+        """
 
     # def singleStep(self) -> float: ...
     # def stepType(self) -> PySide6.QtWidgets.QAbstractSpinBox.StepType: ...
     # def suffix(self) -> str: ...
     # def textFromValue(self, val: float) -> str: ...
     # def validate(self, input: str, pos: int) -> object: ...
-    def value(self) -> float: ...
+    def value(self) -> float:
+        """
+        Returns the value of the spin box.
+
+        Returns:
+            The value of the spin box.
+        """
 
     # def valueFromText(self, text: str) -> float: ...
 
