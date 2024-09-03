@@ -4330,7 +4330,7 @@ class QHBoxLayout():
 
 class QLabel():
     """
-    QLabel is used for displaying text or an image. No user interaction 
+    QLabel is used for displaying text or an image. No user interaction
     functionality is provided.
 
     Examples:
@@ -4399,7 +4399,7 @@ class QLabel():
     # def setTextInteractionFlags(self, flags: PySide6.QtCore.Qt.TextInteractionFlag) -> None: ...
     # def setWordWrap(self, on: bool) -> None: ...
     # def sizeHint(self) -> PySide6.QtCore.QSize: ...
-    def text(self) -> str: 
+    def text(self) -> str:
         """
         Returns the label's text.
 
@@ -5736,13 +5736,13 @@ class QPushButton():
     """
     The push button, or command button, is perhaps the most commonly used widget
     in any graphical user interface. Push (click) a button to command the computer
-    to perform some action, or to answer a question. Typical buttons are OK, Apply, 
+    to perform some action, or to answer a question. Typical buttons are OK, Apply,
     Cancel, Close, Yes, No and Help.
     """
 
     clicked: ClassVar[Signal] = ...  # clicked()
 
-    def setText(text: str) -> None: 
+    def setText(text: str) -> None:
         """
         Sets the text to be displayed in the button.
 
@@ -8929,11 +8929,33 @@ class QTextEdit():
 
 
 class QVBoxLayout():
-    """_summary_
+    """Create a vertical box to which widgets can be added.
+    Layouts can be added to other layouts.
 
-    Args:
-        PySide6 (_type_): _description_
+    examples:
+        >>> vbox = QVBoxLayout()
+        >>> textedit = QTextEdit()
+        >>> vbox.addWidget(textedit)
+
+        >>> vbox = QVBoxLayout()
+        >>> hbox = QHBoxLayout()
+        >>> vbox.addLayout(hbox)
+
     """
+
+    def addLayout(self, layout: PySide6.QtWidgets.QBoxLayout) -> None:
+        """Adds a layout to the vertical box layout
+
+        Args:
+            Layout (PySide6.QtWidgets.QBoxLayout): Layout
+        """
+
+    def addWidget(self, widget: PySide6.QtWidgets.QWidget) -> None:
+        """Adds a widget to the vertical box layout
+
+        Args:
+            widget (PySide6.QtWidgets.QWidget): Widget
+        """
 
     @overload
     def __init__(self) -> None: ...
