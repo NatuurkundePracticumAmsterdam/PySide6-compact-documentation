@@ -837,14 +837,41 @@ NoneType = type(None)
 #     def yearShown(self) -> int: ...
 
 
-class QCheckBox(PySide6.QtWidgets.QAbstractButton):
-    """_summary_
+class QCheckBox():
+    """
+    ![](assets/checkbox.png)
 
-    Args:
-        PySide6 (_type_): _description_
+    A QCheckBox widget is a toggle button that can be checked or unchecked.
+    Checkboxes are typically used to represent features in an application that
+    can be enabled or disabled without affecting others. By default, a checkbox
+    is unchecked.
+
+    Examples:
+        >>> checkbox = QCheckBox()
+        >>> checkbox.isChecked()
+        False
+        >>> checkbox.setChecked(True)
+        >>> checkbox.isChecked()
+        True
     """
 
-    def IsChecked(): ...
+    def IsChecked():
+        """
+        Returns True if the checkbox is checked; otherwise returns False.
+
+        Returns:
+            bool: True if the checkbox is checked; otherwise False.
+        """
+        ...
+
+    def setChecked(checked: bool):
+        """
+        Sets the checkbox to be checked if checked is True; otherwise sets it
+        to be unchecked.
+
+        Args:
+            checked (bool): True to check the checkbox; otherwise False.
+        """
 
     # stateChanged             : ClassVar[Signal] = ... # stateChanged(int)
 
@@ -970,11 +997,26 @@ class QCheckBox(PySide6.QtWidgets.QAbstractButton):
 #     def visualRegionForSelection(self, selection: PySide6.QtCore.QItemSelection) -> PySide6.QtGui.QRegion: ...
 
 
-class QComboBox(PySide6.QtWidgets.QWidget):
-    """_summary_
+class QComboBox():
+    """
+    A QComboBox is a button that provides a list of options to the user when clicked.
 
-    Args:
-        PySide6 (_type_): _description_
+    Examples:
+        >>> combo = QComboBox()
+        >>> combo.addItem("Option 1")
+        >>> combo.addItems("[Option 2, Option 3]")
+        >>> combo.currentText()
+        'Option 1'
+        >>> combo.currentIndex()
+        '0'
+        >>> combo.setCurrentIndex(2)
+        >>> combo.currentText()
+        'Option 3'
+        >>> combo.clear()
+        >>> combo.currentText()
+        ''
+        >>> combo.currentIndex()
+        '-1'
     """
 
     # activated                : ClassVar[Signal] = ... # activated(int)
@@ -985,44 +1027,72 @@ class QComboBox(PySide6.QtWidgets.QWidget):
     # textActivated            : ClassVar[Signal] = ... # textActivated(QString)
     # textHighlighted          : ClassVar[Signal] = ... # textHighlighted(QString)
 
-    class InsertPolicy(enum.Enum):
+    # class InsertPolicy(enum.Enum):
 
-        NoInsert: QComboBox.InsertPolicy = ...  # 0x0
-        InsertAtTop: QComboBox.InsertPolicy = ...  # 0x1
-        InsertAtCurrent: QComboBox.InsertPolicy = ...  # 0x2
-        InsertAtBottom: QComboBox.InsertPolicy = ...  # 0x3
-        InsertAfterCurrent: QComboBox.InsertPolicy = ...  # 0x4
-        InsertBeforeCurrent: QComboBox.InsertPolicy = ...  # 0x5
-        InsertAlphabetically: QComboBox.InsertPolicy = ...  # 0x6
+    #     NoInsert: QComboBox.InsertPolicy = ...  # 0x0
+    #     InsertAtTop: QComboBox.InsertPolicy = ...  # 0x1
+    #     InsertAtCurrent: QComboBox.InsertPolicy = ...  # 0x2
+    #     InsertAtBottom: QComboBox.InsertPolicy = ...  # 0x3
+    #     InsertAfterCurrent: QComboBox.InsertPolicy = ...  # 0x4
+    #     InsertBeforeCurrent: QComboBox.InsertPolicy = ...  # 0x5
+    #     InsertAlphabetically: QComboBox.InsertPolicy = ...  # 0x6
 
-    class SizeAdjustPolicy(enum.Enum):
+    # class SizeAdjustPolicy(enum.Enum):
 
-        AdjustToContents: QComboBox.SizeAdjustPolicy = ...  # 0x0
-        AdjustToContentsOnFirstShow: QComboBox.SizeAdjustPolicy = ...  # 0x1
-        AdjustToMinimumContentsLengthWithIcon: QComboBox.SizeAdjustPolicy = ...  # 0x2
+    #     AdjustToContents: QComboBox.SizeAdjustPolicy = ...  # 0x0
+    #     AdjustToContentsOnFirstShow: QComboBox.SizeAdjustPolicy = ...  # 0x1
+    #     AdjustToMinimumContentsLengthWithIcon: QComboBox.SizeAdjustPolicy = ...  # 0x2
 
-    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    @overload
-    def addItem(
-        self,
-        icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap],
-        text: str,
-        userData: Any = ...,
-    ) -> None: ...
-    @overload
-    def addItem(self, text: str, userData: Any = ...) -> None: ...
-    def addItems(self, texts: Sequence[str]) -> None: ...
+    # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+
+    # @overload
+    # def addItem(self,icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, userData: Any = ...,) -> None: ...
+    # @overload
+    def addItem(self, text: str) -> None:
+        """
+        Adds an item to the combo box with the given text.
+
+        Args:
+            text (str): The text to display in the combo box.
+        """
+
+    def addItems(self, texts: Sequence[str]) -> None:
+        """
+        Adds the items in the list texts to the combo box.
+
+        Args:
+            texts (Sequence[str]): The list of strings to add to the combo box.
+        """
 
     # def changeEvent(self, e: PySide6.QtCore.QEvent) -> None: ...
-    def clear(self) -> None: ...
+    def clear(self) -> None:
+        """
+        Clears the contents of the combo box, removing all items.
+        """
 
     # def clearEditText(self) -> None: ...
     # def completer(self) -> PySide6.QtWidgets.QCompleter: ...
     # def contextMenuEvent(self, e: PySide6.QtGui.QContextMenuEvent) -> None: ...
     # def count(self) -> int: ...
     # def currentData(self, role: int = ...) -> Any: ...
-    def currentIndex(self) -> int: ...
-    def currentText(self) -> str: ...
+    def currentIndex(self) -> int:
+        """
+        Gets the index of the currently selected item in the combo box. For
+        an empty combo box, returns -1. The current index can change when inserting
+        or removing items.
+
+        Returns:
+            int: The index of the currently selected item.
+        """
+
+    def currentText(self) -> str:
+        """
+        Gets the text of the currently selected item in the combo box. For an
+        empty combo box, returns an empty string.
+
+        Returns:
+            str: The text of the currently selected item.
+        """
 
     # def duplicatesEnabled(self) -> bool: ...
     # def event(self, event: PySide6.QtCore.QEvent) -> bool: ...
@@ -1065,14 +1135,34 @@ class QComboBox(PySide6.QtWidgets.QWidget):
     # def mouseReleaseEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
     # def paintEvent(self, e: PySide6.QtGui.QPaintEvent) -> None: ...
     # def placeholderText(self) -> str: ...
-    def removeItem(self, index: int) -> None: ...
+    def removeItem(self, index: int) -> None:
+        """
+        Removes the item at the given index from the combo box.
+
+        Args:
+            index (int): The index of the item to remove.
+        """
 
     # def resizeEvent(self, e: PySide6.QtGui.QResizeEvent) -> None: ...
     # def rootModelIndex(self) -> PySide6.QtCore.QModelIndex: ...
     # def setCompleter(self, c: PySide6.QtWidgets.QCompleter) -> None: ...
-    def setCurrentIndex(self, index: int) -> None: ...
-    def setCurrentText(self, text: str) -> None: ...
-    def setText(): ...
+    def setCurrentIndex(self, index: int) -> None:
+        """
+        Sets the current index of the combo box to the given index.
+
+        Args:
+            index (int): The index of the item to set as the current item.
+        """
+
+    def setCurrentText(self, text: str) -> None:
+        """
+        Sets the current text of the combo box to the given text.
+
+        Args:
+            text (str): The text to set as the current text.
+        """
+
+    # def setText(): ...
 
     # def setDuplicatesEnabled(self, enable: bool) -> None: ...
     # def setEditText(self, text: str) -> None: ...
@@ -1537,11 +1627,24 @@ class QComboBox(PySide6.QtWidgets.QWidget):
 #     def widget(self) -> PySide6.QtWidgets.QWidget: ...
 
 
-class QDoubleSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
-    """_summary_
+class QDoubleSpinBox():
+    """
+    QDoubleSpinBox allows the user to choose a value by clicking the up and down
+    buttons to increment or decrement the value displayed. The value can also be
+    changed by typing in a value. The range of valid values and the number of
+    decimal places shown is configurable.
 
-    Args:
-        PySide6 (_type_): _description_
+    Examples:
+        >>> spin_box = QDoubleSpinBox()
+        >>> spin_box.setMaximum(100)
+        >>> spin_box.setMinimum(0)
+        >>> spin_box.setSingleStep(0.1)
+        >>> spin_box.setValue(50)
+        >>> spin_box.value()
+        50.0
+        >>> spin_box.setValue(200)
+        >>> spin_box.value()
+        100.0
     """
 
     textChanged: ClassVar[Signal] = ...  # textChanged(QString)
@@ -1556,23 +1659,56 @@ class QDoubleSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
     # def minimum(self) -> float: ...
     # def prefix(self) -> str: ...
     # def setDecimals(self, prec: int) -> None: ...
-    def setMaximum(self, max: float) -> None: ...
-    def setMinimum(self, min: float) -> None: ...
+    def setMaximum(self, max: float) -> None:
+        """
+        Sets the maximum value of the spin box to max. The default maximum value
+        is 99.99.
+
+        Args:
+            max: The new maximum value.
+        """
+
+    def setMinimum(self, min: float) -> None:
+        """
+        Sets the minimum value of the spin box to min. The default minimum value
+        is 0.0.
+
+        Args:
+            min: The new minimum value.
+        """
 
     # def setPrefix(self, prefix: str) -> None: ...
     # def setRange(self, min: float, max: float) -> None: ...
-    def setSingleStep(self, val: float) -> None: ...
+    def setSingleStep(self, val: float) -> None:
+        """
+        Sets the step value to val.
+
+        Args:
+            val: The new step value.
+        """
 
     # def setStepType(self, stepType: PySide6.QtWidgets.QAbstractSpinBox.StepType) -> None: ...
     # def setSuffix(self, suffix: str) -> None: ...
-    def setValue(self, val: float) -> None: ...
+    def setValue(self, val: float) -> None:
+        """
+        Sets the value of the spin box to val.
+
+        Args:
+            val: The new value.
+        """
 
     # def singleStep(self) -> float: ...
     # def stepType(self) -> PySide6.QtWidgets.QAbstractSpinBox.StepType: ...
     # def suffix(self) -> str: ...
     # def textFromValue(self, val: float) -> str: ...
     # def validate(self, input: str, pos: int) -> object: ...
-    def value(self) -> float: ...
+    def value(self) -> float:
+        """
+        Returns the value of the spin box.
+
+        Returns:
+            The value of the spin box.
+        """
 
     # def valueFromText(self, text: str) -> float: ...
 
@@ -1894,7 +2030,7 @@ class QDoubleSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
 #     def testOption(self, option: PySide6.QtWidgets.QFontDialog.FontDialogOption) -> bool: ...
 
 
-class QFormLayout(PySide6.QtWidgets.QLayout):
+class QFormLayout():
     """_summary_
 
     Args:
@@ -3794,7 +3930,7 @@ class QFormLayout(PySide6.QtWidgets.QLayout):
 #     def verticalSpacing(self) -> int: ...
 
 
-class QGroupBox(PySide6.QtWidgets.QWidget):
+class QGroupBox():
     """_summary_
 
     Args:
@@ -3833,7 +3969,7 @@ class QGroupBox(PySide6.QtWidgets.QWidget):
     # def title(self) -> str: ...
 
 
-class QHBoxLayout(PySide6.QtWidgets.QBoxLayout):
+class QHBoxLayout():
     """_summary_
 
     Args:
@@ -4192,11 +4328,16 @@ class QHBoxLayout(PySide6.QtWidgets.QBoxLayout):
 #     def value(self) -> float: ...
 
 
-class QLabel(PySide6.QtWidgets.QFrame):
-    """_summary_
+class QLabel():
+    """
+    QLabel is used for displaying text or an image. No user interaction
+    functionality is provided.
 
-    Args:
-        PySide6 (_type_): _description_
+    Examples:
+        >>> label = QLabel()
+        >>> label.setText("Hello World!")
+        >>> label.text()
+        'Hello World!'
     """
 
     # linkActivated            : ClassVar[Signal] = ... # linkActivated(QString)
@@ -4247,13 +4388,24 @@ class QLabel(PySide6.QtWidgets.QFrame):
     # def setPixmap(self, arg__1: Union[PySide6.QtGui.QPixmap, PySide6.QtGui.QImage, str]) -> None: ...
     # def setScaledContents(self, arg__1: bool) -> None: ...
     # def setSelection(self, arg__1: int, arg__2: int) -> None: ...
-    def setText(self, arg__1: str) -> None: ...
+    def setText(self, text: str) -> None:
+        """
+        Sets the label's text to the given text.
 
+        Args:
+            text (str): The text to set.
+        """
     # def setTextFormat(self, arg__1: PySide6.QtCore.Qt.TextFormat) -> None: ...
     # def setTextInteractionFlags(self, flags: PySide6.QtCore.Qt.TextInteractionFlag) -> None: ...
     # def setWordWrap(self, on: bool) -> None: ...
     # def sizeHint(self) -> PySide6.QtCore.QSize: ...
-    # def text(self) -> str: ...
+    def text(self) -> str:
+        """
+        Returns the label's text.
+
+        Returns:
+            str: The label's text.
+        """
     # def textFormat(self) -> PySide6.QtCore.Qt.TextFormat: ...
     # def textInteractionFlags(self) -> PySide6.QtCore.Qt.TextInteractionFlag: ...
     # def wordWrap(self) -> bool: ...
@@ -4735,7 +4887,7 @@ class QLabel(PySide6.QtWidgets.QFrame):
 #     def write(self, out: PySide6.QtCore.QDataStream) -> None: ...
 
 
-class QMainWindow(PySide6.QtWidgets.QWidget):
+class QMainWindow():
     """_summary_
 
     Args:
@@ -5580,16 +5732,23 @@ class QMainWindow(PySide6.QtWidgets.QWidget):
 #     def unpolish(self, widget: PySide6.QtWidgets.QWidget) -> None: ...
 
 
-class QPushButton(PySide6.QtWidgets.QAbstractButton):
-    """_summary_
-
-    Args:
-        PySide6 (_type_): _description_
+class QPushButton():
+    """
+    The push button, or command button, is perhaps the most commonly used widget
+    in any graphical user interface. Push (click) a button to command the computer
+    to perform some action, or to answer a question. Typical buttons are OK, Apply,
+    Cancel, Close, Yes, No and Help.
     """
 
     clicked: ClassVar[Signal] = ...  # clicked()
 
-    def setText(): ...
+    def setText(text: str) -> None:
+        """
+        Sets the text to be displayed in the button.
+
+        Args:
+            text (str): The text to display in the button.
+        """
 
     # @overload
     # def __init__(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
@@ -5948,7 +6107,7 @@ class QPushButton(PySide6.QtWidgets.QAbstractButton):
 #     def spacerItem(self) -> PySide6.QtWidgets.QSpacerItem: ...
 
 
-class QSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
+class QSpinBox():
     """_summary_
 
     Args:
@@ -8047,7 +8206,7 @@ class QSpinBox(PySide6.QtWidgets.QAbstractSpinBox):
 #     def sourceType(self) -> PySide6.QtGui.QTextDocument.ResourceType: ...
 
 
-class QTextEdit(PySide6.QtWidgets.QAbstractScrollArea):
+class QTextEdit():
     """_summary_
 
     Args:
@@ -8769,12 +8928,34 @@ class QTextEdit(PySide6.QtWidgets.QAbstractScrollArea):
 #     def stack(self) -> PySide6.QtGui.QUndoStack: ...
 
 
-class QVBoxLayout(PySide6.QtWidgets.QBoxLayout):
-    """_summary_
+class QVBoxLayout():
+    """Create a vertical box to which widgets can be added.
+    Layouts can be added to other layouts.
 
-    Args:
-        PySide6 (_type_): _description_
+    examples:
+        >>> vbox = QVBoxLayout()
+        >>> textedit = QTextEdit()
+        >>> vbox.addWidget(textedit)
+
+        >>> vbox = QVBoxLayout()
+        >>> hbox = QHBoxLayout()
+        >>> vbox.addLayout(hbox)
+
     """
+
+    def addLayout(self, layout: PySide6.QtWidgets.QBoxLayout) -> None:
+        """Adds a layout to the vertical box layout
+
+        Args:
+            Layout (PySide6.QtWidgets.QBoxLayout): Layout
+        """
+
+    def addWidget(self, widget: PySide6.QtWidgets.QWidget) -> None:
+        """Adds a widget to the vertical box layout
+
+        Args:
+            widget (PySide6.QtWidgets.QWidget): Widget
+        """
 
     @overload
     def __init__(self) -> None: ...
