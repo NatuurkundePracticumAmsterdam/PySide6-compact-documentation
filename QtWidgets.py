@@ -837,7 +837,7 @@ NoneType = type(None)
 #     def yearShown(self) -> int: ...
 
 
-class QCheckBox():
+class QCheckBox:
     """
     ![](assets/checkbox.png)
 
@@ -855,12 +855,12 @@ class QCheckBox():
         True
     """
 
-    def IsChecked():
+    def IsChecked() -> bool:
         """
         Returns True if the checkbox is checked; otherwise returns False.
 
         Returns:
-            bool: True if the checkbox is checked; otherwise False.
+            True if the checkbox is checked; otherwise False.
         """
         ...
 
@@ -997,8 +997,10 @@ class QCheckBox():
 #     def visualRegionForSelection(self, selection: PySide6.QtCore.QItemSelection) -> PySide6.QtGui.QRegion: ...
 
 
-class QComboBox():
+class QComboBox:
     """
+    ![](assets/combobox.png)
+
     A QComboBox is a button that provides a list of options to the user when clicked.
 
     Examples:
@@ -1082,7 +1084,7 @@ class QComboBox():
         or removing items.
 
         Returns:
-            int: The index of the currently selected item.
+            The index of the currently selected item.
         """
 
     def currentText(self) -> str:
@@ -1091,7 +1093,7 @@ class QComboBox():
         empty combo box, returns an empty string.
 
         Returns:
-            str: The text of the currently selected item.
+            The text of the currently selected item.
         """
 
     # def duplicatesEnabled(self) -> bool: ...
@@ -1627,8 +1629,11 @@ class QComboBox():
 #     def widget(self) -> PySide6.QtWidgets.QWidget: ...
 
 
-class QDoubleSpinBox():
+class QDoubleSpinBox:
     """
+    ![](assets/double_spinbox.png)
+
+    QDoubleSpinBox is designed to handle double values. For integers, use QSpinBox.
     QDoubleSpinBox allows the user to choose a value by clicking the up and down
     buttons to increment or decrement the value displayed. The value can also be
     changed by typing in a value. The range of valid values and the number of
@@ -1661,7 +1666,7 @@ class QDoubleSpinBox():
     # def setDecimals(self, prec: int) -> None: ...
     def setMaximum(self, max: float) -> None:
         """
-        Sets the maximum value of the spin box to max. The default maximum value
+        Sets the maximum value of the spin box. The default maximum value
         is 99.99.
 
         Args:
@@ -1670,7 +1675,7 @@ class QDoubleSpinBox():
 
     def setMinimum(self, min: float) -> None:
         """
-        Sets the minimum value of the spin box to min. The default minimum value
+        Sets the minimum value of the spin box. The default minimum value
         is 0.0.
 
         Args:
@@ -1681,7 +1686,9 @@ class QDoubleSpinBox():
     # def setRange(self, min: float, max: float) -> None: ...
     def setSingleStep(self, val: float) -> None:
         """
-        Sets the step value to val.
+        Sets the value that the spin box will increment or decrement by when the
+        up or down buttons are clicked. The default step value is 1.0. Setting a
+        singleStep value of less than 0 does nothing.
 
         Args:
             val: The new step value.
@@ -1691,7 +1698,8 @@ class QDoubleSpinBox():
     # def setSuffix(self, suffix: str) -> None: ...
     def setValue(self, val: float) -> None:
         """
-        Sets the value of the spin box to val.
+        Sets the value of the spin box. If the value is outside the range of the
+        spin box, the value is adjusted to the nearest limit.
 
         Args:
             val: The new value.
@@ -2030,7 +2038,7 @@ class QDoubleSpinBox():
 #     def testOption(self, option: PySide6.QtWidgets.QFontDialog.FontDialogOption) -> bool: ...
 
 
-class QFormLayout():
+class QFormLayout:
     """_summary_
 
     Args:
@@ -3930,7 +3938,7 @@ class QFormLayout():
 #     def verticalSpacing(self) -> int: ...
 
 
-class QGroupBox():
+class QGroupBox:
     """_summary_
 
     Args:
@@ -3969,7 +3977,7 @@ class QGroupBox():
     # def title(self) -> str: ...
 
 
-class QHBoxLayout():
+class QHBoxLayout:
     """_summary_
 
     Args:
@@ -4328,8 +4336,10 @@ class QHBoxLayout():
 #     def value(self) -> float: ...
 
 
-class QLabel():
+class QLabel:
     """
+    ![](assets/label.png)
+
     QLabel is used for displaying text or an image. No user interaction
     functionality is provided.
 
@@ -4395,6 +4405,7 @@ class QLabel():
         Args:
             text (str): The text to set.
         """
+
     # def setTextFormat(self, arg__1: PySide6.QtCore.Qt.TextFormat) -> None: ...
     # def setTextInteractionFlags(self, flags: PySide6.QtCore.Qt.TextInteractionFlag) -> None: ...
     # def setWordWrap(self, on: bool) -> None: ...
@@ -4404,8 +4415,9 @@ class QLabel():
         Returns the label's text.
 
         Returns:
-            str: The label's text.
+            The label's text.
         """
+
     # def textFormat(self) -> PySide6.QtCore.Qt.TextFormat: ...
     # def textInteractionFlags(self) -> PySide6.QtCore.Qt.TextInteractionFlag: ...
     # def wordWrap(self) -> bool: ...
@@ -4887,7 +4899,7 @@ class QLabel():
 #     def write(self, out: PySide6.QtCore.QDataStream) -> None: ...
 
 
-class QMainWindow():
+class QMainWindow:
     """_summary_
 
     Args:
@@ -5732,8 +5744,10 @@ class QMainWindow():
 #     def unpolish(self, widget: PySide6.QtWidgets.QWidget) -> None: ...
 
 
-class QPushButton():
+class QPushButton:
     """
+    ![](assets/pushbutton.png)
+
     The push button, or command button, is perhaps the most commonly used widget
     in any graphical user interface. Push (click) a button to command the computer
     to perform some action, or to answer a question. Typical buttons are OK, Apply,
@@ -6107,11 +6121,27 @@ class QPushButton():
 #     def spacerItem(self) -> PySide6.QtWidgets.QSpacerItem: ...
 
 
-class QSpinBox():
-    """_summary_
+class QSpinBox:
+    """
+    ![](assets/spinbox.png)
 
-    Args:
-        PySide6 (_type_): _description_
+    QSpinBox is designed to handle integers and discrete sets of values. Use
+    QDoubleSpinBox for floating point values. QSpinBox allows the user to choose
+    a value by clicking the up and down buttons to increment or decrement the
+    value displayed. The value can also be changed by typing in a value. The range
+    of valid values and the number of decimal places shown is configurable.
+
+    Examples:
+        >>> spin_box = QSpinBox()
+        >>> spin_box.setMaximum(100)
+        >>> spin_box.setMinimum(0)
+        >>> spin_box.setSingleStep(5)
+        >>> spin_box.setValue(50)
+        >>> spin_box.value()
+        50
+        >>> spin_box.setValue(200)
+        >>> spin_box.value()
+        100
     """
 
     textChanged: ClassVar[Signal] = ...  # textChanged(QString)
@@ -6127,23 +6157,58 @@ class QSpinBox():
     # def minimum(self) -> int: ...
     # def prefix(self) -> str: ...
     # def setDisplayIntegerBase(self, base: int) -> None: ...
-    def setMaximum(self, max: int) -> None: ...
-    def setMinimum(self, min: int) -> None: ...
+    def setMaximum(self, max: int) -> None:
+        """
+        Sets the maximum value of the spin box. The default maximum value is 99.
+
+        Args:
+            max (int): The maximum value of the spin box.
+        """
+
+    def setMinimum(self, min: int) -> None:
+        """
+        Sets the minimum value of the spin box. The default minimum value
+        is 0.
+
+        Args:
+            min (int): The minimum value of the spin box.
+        """
 
     # def setPrefix(self, prefix: str) -> None: ...
     # def setRange(self, min: int, max: int) -> None: ...
-    def setSingleStep(self, val: int) -> None: ...
+    def setSingleStep(self, val: int) -> None:
+        """
+        Sets the value that the spin box will increment or decrement by when the
+        up or down buttons are clicked. The default step value is 1. Setting a
+        value less than 0 does nothing.
+
+        Args:
+            val (int): The value to increment or decrement by.
+        """
 
     # def setStepType(self, stepType: PySide6.QtWidgets.QAbstractSpinBox.StepType) -> None: ...
     # def setSuffix(self, suffix: str) -> None: ...
-    def setValue(self, val: int) -> None: ...
+    def setValue(self, val: int) -> None:
+        """
+        Sets the value of the spin box. If the value is outside the range of
+        the spin box, the value is adjusted to the nearest limit.
+
+        Args:
+            val (int): The value to set the spin box to.
+        """
 
     # def singleStep(self) -> int: ...
     # def stepType(self) -> PySide6.QtWidgets.QAbstractSpinBox.StepType: ...
     # def suffix(self) -> str: ...
     # def textFromValue(self, val: int) -> str: ...
     # def validate(self, input: str, pos: int) -> object: ...
-    def value(self) -> int: ...
+    def value(self) -> int:
+        """
+        Returns the current value of the spin box.
+
+        Returns:
+            The current value of the spin box.
+        """
 
 
 #    def valueFromText(self, text: str) -> int: ...
@@ -8206,7 +8271,7 @@ class QSpinBox():
 #     def sourceType(self) -> PySide6.QtGui.QTextDocument.ResourceType: ...
 
 
-class QTextEdit():
+class QTextEdit:
     """_summary_
 
     Args:
@@ -8928,7 +8993,7 @@ class QTextEdit():
 #     def stack(self) -> PySide6.QtGui.QUndoStack: ...
 
 
-class QVBoxLayout():
+class QVBoxLayout:
     """Create a vertical box to which widgets can be added.
     Layouts can be added to other layouts.
 
