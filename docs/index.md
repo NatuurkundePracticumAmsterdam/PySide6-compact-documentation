@@ -5,7 +5,7 @@
 **This PySide6 documentation** is compact, focused on beginners, and while not complete, it is clear and explanatory. PySide6 is the official Python module from the Qt for Python project, which provides access to the complete Qt 6.0+ framework. 
 
 For the **full Pyside6 documentation**, checkout the [Qt for Python docs](https://doc.qt.io/qtforpython-6/index.html).
-<br></br><br></br>
+<br></br>
 <table>
 <td>
 <font size = "5" color = "#dd2e5b"> Getting started </font> 
