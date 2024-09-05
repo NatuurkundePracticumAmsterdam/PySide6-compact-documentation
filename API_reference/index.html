@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../img/favicon.ico">
 
     
-    <title>Reference - PySide6 Compact Documentation</title>
+    <title>API Reference - PySide6 Compact Documentation</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -83,7 +83,7 @@
                 
                 
                     <li class="active">
-                        <a href="./">Reference</a>
+                        <a href="./">API Reference</a>
                     </li>
                 
                 
@@ -115,7 +115,7 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#reference">Reference</a></li>
+        <li class="first-level active"><a href="#api-reference">API Reference</a></li>
             <li class="second-level"><a href="#QtWidgets">QtWidgets</a></li>
                 
             <li class="second-level"><a href="#QtWidgets.QCheckBox">QCheckBox</a></li>
@@ -156,6 +156,11 @@
                 <li class="third-level"><a href="#QtWidgets.QPushButton.setText">setText</a></li>
             <li class="second-level"><a href="#QtWidgets.QSpinBox">QSpinBox</a></li>
                 
+                <li class="third-level"><a href="#QtWidgets.QSpinBox.setMaximum">setMaximum</a></li>
+                <li class="third-level"><a href="#QtWidgets.QSpinBox.setMinimum">setMinimum</a></li>
+                <li class="third-level"><a href="#QtWidgets.QSpinBox.setSingleStep">setSingleStep</a></li>
+                <li class="third-level"><a href="#QtWidgets.QSpinBox.setValue">setValue</a></li>
+                <li class="third-level"><a href="#QtWidgets.QSpinBox.value">value</a></li>
             <li class="second-level"><a href="#QtWidgets.QTextEdit">QTextEdit</a></li>
                 
             <li class="second-level"><a href="#QtWidgets.QVBoxLayout">QVBoxLayout</a></li>
@@ -166,7 +171,7 @@
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="reference">Reference</h1>
+<h1 id="api-reference">API Reference</h1>
 
 
 <div class="doc doc-object doc-module">
@@ -251,13 +256,14 @@ is unchecked.</p>
     <table>
       <thead>
         <tr>
-<th>Name</th>          <th>Type</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>bool</code></td>            <td>
+            <td>
+                  <code>bool</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -341,7 +347,8 @@ to be unchecked.</p>
     <div class="doc doc-contents ">
 
 
-      <p>A QComboBox is a button that provides a list of options to the user when clicked.</p>
+      <p><img alt="" src="../assets/combobox.png" /></p>
+<p>A QComboBox is a button that provides a list of options to the user when clicked.</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -504,13 +511,13 @@ or removing items.</p>
     <table>
       <thead>
         <tr>
-<th>Name</th>          <th>Type</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>int</code></td>            <td>
+            <td>
                   <code>int</code>
             </td>
             <td>
@@ -545,13 +552,13 @@ empty combo box, returns an empty string.</p>
     <table>
       <thead>
         <tr>
-<th>Name</th>          <th>Type</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>str</code></td>            <td>
+            <td>
                   <code>str</code>
             </td>
             <td>
@@ -727,7 +734,9 @@ empty combo box, returns an empty string.</p>
     <div class="doc doc-contents ">
 
 
-      <p>QDoubleSpinBox allows the user to choose a value by clicking the up and down
+      <p><img alt="" src="../assets/double_spinbox.png" /></p>
+<p>QDoubleSpinBox is designed to handle double values. For integers, use QSpinBox.
+QDoubleSpinBox allows the user to choose a value by clicking the up and down
 buttons to increment or decrement the value displayed. The value can also be
 changed by typing in a value. The range of valid values and the number of
 decimal places shown is configurable.</p>
@@ -770,7 +779,7 @@ decimal places shown is configurable.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Sets the maximum value of the spin box to max. The default maximum value
+      <p>Sets the maximum value of the spin box. The default maximum value
 is 99.99.</p>
 
 
@@ -817,7 +826,7 @@ is 99.99.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Sets the minimum value of the spin box to min. The default minimum value
+      <p>Sets the minimum value of the spin box. The default minimum value
 is 0.0.</p>
 
 
@@ -864,7 +873,9 @@ is 0.0.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Sets the step value to val.</p>
+      <p>Sets the value that the spin box will increment or decrement by when the
+up or down buttons are clicked. The default step value is 1.0. Setting a
+singleStep value of less than 0 does nothing.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -910,7 +921,8 @@ is 0.0.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Sets the value of the spin box to val.</p>
+      <p>Sets the value of the spin box. If the value is outside the range of the
+spin box, the value is adjusted to the nearest limit.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -1173,7 +1185,8 @@ is 0.0.</p>
     <div class="doc doc-contents ">
 
 
-      <p>QLabel is used for displaying text or an image. No user interaction
+      <p><img alt="" src="../assets/label.png" /></p>
+<p>QLabel is used for displaying text or an image. No user interaction
 functionality is provided.</p>
 
 
@@ -1261,13 +1274,13 @@ functionality is provided.</p>
     <table>
       <thead>
         <tr>
-<th>Name</th>          <th>Type</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>str</code></td>            <td>
+            <td>
                   <code>str</code>
             </td>
             <td>
@@ -1355,7 +1368,8 @@ functionality is provided.</p>
     <div class="doc doc-contents ">
 
 
-      <p>The push button, or command button, is perhaps the most commonly used widget
+      <p><img alt="" src="../assets/pushbutton.png" /></p>
+<p>The push button, or command button, is perhaps the most commonly used widget
 in any graphical user interface. Push (click) a button to command the computer
 to perform some action, or to answer a question. Typical buttons are OK, Apply,
 Cancel, Close, Yes, No and Help.</p>
@@ -1441,7 +1455,52 @@ Cancel, Close, Yes, No and Help.</p>
     <div class="doc doc-contents ">
 
 
-      <p><em>summary</em></p>
+      <p><img alt="" src="../assets/spinbox.png" /></p>
+<p>QSpinBox is designed to handle integers and discrete sets of values. Use
+QDoubleSpinBox for floating point values. QSpinBox allows the user to choose
+a value by clicking the up and down buttons to increment or decrement the
+value displayed. The value can also be changed by typing in a value. The range
+of valid values and the number of decimal places shown is configurable.</p>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">spin_box</span> <span class="o">=</span> <span class="n">QSpinBox</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spin_box</span><span class="o">.</span><span class="n">setMaximum</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spin_box</span><span class="o">.</span><span class="n">setMinimum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spin_box</span><span class="o">.</span><span class="n">setSingleStep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spin_box</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spin_box</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="go">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spin_box</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spin_box</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="go">100</span>
+</code></pre></div>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="QtWidgets.QSpinBox.setMaximum" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">setMaximum</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Sets the maximum value of the spin box. The default maximum value is 99.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -1456,13 +1515,13 @@ Cancel, Close, Yes, No and Help.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>PySide6</code></td>
+            <td><code>max</code></td>
             <td>
-                  <code>_type_</code>
+                  <code>int</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p><em>description</em></p>
+                <p>The maximum value of the spin box.</p>
               </div>
             </td>
             <td>
@@ -1472,18 +1531,191 @@ Cancel, Close, Yes, No and Help.</p>
       </tbody>
     </table>
 
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
 
 
+<h3 id="QtWidgets.QSpinBox.setMinimum" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">setMinimum</span><span class="p">(</span><span class="nb">min</span><span class="p">)</span></code>
 
-  <div class="doc doc-children">
-
-
-
-
+</h3>
 
 
+    <div class="doc doc-contents ">
+
+      <p>Sets the minimum value of the spin box. The default minimum value
+is 0.</p>
 
 
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>min</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The minimum value of the spin box.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="QtWidgets.QSpinBox.setSingleStep" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">setSingleStep</span><span class="p">(</span><span class="n">val</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Sets the value that the spin box will increment or decrement by when the
+up or down buttons are clicked. The default step value is 1. Setting a
+value less than 0 does nothing.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>val</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The value to increment or decrement by.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="QtWidgets.QSpinBox.setValue" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">setValue</span><span class="p">(</span><span class="n">val</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Sets the value of the spin box. If the value is outside the range of
+the spin box, the value is adjusted to the nearest limit.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>val</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The value to set the spin box to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="QtWidgets.QSpinBox.value" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">value</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Returns the current value of the spin box.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The current value of the spin box.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
 
 
 
