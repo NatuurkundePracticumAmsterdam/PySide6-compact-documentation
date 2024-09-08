@@ -1,3 +1,6 @@
+---
+disable_toc: true
+---
 
 <font size = "20" color = "#dd2e5b"> Pyside6 Compact Documentation </font> 
 
