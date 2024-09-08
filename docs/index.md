@@ -63,7 +63,7 @@ td {
       </ul>
     </td>
     <td>
-    <li style = "padding-left: 125px;"> </li>
+    <li style = "padding-left: 125px; list-style-type: none;"> </li>
     </td>                                           
   </tr>
 </table>
