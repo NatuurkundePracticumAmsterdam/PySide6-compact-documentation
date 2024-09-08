@@ -5,6 +5,7 @@ theme:
   custom_dir: 'docs/cinder'
   logo: favicon.ico
   site_favicon: favicon.ico
+  disable_nav_previous_next: true
 
 plugins:
   - search

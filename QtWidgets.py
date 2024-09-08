@@ -3,8 +3,7 @@
 # from __future__ import annotations
 
 """
-This file contains the exact signatures for all functions in module
-PySide6.QtWidgets, except for defaults which are replaced by "...".
+This page contains the API documentation of the PySide6.QtWidgets module. 
 """
 
 # Module `PySide6.QtWidgets`
