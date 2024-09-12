@@ -34,10 +34,12 @@ class QMainWindow:
     A main window provides a framework for building an application's user interface.
     A user interface has to have one main window. QMainWindow provides a main
     application window. To the main window you can add other layouts, such as
-    QHorizontalLayout and QVBoxLayout.
+    QHBoxLayout and QVBoxLayout.
 
     Examples:
-        >>> window = QMainWindow()
+        ``` py
+        window = QMainWindow()
+        ```
     """
 
     # iconSizeChanged          : ClassVar[Signal] = ... # iconSizeChanged(QSize)
@@ -122,12 +124,16 @@ class QHBoxLayout:
     in the window, the layout will automatically wrap or resize them.
 
     Examples:
-        >>> layout = QHBoxLayout()
-        >>> layout.addWidget(QPushButton("Button 1"))
-        >>> layout.addWidget(QPushButton("Button 2"))
+        ``` py
+        layout = QHBoxLayout()
+        layout.addWidget(QPushButton("Button 1"))
+        layout.addWidget(QPushButton("Button 2"))
+        ```
 
-        >>> layout = QHBoxLayout()
-        >>> layout.addLayout(QVBoxLayout())
+        ``` py
+        layout = QHBoxLayout()
+        layout.addLayout(QVBoxLayout())
+        ```
     """
 
     def addLayout(self, layout: PySide6.QtWidgets.QBoxLayout) -> None:
@@ -156,13 +162,16 @@ class QVBoxLayout:
     in the window, the layout will automatically wrap or resize them.
 
     examples:
-        >>> vbox = QVBoxLayout()
-        >>> textedit = QTextEdit()
-        >>> vbox.addWidget(textedit)
-
-        >>> vbox = QVBoxLayout()
-        >>> hbox = QHBoxLayout()
-        >>> vbox.addLayout(hbox)
+        ``` py
+        vbox = QVBoxLayout()
+        textedit = QTextEdit()
+        vbox.addWidget(textedit)
+        ```
+        ``` py
+        vbox = QVBoxLayout()
+        hbox = QHBoxLayout()
+        vbox.addLayout(hbox)
+        ```
     """
 
     def addLayout(self, layout: PySide6.QtWidgets.QBoxLayout) -> None:
@@ -584,12 +593,16 @@ class QCheckBox:
     is unchecked.
 
     Examples:
-        >>> checkbox = QCheckBox()
-        >>> checkbox.isChecked()
-        False
-        >>> checkbox.setChecked(True)
-        >>> checkbox.isChecked()
-        True
+        ``` py
+        checkbox = QCheckBox()
+        print(checkbox.isChecked())
+        ```
+        ```False```
+        ``` py
+        checkbox.setChecked(True)
+        print(checkbox.isChecked())
+        ```
+        ```True```
     """
 
     def IsChecked() -> bool:
@@ -640,10 +653,12 @@ class QLabel:
     functionality is provided.
 
     Examples:
-        >>> label = QLabel()
-        >>> label.setText("Hello World!")
-        >>> label.text()
-        'Hello World!'
+        ``` py
+        label = QLabel()
+        label.setText("Hello World!")
+        print(label.text())
+        ```
+        ```'Hello World!'```
     """
 
     # linkActivated            : ClassVar[Signal] = ... # linkActivated(QString)
@@ -726,21 +741,31 @@ class QComboBox:
     A QComboBox is a button that provides a list of options to the user when clicked.
 
     Examples:
-        >>> combo = QComboBox()
-        >>> combo.addItem("Option 1")
-        >>> combo.addItems("[Option 2, Option 3]")
-        >>> combo.currentText()
-        'Option 1'
-        >>> combo.currentIndex()
-        '0'
-        >>> combo.setCurrentIndex(2)
-        >>> combo.currentText()
-        'Option 3'
-        >>> combo.clear()
-        >>> combo.currentText()
-        ''
-        >>> combo.currentIndex()
-        '-1'
+        ``` py
+        combo = QComboBox()
+        combo.addItem("Option 1")
+        combo.addItems("[Option 2, Option 3]")
+        print(combo.currentText())
+        ```
+        ```'Option 1'```
+        ``` py
+        print(combo.currentIndex())
+        ```
+        ```'0'```
+        ``` py
+        combo.setCurrentIndex(2)
+        print(combo.currentText())
+        ```
+        ```'Option 3'```
+        ``` py
+        combo.clear()
+        print(combo.currentText())
+        ```
+        ```''```
+        ``` py
+        print(combo.currentIndex())
+        ```
+        ```'-1'```
     """
 
     # activated                : ClassVar[Signal] = ... # activated(int)
@@ -929,16 +954,20 @@ class QSpinBox:
     of valid values and the number of decimal places shown is configurable.
 
     Examples:
-        >>> spin_box = QSpinBox()
-        >>> spin_box.setMaximum(100)
-        >>> spin_box.setMinimum(0)
-        >>> spin_box.setSingleStep(5)
-        >>> spin_box.setValue(50)
-        >>> spin_box.value()
-        50
-        >>> spin_box.setValue(200)
-        >>> spin_box.value()
-        100
+        ``` py
+        spin_box = QSpinBox()
+        spin_box.setMaximum(100)
+        spin_box.setMinimum(0)
+        spin_box.setSingleStep(5)
+        spin_box.setValue(50)
+        print(spin_box.value())
+        ```
+        ```50```
+        ``` py
+        spin_box.setValue(200)
+        print(spin_box.value())
+        ```
+        ```100```
     """
 
     textChanged: ClassVar[Signal] = ...  # textChanged(QString)
@@ -1023,16 +1052,20 @@ class QDoubleSpinBox:
     decimal places shown is configurable.
 
     Examples:
-        >>> spin_box = QDoubleSpinBox()
-        >>> spin_box.setMaximum(100)
-        >>> spin_box.setMinimum(0)
-        >>> spin_box.setSingleStep(0.1)
-        >>> spin_box.setValue(50)
-        >>> spin_box.value()
-        50.0
-        >>> spin_box.setValue(200)
-        >>> spin_box.value()
-        100.0
+        ``` py
+        spin_box = QDoubleSpinBox()
+        spin_box.setMaximum(100)
+        spin_box.setMinimum(0)
+        spin_box.setSingleStep(0.1)
+        spin_box.setValue(50)
+        print(spin_box.value())
+        ```
+        ```50.0```
+        ``` py
+        spin_box.setValue(200)
+        print(spin_box.value())
+        ```
+        ```100.0```
     """
 
     textChanged: ClassVar[Signal] = ...  # textChanged(QString)
@@ -1104,205 +1137,6 @@ class QDoubleSpinBox:
     # def valueFromText(self, text: str) -> float: ...
 
 
-class QComboBox:
-    """
-    ![](assets/combobox.png)
-
-    A QComboBox is a button that provides a list of options to the user when clicked.
-
-    Examples:
-        >>> combo = QComboBox()
-        >>> combo.addItem("Option 1")
-        >>> combo.addItems("[Option 2, Option 3]")
-        >>> combo.currentText()
-        'Option 1'
-        >>> combo.currentIndex()
-        '0'
-        >>> combo.setCurrentIndex(2)
-        >>> combo.currentText()
-        'Option 3'
-        >>> combo.clear()
-        >>> combo.currentText()
-        ''
-        >>> combo.currentIndex()
-        '-1'
-    """
-
-    # activated                : ClassVar[Signal] = ... # activated(int)
-    currentIndexChanged: ClassVar[Signal] = ...  # currentIndexChanged(int)
-    # currentTextChanged       : ClassVar[Signal] = ... # currentTextChanged(QString)
-    # editTextChanged          : ClassVar[Signal] = ... # editTextChanged(QString)
-    # highlighted              : ClassVar[Signal] = ... # highlighted(int)
-    # textActivated            : ClassVar[Signal] = ... # textActivated(QString)
-    # textHighlighted          : ClassVar[Signal] = ... # textHighlighted(QString)
-
-    # class InsertPolicy(enum.Enum):
-
-    #     NoInsert: QComboBox.InsertPolicy = ...  # 0x0
-    #     InsertAtTop: QComboBox.InsertPolicy = ...  # 0x1
-    #     InsertAtCurrent: QComboBox.InsertPolicy = ...  # 0x2
-    #     InsertAtBottom: QComboBox.InsertPolicy = ...  # 0x3
-    #     InsertAfterCurrent: QComboBox.InsertPolicy = ...  # 0x4
-    #     InsertBeforeCurrent: QComboBox.InsertPolicy = ...  # 0x5
-    #     InsertAlphabetically: QComboBox.InsertPolicy = ...  # 0x6
-
-    # class SizeAdjustPolicy(enum.Enum):
-
-    #     AdjustToContents: QComboBox.SizeAdjustPolicy = ...  # 0x0
-    #     AdjustToContentsOnFirstShow: QComboBox.SizeAdjustPolicy = ...  # 0x1
-    #     AdjustToMinimumContentsLengthWithIcon: QComboBox.SizeAdjustPolicy = ...  # 0x2
-
-    # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-
-    # @overload
-    # def addItem(self,icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, userData: Any = ...,) -> None: ...
-    # @overload
-    def addItem(self, text: str) -> None:
-        """
-        Adds an item to the combo box with the given text.
-
-        Args:
-            text (str): The text to display in the combo box.
-        """
-
-    def addItems(self, texts: Sequence[str]) -> None:
-        """
-        Adds the items in the list texts to the combo box.
-
-        Args:
-            texts (Sequence[str]): The list of strings to add to the combo box.
-        """
-
-    # def changeEvent(self, e: PySide6.QtCore.QEvent) -> None: ...
-    def clear(self) -> None:
-        """
-        Clears the contents of the combo box, removing all items.
-        """
-
-    # def clearEditText(self) -> None: ...
-    # def completer(self) -> PySide6.QtWidgets.QCompleter: ...
-    # def contextMenuEvent(self, e: PySide6.QtGui.QContextMenuEvent) -> None: ...
-    # def count(self) -> int: ...
-    # def currentData(self, role: int = ...) -> Any: ...
-    def currentIndex(self) -> int:
-        """
-        Gets the index of the currently selected item in the combo box. For
-        an empty combo box, returns -1. The current index can change when inserting
-        or removing items.
-
-        Returns:
-            The index of the currently selected item.
-        """
-
-    def currentText(self) -> str:
-        """
-        Gets the text of the currently selected item in the combo box. For an
-        empty combo box, returns an empty string.
-
-        Returns:
-            The text of the currently selected item.
-        """
-
-    # def duplicatesEnabled(self) -> bool: ...
-    # def event(self, event: PySide6.QtCore.QEvent) -> bool: ...
-    # def findData(self, data: Any, role: int = ..., flags: PySide6.QtCore.Qt.MatchFlag = ...) -> int: ...
-    # def findText(self, text: str, flags: PySide6.QtCore.Qt.MatchFlag = ...) -> int: ...
-    # def focusInEvent(self, e: PySide6.QtGui.QFocusEvent) -> None: ...
-    # def focusOutEvent(self, e: PySide6.QtGui.QFocusEvent) -> None: ...
-    # def hasFrame(self) -> bool: ...
-    # def hideEvent(self, e: PySide6.QtGui.QHideEvent) -> None: ...
-    # def hidePopup(self) -> None: ...
-    # def iconSize(self) -> PySide6.QtCore.QSize: ...
-    # def initStyleOption(self, option: PySide6.QtWidgets.QStyleOptionComboBox) -> None: ...
-    # def inputMethodEvent(self, arg__1: PySide6.QtGui.QInputMethodEvent) -> None: ...
-    # @overload
-    # def inputMethodQuery(self, arg__1: PySide6.QtCore.Qt.InputMethodQuery) -> Any: ...
-    # @overload
-    # def inputMethodQuery(self, query: PySide6.QtCore.Qt.InputMethodQuery, argument: Any) -> Any: ...
-    # @overload
-    # def insertItem(self, index: int, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, userData: Any = ...) -> None: ...
-    # @overload
-    # def insertItem(self, index: int, text: str, userData: Any = ...) -> None: ...
-    # def insertItems(self, index: int, texts: Sequence[str]) -> None: ...
-    # def insertPolicy(self) -> PySide6.QtWidgets.QComboBox.InsertPolicy: ...
-    # def insertSeparator(self, index: int) -> None: ...
-    # def isEditable(self) -> bool: ...
-    # def itemData(self, index: int, role: int = ...) -> Any: ...
-    # def itemDelegate(self) -> PySide6.QtWidgets.QAbstractItemDelegate: ...
-    # def itemIcon(self, index: int) -> PySide6.QtGui.QIcon: ...
-    # def itemText(self, index: int) -> str: ...
-    # def keyPressEvent(self, e: PySide6.QtGui.QKeyEvent) -> None: ...
-    # def keyReleaseEvent(self, e: PySide6.QtGui.QKeyEvent) -> None: ...
-    # def lineEdit(self) -> PySide6.QtWidgets.QLineEdit: ...
-    # def maxCount(self) -> int: ...
-    # def maxVisibleItems(self) -> int: ...
-    # def minimumContentsLength(self) -> int: ...
-    # def minimumSizeHint(self) -> PySide6.QtCore.QSize: ...
-    # def model(self) -> PySide6.QtCore.QAbstractItemModel: ...
-    # def modelColumn(self) -> int: ...
-    # def mousePressEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
-    # def mouseReleaseEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
-    # def paintEvent(self, e: PySide6.QtGui.QPaintEvent) -> None: ...
-    # def placeholderText(self) -> str: ...
-    def removeItem(self, index: int) -> None:
-        """
-        Removes the item at the given index from the combo box.
-
-        Args:
-            index (int): The index of the item to remove.
-        """
-
-    # def resizeEvent(self, e: PySide6.QtGui.QResizeEvent) -> None: ...
-    # def rootModelIndex(self) -> PySide6.QtCore.QModelIndex: ...
-    # def setCompleter(self, c: PySide6.QtWidgets.QCompleter) -> None: ...
-    def setCurrentIndex(self, index: int) -> None:
-        """
-        Sets the current index of the combo box to the given index.
-
-        Args:
-            index (int): The index of the item to set as the current item.
-        """
-
-    def setCurrentText(self, text: str) -> None:
-        """
-        Sets the current text of the combo box to the given text.
-
-        Args:
-            text (str): The text to set as the current text.
-        """
-
-    # def setText(): ...
-
-    # def setDuplicatesEnabled(self, enable: bool) -> None: ...
-    # def setEditText(self, text: str) -> None: ...
-    # def setEditable(self, editable: bool) -> None: ...
-    # def setFrame(self, arg__1: bool) -> None: ...
-    # def setIconSize(self, size: PySide6.QtCore.QSize) -> None: ...
-    # def setInsertPolicy(self, policy: PySide6.QtWidgets.QComboBox.InsertPolicy) -> None: ...
-    # def setItemData(self, index: int, value: Any, role: int = ...) -> None: ...
-    # def setItemDelegate(self, delegate: PySide6.QtWidgets.QAbstractItemDelegate) -> None: ...
-    # def setItemIcon(self, index: int, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap]) -> None: ...
-    # def setItemText(self, index: int, text: str) -> None: ...
-    # def setLineEdit(self, edit: PySide6.QtWidgets.QLineEdit) -> None: ...
-    # def setMaxCount(self, max: int) -> None: ...
-    # def setMaxVisibleItems(self, maxItems: int) -> None: ...
-    # def setMinimumContentsLength(self, characters: int) -> None: ...
-    # def setModel(self, model: PySide6.QtCore.QAbstractItemModel) -> None: ...
-    # def setModelColumn(self, visibleColumn: int) -> None: ...
-    # def setPlaceholderText(self, placeholderText: str) -> None: ...
-    # def setRootModelIndex(self, index: Union[PySide6.QtCore.QModelIndex, PySide6.QtCore.QPersistentModelIndex]) -> None: ...
-    # def setSizeAdjustPolicy(self, policy: PySide6.QtWidgets.QComboBox.SizeAdjustPolicy) -> None: ...
-    # def setValidator(self, v: PySide6.QtGui.QValidator) -> None: ...
-    # def setView(self, itemView: PySide6.QtWidgets.QAbstractItemView) -> None: ...
-    # def showEvent(self, e: PySide6.QtGui.QShowEvent) -> None: ...
-    # def showPopup(self) -> None: ...
-    # def sizeAdjustPolicy(self) -> PySide6.QtWidgets.QComboBox.SizeAdjustPolicy: ...
-    # def sizeHint(self) -> PySide6.QtCore.QSize: ...
-    # def validator(self) -> PySide6.QtGui.QValidator: ...
-    # def view(self) -> PySide6.QtWidgets.QAbstractItemView: ...
-    # def wheelEvent(self, e: PySide6.QtGui.QWheelEvent) -> None: ...
-
-
 class QPushButton:
     """
     ![](assets/pushbutton.png)
@@ -1313,10 +1147,12 @@ class QPushButton:
     Cancel, Close, Yes, No and Help.
 
     Examples:
-        >>> button = QPushButton()
-        >>> button.setText("Click me!")
-        >>> button.text()
-        'Click me!'
+        ``` py
+        button = QPushButton()
+        button.setText("Click me!")
+        print(button.text())
+        ```
+        ```'Click me!'```
     """
 
     clicked: ClassVar[Signal] = ...  # clicked()
