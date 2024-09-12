@@ -1,13 +1,15 @@
 site_name: PySide6 Compact Documentation
 
 theme:
-  name: null
-  custom_dir: 'docs/cinder'
-  site_favicon: favicon.ico
-  disable_nav_previous_next: true
-  features: 
+  name: cinder
+  features:
     - content.code.copy
     - content.code.select
+
+extra:
+  collapse_toc: true
+  disable_nav_previous_next: true
+
 
 plugins:
   - search
