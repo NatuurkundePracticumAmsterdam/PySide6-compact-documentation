@@ -10,3 +10,4 @@ dependencies:
     - mkdocstrings[python]
     - pyside6
     - pygments
+    - mkdocs-cinder

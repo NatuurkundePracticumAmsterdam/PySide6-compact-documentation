@@ -586,7 +586,7 @@ class QTextEdit:
 class QCheckBox:
     """
     <hr>
-    ![](assets/checkbox.png)
+    ![](buttons/checkbox.png)
 
     <br>
     A QCheckBox widget is a toggle button that can be checked or unchecked.
@@ -673,7 +673,7 @@ class QCheckBox:
 class QLabel:
     """
     <hr>
-    ![](assets/label.png)
+    ![](buttons/label.png)
 
     <br>
     QLabel is used for displaying text or an image. No user interaction
@@ -784,7 +784,7 @@ class QLabel:
 class QComboBox:
     """
     <hr>
-    ![](assets/combobox.png)
+    ![](buttons/combobox.png)
 
     <br>
     A QComboBox is a button that provides a list of options to the user when clicked.
@@ -1032,11 +1032,11 @@ class QComboBox:
 class QSpinBox:
     """
     <hr>
-    ![](assets/spinbox.png)
+    ![](buttons/spinbox.png)
 
     <br>
     QSpinBox is designed to handle integers and discrete sets of values. Use
-    [QDoubleSpinBox](/API_reference/#QtWidgets.QDoubleSpinBox) for floating point values. QSpinBox allows the user to choose
+    [QDoubleSpinBox](../QDoubleSpinBox) for floating point values. QSpinBox allows the user to choose
     a value by clicking the up and down buttons to increment or decrement the
     value displayed. The value can also be changed by typing in a value. The range
     of valid values and the number of decimal places shown is configurable.
@@ -1160,11 +1160,11 @@ class QSpinBox:
 class QDoubleSpinBox:
     """
     <hr>
-    ![](assets/double_spinbox.png)
+    ![](buttons/double_spinbox.png)
 
     <br>
     QDoubleSpinBox is designed to handle double values. For integers, use
-    [QSpinBox](/API_reference/#QtWidgets.QSpinBox). QDoubleSpinBox allows the user to choose a value by clicking
+    [QSpinBox](../QDoubleSpinBox). QDoubleSpinBox allows the user to choose a value by clicking
     the up and down buttons to increment or decrement the value displayed. The
     value can also be changed by typing in a value. The range of valid values
     and the number of decimal places shown is configurable.
@@ -1287,7 +1287,7 @@ class QDoubleSpinBox:
 class QPushButton:
     """
     <hr>
-    ![](assets/pushbutton.png)
+    ![](buttons/pushbutton.png)
 
     <br>
     The push button, or command button, is perhaps the most commonly used widget
