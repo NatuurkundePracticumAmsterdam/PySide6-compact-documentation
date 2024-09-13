@@ -1,14 +1,9 @@
----
-disable_toc: true
----
-
-<font size = "20" color = "#dd2e5b"> Pyside6 Compact Documentation </font> 
+# Pyside6 Compact Documentation
 
 
 **This PySide6 documentation** is compact, focused on beginners, and while not complete, it is clear and explanatory.<br> PySide6 is the official Python module from the Qt for Python project, which provides access to the complete Qt 6.0+ framework. 
 
 For the **full Pyside6 documentation**, checkout the [Qt for Python docs](https://doc.qt.io/qtforpython-6/index.html).
-<br>
 <br>
 <br>
 
@@ -24,7 +19,6 @@ li {
 
 .font-title {
   font-size: 24px;
-  color: #dd2e5b;
   display: block;
   padding-bottom: 10px;
 }
@@ -36,11 +30,11 @@ li {
 <style type="text/css">
 ul li::marker {
   font-size: 20px; /* Adjust the size */
-  color: #dd2e5b; /* Optional: change the color */
+/* Optional: change the color */
 }
 
 td {
-  padding-right: 1px; /* Adjust horizontal space between columns */
+  padding-right: 1 px;
 }
 </style>
 
@@ -62,9 +56,7 @@ td {
         <li><span class="font-item">&nbsp <a href="API_reference">API reference</a></span></li>
       </ul>
     </td>
-    <td>
-    <li style = "padding-left: 125px; list-style-type: none;"> </li>
-    </td>                                           
+                                       
   </tr>
 </table>
 

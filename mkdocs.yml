@@ -2,6 +2,7 @@ site_name: PySide6 Compact Documentation
 
 theme:
   name: material
+  favicon: favicon.ico
   features:
     - content.code.copy
     - navigation.expand
@@ -37,7 +38,8 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - User Guide: User_Guide.md
+  - Installation Guide: Installation_Guide.md
+  - Tutorial: tutorial.md
   - API Reference:
     - Overview: PyQtWidgets/index.md
     - PyQtWidgets:
