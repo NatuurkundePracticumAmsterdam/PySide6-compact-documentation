@@ -1,13 +1,20 @@
 site_name: PySide6 Compact Documentation
 
 theme:
-  name: null
-  custom_dir: 'docs/cinder'
-  site_favicon: favicon.ico
-  disable_nav_previous_next: true
-  features: 
+  name: material
+  favicon: favicon.ico
+  features:
     - content.code.copy
-    - content.code.select
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.top
+    - navigation.tabs
+
+
+extra:
+  collapse_toc: true
+  disable_nav_previous_next: true
+
 
 plugins:
   - search
@@ -29,6 +36,23 @@ markdown_extensions:
 
 
 nav:
-  - index.md
-  - User_Guide.md
-  - API_reference.md
+  - Home: index.md
+  - Installation Guide: Installation_Guide.md
+  - Tutorial: tutorial.md
+  - API Reference:
+    - Overview: QtWidgets/index.md
+    - QtWidgets:
+        - QtWidgets/QMainWindow.md
+        - QtWidgets/QHBoxLayout.md
+        - QtWidgets/QVBoxLayout.md
+        - QtWidgets/QGroupBox.md
+        - QtWidgets/QTextEdit.md
+        - QtWidgets/QCheckBox.md
+        - QtWidgets/QLabel.md
+        - QtWidgets/QComboBox.md
+        - QtWidgets/QSpinBox.md
+        - QtWidgets/QDoubleSpinBox.md
+        - QtWidgets/QPushButton.md
+   
+extra_css:
+  - css/disable_toc.css

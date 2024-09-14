@@ -31,15 +31,68 @@ NoneType = type(None)
 
 class QMainWindow:
     """
-    A main window provides a framework for building an application's user interface.
-    A user interface has to have one main window. QMainWindow provides a main
-    application window. To the main window you can add other layouts, such as
-    QHBoxLayout and QVBoxLayout.
+    <hr>
 
-    Examples:
+    A main window provides a framework for building an application's user interface.
+    Every user interface has to have a <code>QMainWindow</code>. It has to
+    have a central widget, which is the main widget in the window. The central widget
+    can be a <a href="../../PyQtWidgets"><code>QWidget</code></a> or any other widget subclass.
+    To this central widget, you can add other layouts, such as <a href="../QHBoxLayout"><code>QHBoxLayout</code></a>
+    and <a href="../QVBoxLayout"><code>QVBoxLayout</code></a>.
+
+    <hr>
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#QtWidgets.QMainWindow.setCentralWidget"><code>setCentralWidget</code></a></li>
+        <li><a href="#QtWidgets.QMainWindow.show"><code>show</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+        <hr>
         ``` py
-        window = QMainWindow()
+
+        from PySide6 import QtWidgets
+        import sys
+
+        class UserInterface(QtWidgets.QMainWindow):
+            def __init__(self):
+
+                # Call the QMainWindow __init__ method.
+                super().__init__()
+
+                # Set the central widget; every QMainWindow must have a central widget.
+                central_widget = QtWidgets.QWidget()
+                self.setCentralWidget(QtWidgets.QWidget())
+
+                # Add a layout to the central widget.
+                layout = QtWidgets.QVBoxLayout(central_widget)
+
+        def main():
+
+            # Create the application object.
+            app = QtWidgets.QApplication(sys.argv)
+
+            # Create the main window, show it, and start the event loop.
+            window = UserInterface()
+            window.show()
+            app.exec()
         ```
+        In the above example, a simple user interface is created using the `QMainWindow` class.
+        We create a class called `UserInterface` that inherits from
+        `QMainWindow`. We then call the `__init__` method of the `QMainWindow` class using
+        the `super()` function. We then create a central widget and set it as the central
+        widget of the main window and add a layout to the central widget.
+        Finally, we create an instance of the `UserInterface` class, show the main window,
+        and start the application event loop.
+        <br>
+        Running the above code will display a window with a vertical layout.
+
+    <hr>
+
+    <br>
     """
 
     # iconSizeChanged          : ClassVar[Signal] = ... # iconSizeChanged(QSize)
@@ -92,7 +145,23 @@ class QMainWindow:
     # def restoreState(self, state: Union[PySide6.QtCore.QByteArray, bytes], version: int = ...) -> bool: ...
     # def saveState(self, version: int = ...) -> PySide6.QtCore.QByteArray: ...
     # def setAnimated(self, enabled: bool) -> None: ...
-    # def setCentralWidget(self, widget: PySide6.QtWidgets.QWidget) -> None: ...
+    def setCentralWidget(self, widget: PySide6.QtWidgets.QWidget) -> None:
+        """
+        Sets the given widget to be the main window's central widget.
+
+        Args:
+            widget (PySide6.QtWidgets.QWidget): The widget to set as the central widget.
+
+        <br>
+        """
+
+    def show(self) -> None:
+        """
+        Shows the main window.
+
+        <br>
+        """
+
     # def setCorner(self, corner: PySide6.QtCore.Qt.Corner, area: PySide6.QtCore.Qt.DockWidgetArea) -> None: ...
     # def setDockNestingEnabled(self, enabled: bool) -> None: ...
     # def setDockOptions(self, options: PySide6.QtWidgets.QMainWindow.DockOption) -> None: ...
@@ -120,27 +189,57 @@ class QMainWindow:
 
 class QHBoxLayout:
     """
-    The QHBoxLayout class lines up widgets horizontally. If the widgets do not fit
-    in the window, the layout will automatically wrap or resize them.
+    <hr>
+    The <code>QHBoxLayout</code> class lines up widgets horizontally. If the widgets do not fit
+    in the window, the layout will automatically wrap or resize them. For a vertical
+    layout, use <a href="../QVBoxLayout"><code>QVBoxLayout</code></a>.
 
-    Examples:
-        ``` py
-        layout = QHBoxLayout()
-        layout.addWidget(QPushButton("Button 1"))
-        layout.addWidget(QPushButton("Button 2"))
-        ```
+    Args:
+        parent (PySide6.QtWidgets.QWidget): Parent widget
+    <hr>
 
-        ``` py
-        layout = QHBoxLayout()
-        layout.addLayout(QVBoxLayout())
-        ```
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#QtWidgets.QHBoxLayout.addLayout"><code>addLayout</code></a></li>
+        <li><a href="#QtWidgets.QHBoxLayout.addWidget"><code>addWidget</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+    <hr>
+    ``` py
+    central_widget = QtWidgets.QWidget()
+    layout = QHBoxLayout(central_widget)
+    layout.addWidget(QPushButton("Button 1"))
+    layout.addWidget(QPushButton("Button 2"))
+    ```
+    In the above example, a horizontal layout is created, added to a central
+    widget, and two buttons are added to it. The buttons will be displayed
+    horizontally.
+
+    <br>
+
+    ``` py
+    central_widget = QtWidgets.QWidget()
+    layout = QHBoxLayout(central_widget)
+    layout.addLayout(QVBoxLayout())
+    ```
+    In the above example, a horizontal layout is created, added to a central
+    widget, and a vertical layout is added to it.
+    <hr>
+
+    <br>
     """
+
+    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
     def addLayout(self, layout: PySide6.QtWidgets.QBoxLayout) -> None:
         """Adds a layout to the horizontal box layout
 
         Args:
             Layout (PySide6.QtWidgets.QBoxLayout): Layout
+        <br>
         """
 
     def addWidget(self, widget: PySide6.QtWidgets.QWidget) -> None:
@@ -148,6 +247,8 @@ class QHBoxLayout:
 
         Args:
             widget (PySide6.QtWidgets.QWidget): Widget
+        <br>
+        <br>
         """
 
     # @overload
@@ -158,27 +259,53 @@ class QHBoxLayout:
 
 class QVBoxLayout:
     """
-    The QVBoxLayout class lines up widgets vertically. If the widgets do not fit
-    in the window, the layout will automatically wrap or resize them.
+    <hr>
+    The <code>QVBoxLayout</code> class lines up widgets vertically. If the widgets do not fit
+    in the window, the layout will automatically wrap or resize them. For a horizontal
+    layout, see <a href="../QHBoxLayout"><code>QHBoxLayout </code></a>.
 
-    examples:
-        ``` py
-        vbox = QVBoxLayout()
-        textedit = QTextEdit()
-        vbox.addWidget(textedit)
-        ```
-        ``` py
-        vbox = QVBoxLayout()
-        hbox = QHBoxLayout()
-        vbox.addLayout(hbox)
-        ```
+    Args:
+        parent (PySide6.QtWidgets.QWidget): Parent widget.
+
+    <hr>
+
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#QtWidgets.QVBoxLayout.addLayout"><code>addLayout</code></a></li>
+        <li><a href="#QtWidgets.QVBoxLayout.addWidget"><code>addWidget</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+    <hr>
+    ``` py
+    vbox = QVBoxLayout()
+    textedit = QTextEdit()
+    vbox.addWidget(textedit)
+    ```
+    In the above example, a vertical layout is created and a QTextEdit widget is added to it.
+
+    ``` py
+    vbox = QVBoxLayout()
+    hbox = QHBoxLayout()
+    vbox.addLayout(hbox)
+    ```
+    In the above example, a vertical layout is created and a horizontal layout is added to it.
+    <hr>
+
+    <br>
     """
+
+    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
     def addLayout(self, layout: PySide6.QtWidgets.QBoxLayout) -> None:
         """Adds a layout to the vertical box layout
 
         Args:
             Layout (PySide6.QtWidgets.QBoxLayout): Layout
+        <br>
         """
 
     def addWidget(self, widget: PySide6.QtWidgets.QWidget) -> None:
@@ -186,6 +313,8 @@ class QVBoxLayout:
 
         Args:
             widget (PySide6.QtWidgets.QWidget): Widget
+        <br>
+        <br>
         """
 
     @overload
@@ -585,24 +714,45 @@ class QTextEdit:
 
 class QCheckBox:
     """
-    ![](assets/checkbox.png)
+    <hr>
+    ![](buttons/checkbox.png)
 
-    A QCheckBox widget is a toggle button that can be checked or unchecked.
+    A <code>QCheckBox</code> widget is a toggle button that can be checked or unchecked.
     Checkboxes are typically used to represent features in an application that
     can be enabled or disabled without affecting others. By default, a checkbox
     is unchecked.
 
-    Examples:
+    <hr>
+
+    <h3>Signal</h3>
+    <ul>
+        <li><code>stateChanged</code>: Emitted whenever the checkbox's state changes.</li>
+    </ul>
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#QtWidgets.QCheckBox.IsChecked"><code>IsChecked</code></a></li>
+        <li><a href="#QtWidgets.QCheckBox.setChecked"><code>setChecked</code></a></li>
+    </ul>
+
+    <br>
+
+
+    **Examples**
+        <hr>
         ``` py
         checkbox = QCheckBox()
-        print(checkbox.isChecked())
+        print(checkbox.IsChecked())
         ```
         ```False```
         ``` py
         checkbox.setChecked(True)
-        print(checkbox.isChecked())
+        print(checkbox.IsChecked())
         ```
         ```True```
+        <hr>
+
+    <br>
     """
 
     def IsChecked() -> bool:
@@ -611,6 +761,7 @@ class QCheckBox:
 
         Returns:
             True if the checkbox is checked; otherwise False.
+        <br>
         """
         ...
 
@@ -621,6 +772,8 @@ class QCheckBox:
 
         Args:
             checked (bool): True to check the checkbox; otherwise False.
+        <br>
+        <br>
         """
 
     # stateChanged             : ClassVar[Signal] = ... # stateChanged(int)
@@ -647,18 +800,36 @@ class QCheckBox:
 
 class QLabel:
     """
-    ![](assets/label.png)
+    <hr>
+    ![](buttons/label.png)
 
-    QLabel is used for displaying text or an image. No user interaction
+    <code>QLabel</code> is used for displaying text or an image. No user interaction
     functionality is provided.
 
-    Examples:
+    <hr>
+
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#QtWidgets.QLabel.setText"><code>setText</code></a></li>
+        <li><a href="#QtWidgets.QLabel.text"><code>text</code></a></li>
+    </ul>
+
+    <br>
+
+
+
+    **Examples**
+        <hr>
         ``` py
         label = QLabel()
         label.setText("Hello World!")
         print(label.text())
         ```
         ```'Hello World!'```
+        <hr>
+
+    <br>
     """
 
     # linkActivated            : ClassVar[Signal] = ... # linkActivated(QString)
@@ -715,6 +886,7 @@ class QLabel:
 
         Args:
             text (str): The text to set.
+        <br>
         """
 
     # def setTextFormat(self, arg__1: PySide6.QtCore.Qt.TextFormat) -> None: ...
@@ -727,6 +899,8 @@ class QLabel:
 
         Returns:
             The label's text.
+        <br>
+        <br>
         """
 
     # def textFormat(self) -> PySide6.QtCore.Qt.TextFormat: ...
@@ -736,11 +910,37 @@ class QLabel:
 
 class QComboBox:
     """
-    ![](assets/combobox.png)
+    <hr>
+    ![](buttons/combobox.png)
 
-    A QComboBox is a button that provides a list of options to the user when clicked.
+    A <code>QComboBox</code> is a button that provides a list of options to the user when clicked.
+    The user can select an option from the list. The selected option is displayed
+    in the combo box.
 
-    Examples:
+    <hr>
+
+    <h3>Signals</h3>
+    <ul>
+        <li><code>currentIndexChanged</code>: Emitted when the current index changes.</li>
+    </ul>
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#QtWidgets.QComboBox.addItem"><code>addItem</code></a></li>
+        <li><a href="#QtWidgets.QComboBox.addItems"><code>addItems</code></a></li>
+        <li><a href="#QtWidgets.QComboBox.clear"><code>clear</code></a></li>
+        <li><a href="#QtWidgets.QComboBox.currentIndex"><code>currentIndex</code></a></li>
+        <li><a href="#QtWidgets.QComboBox.currentText"><code>currentText</code></a></li>
+        <li><a href="#QtWidgets.QComboBox.removeItem"><code>removeItem</code></a></li>
+        <li><a href="#QtWidgets.QComboBox.setCurrentIndex"><code>setCurrentIndex</code></a></li>
+        <li><a href="#QtWidgets.QComboBox.setCurrentText"><code>setCurrentText</code></a></li>
+    </ul>
+
+    <br>
+
+
+    **Examples**
+        <hr>
         ``` py
         combo = QComboBox()
         combo.addItem("Option 1")
@@ -766,6 +966,8 @@ class QComboBox:
         print(combo.currentIndex())
         ```
         ```'-1'```
+        <hr>
+    <br>
     """
 
     # activated                : ClassVar[Signal] = ... # activated(int)
@@ -803,6 +1005,7 @@ class QComboBox:
 
         Args:
             text (str): The text to display in the combo box.
+        <br>
         """
 
     def addItems(self, texts: Sequence[str]) -> None:
@@ -811,12 +1014,15 @@ class QComboBox:
 
         Args:
             texts (Sequence[str]): The list of strings to add to the combo box.
+        <br>
         """
 
     # def changeEvent(self, e: PySide6.QtCore.QEvent) -> None: ...
     def clear(self) -> None:
         """
         Clears the contents of the combo box, removing all items.
+
+        <br>
         """
 
     # def clearEditText(self) -> None: ...
@@ -832,6 +1038,7 @@ class QComboBox:
 
         Returns:
             The index of the currently selected item.
+        <br>
         """
 
     def currentText(self) -> str:
@@ -841,6 +1048,7 @@ class QComboBox:
 
         Returns:
             The text of the currently selected item.
+        <br>
         """
 
     # def duplicatesEnabled(self) -> bool: ...
@@ -890,6 +1098,7 @@ class QComboBox:
 
         Args:
             index (int): The index of the item to remove.
+        <br>
         """
 
     # def resizeEvent(self, e: PySide6.QtGui.QResizeEvent) -> None: ...
@@ -901,6 +1110,7 @@ class QComboBox:
 
         Args:
             index (int): The index of the item to set as the current item.
+        <br>
         """
 
     def setCurrentText(self, text: str) -> None:
@@ -909,6 +1119,8 @@ class QComboBox:
 
         Args:
             text (str): The text to set as the current text.
+        <br>
+        <br>
         """
 
     # def setText(): ...
@@ -945,15 +1157,35 @@ class QComboBox:
 
 class QSpinBox:
     """
-    ![](assets/spinbox.png)
+    <hr>
+    ![](buttons/spinbox.png)
 
-    QSpinBox is designed to handle integers and discrete sets of values. Use
-    QDoubleSpinBox for floating point values. QSpinBox allows the user to choose
-    a value by clicking the up and down buttons to increment or decrement the
-    value displayed. The value can also be changed by typing in a value. The range
-    of valid values and the number of decimal places shown is configurable.
+    <code>QSpinBox</code> is designed to handle integers and discrete sets of values. Use
+    <a href="../QDoubleSpinBox"><code>QDoubleSpinBox</code></a> for floating point values.
+    <code>QSpinBox</code> allows the user to choose a value by clicking the up and down buttons
+    to increment or decrement the value displayed. The value can also be changed by typing
+    in a value. The range of valid values and the number of decimal places shown is configurable.
 
-    Examples:
+    <hr>
+
+    <h3>Signals</h3>
+    <ul>
+        <li><code>valueChanged</code>: Emitted when the value in the spin box changes.</li>
+    </ul>
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#QtWidgets.QSpinBox.setMaximum"><code>setMaximum</code></a></li>
+        <li><a href="#QtWidgets.QSpinBox.setMinimum"><code>setMinimum</code></a></li>
+        <li><a href="#QtWidgets.QSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
+        <li><a href="#QtWidgets.QSpinBox.setValue"><code>setValue</code></a></li>
+        <li><a href="#QtWidgets.QSpinBox.value"><code>value</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+        <hr>
         ``` py
         spin_box = QSpinBox()
         spin_box.setMaximum(100)
@@ -968,6 +1200,9 @@ class QSpinBox:
         print(spin_box.value())
         ```
         ```100```
+        <hr>
+
+    <br>
     """
 
     textChanged: ClassVar[Signal] = ...  # textChanged(QString)
@@ -990,6 +1225,7 @@ class QSpinBox:
 
         Args:
             max (int): The maximum value of the spin box.
+        <br>
         """
 
     def setMinimum(self, min: int) -> None:
@@ -999,6 +1235,7 @@ class QSpinBox:
 
         Args:
             min (int): The minimum value of the spin box.
+        <br>
         """
 
     # def setPrefix(self, prefix: str) -> None: ...
@@ -1012,6 +1249,7 @@ class QSpinBox:
 
         Args:
             val (int): The value to increment or decrement by.
+        <br>
         """
 
     # def setStepType(self, stepType: PySide6.QtWidgets.QAbstractSpinBox.StepType) -> None: ...
@@ -1023,6 +1261,7 @@ class QSpinBox:
 
         Args:
             val (int): The value to set the spin box to.
+        <br>
         """
 
     # def singleStep(self) -> int: ...
@@ -1036,6 +1275,8 @@ class QSpinBox:
 
         Returns:
             The current value of the spin box.
+        <br>
+        <br>
         """
 
     # def valueFromText(self, text: str) -> int: ...
@@ -1043,15 +1284,37 @@ class QSpinBox:
 
 class QDoubleSpinBox:
     """
-    ![](assets/double_spinbox.png)
+    <hr>
+    ![](buttons/double_spinbox.png)
 
-    QDoubleSpinBox is designed to handle double values. For integers, use QSpinBox.
-    QDoubleSpinBox allows the user to choose a value by clicking the up and down
-    buttons to increment or decrement the value displayed. The value can also be
-    changed by typing in a value. The range of valid values and the number of
-    decimal places shown is configurable.
+    <code>QDoubleSpinBox</code> is designed to handle double values. For integers, use
+    <a href="../QSpinBox"><code>QSpinBox</code></a> instead. <code>QDoubleSpinBox</code>
+    allows the user to choose a value by clicking the up and down buttons to
+    increment or decrement the value displayed. The value can also be changed
+    by typing in a value. The range of valid values and the number of decimal
+    places shown is configurable.
 
-    Examples:
+    <hr>
+
+    <h3>Signals</h3>
+    <ul>
+        <li><code>valueChanged</code>: Emitted when the value in the spin box changes.</li>
+    </ul>
+
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#QtWidgets.QDoubleSpinBox.setMaximum"><code>setMaximum</code></a></li>
+        <li><a href="#QtWidgets.QDoubleSpinBox.setMinimum"><code>setMinimum</code></a></li>
+        <li><a href="#QtWidgets.QDoubleSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
+        <li><a href="#QtWidgets.QDoubleSpinBox.setValue"><code>setValue</code></a></li>
+        <li><a href="#QtWidgets.QDoubleSpinBox.value"><code>value</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+        <hr>
         ``` py
         spin_box = QDoubleSpinBox()
         spin_box.setMaximum(100)
@@ -1066,6 +1329,9 @@ class QDoubleSpinBox:
         print(spin_box.value())
         ```
         ```100.0```
+        <hr>
+
+    <br>
     """
 
     textChanged: ClassVar[Signal] = ...  # textChanged(QString)
@@ -1087,6 +1353,7 @@ class QDoubleSpinBox:
 
         Args:
             max: The new maximum value.
+        <br>
         """
 
     def setMinimum(self, min: float) -> None:
@@ -1096,6 +1363,7 @@ class QDoubleSpinBox:
 
         Args:
             min: The new minimum value.
+        <br>
         """
 
     # def setPrefix(self, prefix: str) -> None: ...
@@ -1108,6 +1376,7 @@ class QDoubleSpinBox:
 
         Args:
             val: The new step value.
+        <br>
         """
 
     # def setStepType(self, stepType: PySide6.QtWidgets.QAbstractSpinBox.StepType) -> None: ...
@@ -1119,6 +1388,7 @@ class QDoubleSpinBox:
 
         Args:
             val: The new value.
+        <br>
         """
 
     # def singleStep(self) -> float: ...
@@ -1132,6 +1402,8 @@ class QDoubleSpinBox:
 
         Returns:
             The value of the spin box.
+        <br>
+        <br>
         """
 
     # def valueFromText(self, text: str) -> float: ...
@@ -1139,20 +1411,40 @@ class QDoubleSpinBox:
 
 class QPushButton:
     """
-    ![](assets/pushbutton.png)
+    <hr>
+    ![](buttons/pushbutton.png)
 
     The push button, or command button, is perhaps the most commonly used widget
     in any graphical user interface. Push (click) a button to command the computer
     to perform some action, or to answer a question. Typical buttons are OK, Apply,
     Cancel, Close, Yes, No and Help.
 
-    Examples:
+    <hr>
+
+    <h3>Signals</h3>
+    <ul>
+        <li><code>clicked</code>: Emitted when the button is clicked.</li>
+    </ul>
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#QtWidgets.QPushButton.text"><code>text</code></a></li>
+        <li><a href="#QtWidgets.QPushButton.setText"><code>setText</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+        <hr>
         ``` py
         button = QPushButton()
         button.setText("Click me!")
         print(button.text())
         ```
         ```'Click me!'```
+        <hr>
+
+    <br>
     """
 
     clicked: ClassVar[Signal] = ...  # clicked()
@@ -1163,6 +1455,7 @@ class QPushButton:
 
         Returns:
             The text displayed in the button.
+        <br>
         """
 
     def setText(text: str) -> None:
@@ -1171,6 +1464,8 @@ class QPushButton:
 
         Args:
             text (str): The text to display in the button.
+        <br>
+        <br>
         """
 
     # @overload
