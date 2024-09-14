@@ -9,20 +9,22 @@
       
       
       
+        <link rel="prev" href="../QGroupBox/">
       
-        <link rel="next" href="Installation_Guide/">
+      
+        <link rel="next" href="../QCheckBox/">
       
       
-      <link rel="icon" href="favicon.ico">
+      <link rel="icon" href="../../favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>PySide6 Compact Documentation</title>
+        <title>QTextEdit - PySide6 Compact Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -41,11 +43,11 @@
       
     
     
-      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="css/disable_toc.css">
+      <link rel="stylesheet" href="../../css/disable_toc.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pyside6-compact-documentation" class="md-skip">
+        <a href="#QtWidgets.QTextEdit" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +80,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="PySide6 Compact Documentation" class="md-header__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
+    <a href="../.." title="PySide6 Compact Documentation" class="md-header__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -98,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              QTextEdit
             
           </span>
         </div>
@@ -165,11 +167,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -186,7 +186,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="Installation_Guide/" class="md-tabs__link">
+      <a href="../../Installation_Guide/" class="md-tabs__link">
         
   
     
@@ -203,7 +203,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="tutorial/" class="md-tabs__link">
+      <a href="../../tutorial/" class="md-tabs__link">
         
   
     
@@ -218,11 +218,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="QtWidgets/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   API Reference
@@ -244,9 +246,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -257,7 +257,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="PySide6 Compact Documentation" class="md-nav__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
+    <a href="../.." title="PySide6 Compact Documentation" class="md-nav__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -272,19 +272,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -293,7 +284,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -305,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Installation_Guide/" class="md-nav__link">
+      <a href="../../Installation_Guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -325,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorial/" class="md-nav__link">
+      <a href="../../tutorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -342,23 +332,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -369,7 +364,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             API Reference
@@ -383,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -401,6 +396,8 @@
                 
   
   
+    
+  
   
   
     
@@ -410,11 +407,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -428,7 +425,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             QtWidgets
@@ -442,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QMainWindow/" class="md-nav__link">
+      <a href="../QMainWindow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -463,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QHBoxLayout/" class="md-nav__link">
+      <a href="../QHBoxLayout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -484,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QVBoxLayout/" class="md-nav__link">
+      <a href="../QVBoxLayout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -505,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QGroupBox/" class="md-nav__link">
+      <a href="../QGroupBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -523,10 +520,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="QtWidgets/QTextEdit/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    QTextEdit
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -535,6 +550,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#QtWidgets.QTextEdit" class="md-nav__link">
+    <span class="md-ellipsis">
+      QTextEdit
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -547,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QCheckBox/" class="md-nav__link">
+      <a href="../QCheckBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -568,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QLabel/" class="md-nav__link">
+      <a href="../QLabel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -589,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QComboBox/" class="md-nav__link">
+      <a href="../QComboBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -610,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QSpinBox/" class="md-nav__link">
+      <a href="../QSpinBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -631,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QDoubleSpinBox/" class="md-nav__link">
+      <a href="../QDoubleSpinBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -652,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="QtWidgets/QPushButton/" class="md-nav__link">
+      <a href="../QPushButton/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -689,9 +731,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -700,8 +740,23 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#QtWidgets.QTextEdit" class="md-nav__link">
+    <span class="md-ellipsis">
+      QTextEdit
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -716,58 +771,76 @@
                   
 
 
-<h1 id="pyside6-compact-documentation">Pyside6 Compact Documentation</h1>
-<p><strong>This PySide6 documentation</strong> is compact, focused on beginners, and while not complete, it is clear and explanatory. <br> PySide6 is the official Python module from the Qt for Python project, which provides access to the complete Qt 6.0+ framework. </p>
-<p>For the <strong>full Pyside6 documentation</strong>, checkout the <a href="https://doc.qt.io/qtforpython-6/index.html">Qt for Python docs</a>.</p>
-<style type="text/css">
-.font-item {
-  font-size: 16px;
-}
-</style>
+  <h1>QTextEdit</h1>
 
-<style type="text/css">
-ul li::marker {
-  font-size: 20px; /* Adjust the size */
-/* Optional: change the color */
-}
-
-</style>
-
-<table style = "border: none; border_spacing: 0;">
-  <tr>
-    <td style="padding-right: 150px;">
-      <span> <h2>Getting started</h2></span>
-      <ul>
-        <li><span class="font-item">&nbsp <a href="Installation_Guide">Install Pyside6 </a></span></li>
-        <li><span class="font-item">&nbsp <a href="Tutorial"> Tutorial </a></span></li>
-      </ul>
-    </td>
-    <td style="padding-right: 20px;">
-      <span> <h2>Documentation</h2></span>
-      <ul>
-        <li><span class="font-item">&nbsp <a href="QtWidgets">API reference</a></span></li>
-      </ul>
-    </td>
-
-  </tr>
-</table>
-
-<p><br></br>
-<br></br></p>
+<div class="doc doc-object doc-class">
 
 
 
+<a id="QtWidgets.QTextEdit"></a>
+    <div class="doc doc-contents first">
 
 
+        <p><em>summary</em></p>
 
 
-  
-  
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>PySide6</code></td>
+            <td>
+                  <code>_type_</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><em>description</em></p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
 
 
-  
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -813,10 +886,10 @@ ul li::marker {
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs"], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
     
   </body>
