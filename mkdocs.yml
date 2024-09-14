@@ -5,7 +5,6 @@ theme:
   favicon: favicon.ico
   features:
     - content.code.copy
-    - navigation.expand
     - navigation.instant
     - navigation.instant.progress
     - navigation.top
@@ -41,17 +40,19 @@ nav:
   - Installation Guide: Installation_Guide.md
   - Tutorial: tutorial.md
   - API Reference:
-    - Overview: PyQtWidgets/index.md
-    - PyQtWidgets:
-        - PyQtWidgets/QMainWindow.md
-        - PyQtWidgets/QHBoxLayout.md
-        - PyQtWidgets/QVBoxLayout.md
-        - PyQtWidgets/QGroupBox.md
-        - PyQtWidgets/QTextEdit.md
-        - PyQtWidgets/QCheckBox.md
-        - PyQtWidgets/QLabel.md
-        - PyQtWidgets/QComboBox.md
-        - PyQtWidgets/QSpinBox.md
-        - PyQtWidgets/QDoubleSpinBox.md
-        - PyQtWidgets/QPushButton.md
+    - Overview: QtWidgets/index.md
+    - QtWidgets:
+        - QtWidgets/QMainWindow.md
+        - QtWidgets/QHBoxLayout.md
+        - QtWidgets/QVBoxLayout.md
+        - QtWidgets/QGroupBox.md
+        - QtWidgets/QTextEdit.md
+        - QtWidgets/QCheckBox.md
+        - QtWidgets/QLabel.md
+        - QtWidgets/QComboBox.md
+        - QtWidgets/QSpinBox.md
+        - QtWidgets/QDoubleSpinBox.md
+        - QtWidgets/QPushButton.md
    
+extra_css:
+  - css/disable_toc.css

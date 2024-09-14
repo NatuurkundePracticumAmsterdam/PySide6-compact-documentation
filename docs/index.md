@@ -1,27 +1,18 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
+
 # Pyside6 Compact Documentation
 
 
-**This PySide6 documentation** is compact, focused on beginners, and while not complete, it is clear and explanatory.<br> PySide6 is the official Python module from the Qt for Python project, which provides access to the complete Qt 6.0+ framework. 
+**This PySide6 documentation** is compact, focused on beginners, and while not complete, it is clear and explanatory. <br> PySide6 is the official Python module from the Qt for Python project, which provides access to the complete Qt 6.0+ framework. 
 
 For the **full Pyside6 documentation**, checkout the [Qt for Python docs](https://doc.qt.io/qtforpython-6/index.html).
-<br>
-<br>
-
 
 <style type="text/css">
-ul {
-  padding-left: 50px;
-}
-
-li {
-  padding: 2px 0
-}
-
-.font-title {
-  font-size: 24px;
-  display: block;
-  padding-bottom: 10px;
-}
 .font-item {
   font-size: 16px;
 }
@@ -33,34 +24,26 @@ ul li::marker {
 /* Optional: change the color */
 }
 
-td {
-  padding-right: 1 px;
-}
 </style>
 
-<table>
+<table style = "border: none; border_spacing: 0;">
   <tr>
-    <td>
-    <br>
-      <span class="font-title">Getting started</span>
+    <td style="padding-right: 150px;">
+      <span> <h2>Getting started</h2></span>
       <ul>
-        <li><span class="font-item">&nbsp Install Pyside6</span></li>
-        <li><span class="font-item">&nbsp Getting started</span></li>
+        <li><span class="font-item">&nbsp <a href="Installation_Guide">Install Pyside6 </a></span></li>
+        <li><span class="font-item">&nbsp <a href="Tutorial"> Tutorial </a></span></li>
       </ul>
     </td>
-    <td>
-    <br>
-      <span class="font-title">Documentation</span>
+    <td style="padding-right: 20px;">
+      <span> <h2>Documentation</h2></span>
       <ul>
-        <li><span class="font-item">&nbsp <a href="User_Guide">User guide</a></span></li>
-        <li><span class="font-item">&nbsp <a href="API_reference">API reference</a></span></li>
+        <li><span class="font-item">&nbsp <a href="QtWidgets">API reference</a></span></li>
       </ul>
     </td>
                                        
   </tr>
 </table>
 
-<br></br>
-<br></br>
 <br></br>
 <br></br>
