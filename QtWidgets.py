@@ -88,7 +88,7 @@ class QMainWindow:
         Finally, we create an instance of the `UserInterface` class, show the main window,
         and start the application event loop.
         <br>
-        Running the above code will display a window with a vertical layout.
+        Running the `main` function in the above code will display a window with a vertical layout.
 
     <hr>
 
