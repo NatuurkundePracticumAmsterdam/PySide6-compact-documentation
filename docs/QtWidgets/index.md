@@ -6,7 +6,7 @@ In this API Reference we will cover relavant classes and functions which are par
 <br>
 <br>
 
-
+- [`QApplication`](QApplication.md): Manages the GUI application's control flow and main settings.
 - [`QMainWindow`](QMainWindow.md): Provides a framework for building an application's user interface.
 - [`QHBoxLayout`](QHBoxLayout.md): Manages a horizontal layout of widgets. 
 - [`QVBoxLayout`](QVBoxLayout.md): Manages a vertical layout of other widgets. 

@@ -42,6 +42,7 @@ nav:
   - API Reference:
     - Overview: QtWidgets/index.md
     - QtWidgets:
+        - QtWidgets/QApplication.md
         - QtWidgets/QMainWindow.md
         - QtWidgets/QHBoxLayout.md
         - QtWidgets/QVBoxLayout.md
@@ -54,5 +55,3 @@ nav:
         - QtWidgets/QDoubleSpinBox.md
         - QtWidgets/QPushButton.md
    
-extra_css:
-  - css/disable_toc.css
