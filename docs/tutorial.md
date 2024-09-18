@@ -34,7 +34,7 @@ from PySide6.QtCore import Slot
 <hr>
 ## 1. Creating a simple window
 
-If we want to create an empty window, we need to ingredients: a [`QApplication`](../QtWidgets/QApplication) object and a [`QMainWindow`](../QtWidgets/QMainWindow) object. The `QApplication` object manages the GUI application's control flow and main settings, while the `QMainWindow` object provides a framework for building an application's user interface. 
+If we want to create an empty window, we need two ingredients: a [`QApplication`](../QtWidgets/QApplication) object and a [`QMainWindow`](../QtWidgets/QMainWindow) object. The `QApplication` object manages the GUI application's control flow and main settings, while the `QMainWindow` object provides the framework for building an application's user interface. 
 
 ```python
 
@@ -44,13 +44,23 @@ window.show()
 app.exec()
 ```
 
+The code above creates an empty window. The [`show()`](../QtWidgets/QMainWindow/#QtWidgets.QMainWindow.show) method displays the window, and the [`exec()`](../QtWidgets/QApplication/#QtWidgets.QApplication.exec) method starts the application's event loop. The event loop is a loop that waits for events to happen and then dispatches them to the appropriate event handlers. Adding the above code to the script will show an empty window:
+
+<img src="../images/empty_window.png" alt="Empty window" width="300">
+
+
 <br>
 <hr>
 
 ## 2. Adding widgets to the window
+
+To add widgets to the window, we need to create the widgets and set their properties. In this case, we will add a layout to the window and then add a button and a label to the layout. 
+
 
 <br>
 <hr>
 
 ## 3. Connecting widgets to a function
 
+<br>
+<br>
