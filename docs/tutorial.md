@@ -4,17 +4,16 @@ hide:
 ---
 
 
-In this tutorial, we will cover the steps to create a simple GUI application using Pyside6. We will create a simple window with a button and a label. When the button is clicked, the label will display a message. First, it is necessary to install Pyside6. Installation instructions can be found [here](Installation_Guide.md). 
+In this tutorial, we will cover the steps to create a simple GUI application using PySide6. We will create a simple window with a button and a label. When the button is clicked, the label will display a message. First, it is necessary to install PySide6. Installation instructions can be found [here](Installation_Guide.md). 
 
-For this tutorial, we will only use the widgets inherited from the `QtWidgets` class and the `Slot` class from the `QtCore` module:
+For this tutorial, we will only use the widgets inherited from the `QtWidgets` class and the `Slot` class from the `QtCore` module. As a starting point let's create a new Python file `simple_gui.py` and import the necessary modules:
 
-```python
-
+``` py title="simple_gui.py"
 import PySide6.QtWidgets as QtWidgets
 from PySide6.QtCore import Slot
 ```
 
-`QtWidgets` contains all the classes that provide a set of elements to create a graphical user interface, such as buttons, labels and layouts. Some of the most common classes from `QtWidgets` are documented in the [API reference](../QtWidgets). We will use the import statements above as a starting point for our code and build upon it. We will build the GUI application in three steps:
+`QtWidgets` contains all the classes that provide a set of elements to create a graphical user interface, such as buttons, labels and layouts. Some of the most common classes from `QtWidgets` are documented in the [API reference](../QtWidgets). We will use the import statements above as a starting point for our code and build upon it. We will build `simple_gui.py` in three steps:
 
 <style>
     ul.no-bullets {
@@ -36,7 +35,10 @@ from PySide6.QtCore import Slot
 
 If we want to create an empty window, we need two ingredients: a [`QApplication`](../QtWidgets/QApplication) object and a [`QMainWindow`](../QtWidgets/QMainWindow) object. The `QApplication` object manages the GUI application's control flow and main settings, while the `QMainWindow` object provides the framework for building an application's user interface. 
 
-```python
+```python title="simple_gui.py"
+import PySide6.QtWidgets as QtWidgets
+from PySide6.QtCore import Slot
+
 
 app = QtWidgets.QApplication()
 window = QtWidgets.QMainWindow()
