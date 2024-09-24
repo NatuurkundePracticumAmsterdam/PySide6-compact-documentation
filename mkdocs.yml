@@ -45,7 +45,7 @@ nav:
     - 2. Adding widgets to a window: tutorial/adding_widgets_to_a_window.md
     - 3. Connecting widgets to a function: tutorial/connecting_widgets_to_a_function.md
   - API Reference: 
-    - Overwiew: QtWidgets/index.md
+    - Overview: QtWidgets/index.md
     - QtWidgets/QApplication.md
     - QtWidgets/QMainWindow.md
     - QtWidgets/QLayout.md
