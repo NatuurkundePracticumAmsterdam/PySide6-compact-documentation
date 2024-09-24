@@ -10,6 +10,7 @@ theme:
     - navigation.top
     - navigation.tabs
     - navigation.footer
+    - navigation.sections
 
 extra:
   collapse_toc: true
@@ -41,21 +42,25 @@ nav:
   - Tutorial: 
     - Introduction: tutorial/index.md
     - 1. Creating a simple window: tutorial/creating_a_simple_window.md
-    - 2. adding widgets to a window: tutorial/adding_widgets_to_a_window.md
+    - 2. Adding widgets to a window: tutorial/adding_widgets_to_a_window.md
     - 3. Connecting widgets to a function: tutorial/connecting_widgets_to_a_function.md
-  - API Reference:
-    - Overview: QtWidgets/index.md
-    - QtWidgets:
-        - QtWidgets/QApplication.md
-        - QtWidgets/QMainWindow.md
-        - QtWidgets/QHBoxLayout.md
-        - QtWidgets/QVBoxLayout.md
-        - QtWidgets/QGroupBox.md
-        - QtWidgets/QTextEdit.md
-        - QtWidgets/QCheckBox.md
-        - QtWidgets/QLabel.md
-        - QtWidgets/QComboBox.md
-        - QtWidgets/QSpinBox.md
-        - QtWidgets/QDoubleSpinBox.md
-        - QtWidgets/QPushButton.md
-   
+  - API Reference: 
+    - Overwiew: QtWidgets/index.md
+    - QtWidgets/QApplication.md
+    - QtWidgets/QMainWindow.md
+    - QtWidgets/QLayout.md
+    - QtWidgets/QWidget.md
+
+    - QLayouts:
+      - QtWidgets/QHBoxLayout.md
+      - QtWidgets/QVBoxLayout.md
+      - QtWidgets/QGroupBox.md
+    - QWidgets:
+      - QtWidgets/QTextEdit.md
+      - QtWidgets/QCheckBox.md
+      - QtWidgets/QLabel.md
+      - QtWidgets/QComboBox.md
+      - QtWidgets/QSpinBox.md
+      - QtWidgets/QDoubleSpinBox.md
+      - QtWidgets/QPushButton.md
+  

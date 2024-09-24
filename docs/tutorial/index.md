@@ -1,12 +1,10 @@
 ---
 hide:
   - toc
-extra_css:
-  - ./css/extra.css 
 ---
 
 
-In this tutorial, we will cover the steps to create a simple GUI application using PySide6. We will create a simple window with a button and a label. When the button is clicked, the label will display a message. First, it is necessary to install PySide6. Installation instructions can be found [here](Installation_Guide.md). 
+In this tutorial, we will cover the steps to create a simple GUI application using PySide6. We will create a simple window with a button and a label. When the button is clicked, the label will display a message. First, it is necessary to install PySide6. Installation instructions can be found [here](../Installation_Guide.md). 
 
 For this tutorial, we will only use the widgets inherited from the `QtWidgets` class and the `Slot` class from the `QtCore` module. As a starting point let's create a new Python file `simple_gui.py` and import the necessary modules:
 
