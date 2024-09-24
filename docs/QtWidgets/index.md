@@ -1,3 +1,9 @@
+---
+hide:
+  - toc
+  - footer
+---
+
 In this API Reference we will cover relavant classes and functions which are part of the `QtWidgets` module. The `QtWidgets` module contains classes that provide a set of UI elements to create classic desktop-style graphical user interfaces. A list of all the classes in the `QtWidgets` module is given below.
 
 <hr>

@@ -2,6 +2,7 @@
 hide:
   - navigation
   - toc
+  - footer
 ---
 
 
@@ -44,6 +45,3 @@ ul li::marker {
                                        
   </tr>
 </table>
-
-<br></br>
-<br></br>
