@@ -9,7 +9,7 @@ theme:
     - navigation.instant.progress
     - navigation.top
     - navigation.tabs
-
+    - navigation.footer
 
 extra:
   collapse_toc: true
@@ -38,10 +38,15 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Installation Guide: Installation_Guide.md
-  - Tutorial: tutorial.md
+  - Tutorial: 
+    - Introduction: tutorial/index.md
+    - 1. Creating a simple window: tutorial/creating_a_simple_window.md
+    - 2. adding widgets to a window: tutorial/adding_widgets_to_a_window.md
+    - 3. Connecting widgets to a function: tutorial/connecting_widgets_to_a_function.md
   - API Reference:
     - Overview: QtWidgets/index.md
     - QtWidgets:
+        - QtWidgets/QApplication.md
         - QtWidgets/QMainWindow.md
         - QtWidgets/QHBoxLayout.md
         - QtWidgets/QVBoxLayout.md
@@ -54,5 +59,3 @@ nav:
         - QtWidgets/QDoubleSpinBox.md
         - QtWidgets/QPushButton.md
    
-extra_css:
-  - css/disable_toc.css
