@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 ::: QtWidgets.QDoubleSpinBox
     options:
         show_source: false

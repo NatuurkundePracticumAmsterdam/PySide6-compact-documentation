@@ -1,0 +1,4 @@
+:root > * {
+    --md-code-hl-color: #11ac1181;
+    --md-code-hl-color--light: #b2ffb21e;
+  }

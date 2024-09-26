@@ -15,7 +15,7 @@ central_widget.setLayout(vbox)
 
 # Creating a button and a label
 label = QtWidgets.QLabel()
-label.setText("Hello, PySide6!")
+label.setText("Hello, user! Please click the button below.")
 button = QtWidgets.QPushButton()
 button.setText("Click me!")
 

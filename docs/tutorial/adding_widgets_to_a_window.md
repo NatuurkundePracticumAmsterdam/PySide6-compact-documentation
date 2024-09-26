@@ -4,9 +4,9 @@ To add widgets to the window, we need to create the widgets and set their proper
 
 ## Adding a layout
 
-First we need to keep in mind that every [`QMainWindow`](../../QtWidgets/QMainWindow) has to have a central widget. This can simply be a [`QWidget`](../../QtWidgets/QWidget) object. Next, we will add a layout to the central widget. A layout is a container that manages the position of child widgets. In this case, we will use a [`QVBoxLayout`](../../QtWidgets/QVBoxLayout) to manage the position of widgets in our window:
+First we need to keep in mind that every [`QMainWindow`](../../QtWidgets/QMainWindow) has to have a central widget. This can simply be a [`QWidget`](../../QtWidgets/QWidget) object. Next, we will add a layout to the central widget. A layout is a container that manages the position of child widgets. In this case, we will use a [`QVBoxLayout`](../../QtWidgets/QVBoxLayout) to manage the position of widgets in our window. The newly added code is highlighted below:
 
-```python title="simple_gui.py"
+```python title="simple_gui.py" hl_lines="8-14" linenums="1"
 
 import PySide6.QtWidgets as QtWidgets
 from PySide6.QtCore import Slot
@@ -45,7 +45,7 @@ label = QtWidgets.QLabel()
 label.setText("Hello, PySide6!")
 ```
 
-If we simply add the above code to `simple_gui.py`, the button and label will not be visible. This is because we have not added them to the layout. To add the button and label to the layout, we can use the `addWidget()` method of the layout:
+If we simply add the above code to `simple_gui.py`, the button and label will not be visible. This is because we have not added them to the layout. To add the button and label to the layout, we can use the `#!python addWidget()` method of the layout:
 
 ```python
 vbox.addWidget(button)	
@@ -54,7 +54,7 @@ vbox.addWidget(label)
 
 Let's add this code to `simple_gui.py` and see how the window looks:
 
-```python title="simple_gui.py"
+```python title="simple_gui.py" hl_lines="16-24" linenums="1"
 
 import PySide6.QtWidgets as QtWidgets
 from PySide6.QtCore import Slot
@@ -73,7 +73,7 @@ central_widget.setLayout(vbox)
 
 # Creating a button and a label
 label = QtWidgets.QLabel()
-label.setText("Hello, PySide6!")
+label.setText("Hello, User! Please click the button.")
 button = QtWidgets.QPushButton()
 button.setText("Click me!")
 
@@ -86,7 +86,7 @@ app.exec()
 
 ```
 
-Running the above code will show a window with a label with a button that does absolutely nothing when clicked: 
+Running the above code will show a window with a label with a button that does absolutely nothing when clicked (which we will fix in the next step :fontawesome-regular-face-laugh-wink:).
 
 <img src="../images/button_and_label.png" alt="Button and label" width="300">
 

@@ -30,14 +30,14 @@ ul li::marker {
 <table style = "border: none; border_spacing: 0;">
   <tr>
     <td style="padding-right: 150px;">
-      <span> <h2>Getting started</h2></span>
+      <span> <h2>Getting started &#128640; </h2></span>
       <ul>
         <li><span class="font-item">&nbsp <a href="Installation_Guide">Install Pyside6 </a></span></li>
         <li><span class="font-item">&nbsp <a href="Tutorial"> Tutorial </a></span></li>
       </ul>
     </td>
     <td style="padding-right: 20px;">
-      <span> <h2>Documentation</h2></span>
+      <span> <h2>Documentation &#128218; </h2></span>
       <ul>
         <li><span class="font-item">&nbsp <a href="QtWidgets">API reference</a></span></li>
       </ul>
