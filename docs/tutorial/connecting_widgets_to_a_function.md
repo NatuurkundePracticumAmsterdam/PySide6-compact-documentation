@@ -5,7 +5,7 @@ To make a widget interactive, you need to connect it to a function. We can do th
 
 ## Creating a slot function
 
-The slot function doesn't take any arguments. To handle this, we can group all the widgets together with al slot functions in a single class. This way, we can access the widgets inside the slot function through the `self` reference. Assuming that the following code is inside a class in which a [`QLabel`](../../QtWidgets/Qlabel) widget is defined as `self.label`, we can define a slot function as follows:
+The slot function doesn't take any arguments. To handle this, we can group all the widgets together with all slot functions in a single class. This way, we can access the widgets inside the slot function through the `self` reference. Assuming that the following code is inside a class in which a [`QLabel`](../../QtWidgets/Qlabel) widget is defined as `self.label`, we can define a slot function as follows:
 
 
 ```python
@@ -88,23 +88,22 @@ In the code above, we use the `@Slot()` decorator to indicate that the function 
     ```
 
     1. With this line of code, we call the `__init__` method of the parent class `QMainWindow`. In the **without class** case, we do this implicitly when we create the `QMainWindow` object: 
-    ``` linenums="6"
+    ```python linenums="6"
     window = QtWidgets.QMainWindow()
     ```
     2. In this case, we use the `self` reference to access the `QMainWindow` object. The equivalent line in the **without class** case is:
-    ``` linenums="10"
+    ```python linenums="10"
     window.setCentralWidget(central_widget)
     ```
-    in the "without class" case.
     3. We give the `Qlabel` to the `self` reference so that we can access it in slot functions, which we will add later. The equivalent lines in the **without class** case are:
-    ``` linenums="17-18"
+    ```python linenums="17-18"
     label = QtWidgets.QLabel()
     label.setText("Hello, User! Please click the button.")
     ```
     4. We only execute the code if the script is run as the main program, not as an imported module. This is a common Python idiom :wink:.
 
     5. Equivalent lines in the **without class** case are:
-    ``` linenums="5"
+    ```python linenums="5"
     app = QtWidgets.QApplication()
     window = QtWidgets.QMainWindow()
     ```
