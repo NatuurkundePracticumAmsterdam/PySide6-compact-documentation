@@ -6,12 +6,12 @@ hide:
 ---
 
 
-# Pyside6 Compact Documentation
+# PySide6 Compact Documentation
 
 
 **This PySide6 documentation** is compact, focused on beginners, and while not complete, it is clear and explanatory. <br> PySide6 is the official Python module from the Qt for Python project, which provides access to the complete Qt 6.0+ framework. 
 
-For the **full Pyside6 documentation**, checkout the [Qt for Python docs](https://doc.qt.io/qtforpython-6/index.html).
+For the **full PySide6 documentation**, checkout the [Qt for Python docs](https://doc.qt.io/qtforpython-6/index.html).
 
 <style type="text/css">
 .font-item {
