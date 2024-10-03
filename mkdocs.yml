@@ -48,11 +48,6 @@ markdown_extensions:
 
 extra_css:
   - assets/hl_color.css
-  - assets/comparison.css
-
-extra_javascript:
-  - assets/comparison.js
- 
 
 nav:
   - Home: index.md
