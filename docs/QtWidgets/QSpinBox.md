@@ -3,7 +3,7 @@ hide:
   - footer
 ---
 
-::: QtWidgets.QSpinBox
+::: code.QtWidgets.QSpinBox
     options:
         show_source: false
         show_root_heading: false

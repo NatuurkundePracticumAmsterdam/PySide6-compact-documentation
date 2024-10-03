@@ -3,7 +3,7 @@ hide:
   - footer
 ---
 
-::: QtWidgets.QTextEdit
+::: code.QtWidgets.QTextEdit
     options:
         show_source: false
         show_root_heading: false

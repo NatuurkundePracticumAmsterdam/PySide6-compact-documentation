@@ -541,7 +541,7 @@ class QApplication:
     app.exec()
     ```
     In the above example, an instance of the `QApplication` class is created and
-    a [`QMainWindow`](../QMainWindow) is created and shown. The `exec` method is then called to start
+    a [`QMainWindow`](QMainWindow.md) is created and shown. The `exec` method is then called to start
     the application event loop. Running the above code will display an empty window.
 
     <hr>

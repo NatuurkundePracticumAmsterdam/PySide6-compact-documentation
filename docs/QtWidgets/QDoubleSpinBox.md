@@ -3,7 +3,7 @@ hide:
   - footer
 ---
 
-::: QtWidgets.QDoubleSpinBox
+::: code.QtWidgets.QDoubleSpinBox
     options:
         show_source: false
         show_root_heading: false
