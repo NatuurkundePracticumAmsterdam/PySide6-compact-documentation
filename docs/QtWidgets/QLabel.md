@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 ::: QtWidgets.QLabel
     options:
         show_source: false

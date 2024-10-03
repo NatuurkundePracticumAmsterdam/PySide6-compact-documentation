@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 ::: QtWidgets.QGroupBox
     options:
         show_source: false

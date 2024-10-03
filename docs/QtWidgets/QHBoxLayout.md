@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 ::: QtWidgets.QHBoxLayout
     options:
         show_source: false

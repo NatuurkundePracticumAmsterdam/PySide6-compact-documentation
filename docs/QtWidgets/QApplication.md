@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 ::: QtWidgets.QApplication
     options:
         show_source: false

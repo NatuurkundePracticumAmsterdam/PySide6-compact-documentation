@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 ::: QtWidgets.QComboBox
     options:
         show_source: false
