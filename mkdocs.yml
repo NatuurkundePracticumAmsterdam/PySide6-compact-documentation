@@ -68,8 +68,9 @@ nav:
     - QLayouts:
       - QtWidgets/QHBoxLayout.md
       - QtWidgets/QVBoxLayout.md
-      - QtWidgets/QGroupBox.md
+      - QtWidgets/QGridLayout.md
     - QWidgets:
+      - QtWidgets/QGroupBox.md
       - QtWidgets/QTextEdit.md
       - QtWidgets/QCheckBox.md
       - QtWidgets/QLabel.md
