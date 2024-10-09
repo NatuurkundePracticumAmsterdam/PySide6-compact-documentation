@@ -37,6 +37,28 @@ class QWidget:
 
     <hr>
 
+    <h3>Methods</h3>
+
+    <ul>
+        <li><a href="#QtWidgets.QWidget.resize"><code>resize</code></a></li>
+        <li><a href="#QtWidgets.QWidget.show"><code>show</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+    <hr>
+    ``` py
+    widget = QWidget()
+    widget.resize(250, 150)
+
+    # QPushButton is a subclass of QWidget
+    button = QPushButton("press me")
+    button.resize(100, 50)
+    ```
+    In the above code we show that we can apply the <a href="#QtWidgets.QWidget.resize"><code>resize</code></a></li> method to all widgets that inherit from `QWidget` such as <a href="../QPushButtom"><code>QPushButton</code></a>
+
+    <hr>
     <br>
     """
 
@@ -919,7 +941,7 @@ class QVBoxLayout:
     <hr>
     The <code>QVBoxLayout</code> class lines up widgets vertically. If the widgets do not fit
     in the window, the layout will automatically wrap or resize them. For a horizontal
-    layout, see <a href="../QHBoxLayout"><code>QHBoxLayout </code></a>.
+    layout, see <a href="../QHBoxLayout"><code>QHBoxLayout</code></a>.
 
     Args:
         parent (PySide6.QtWidgets.QWidget): Parent widget.
