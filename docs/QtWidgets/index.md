@@ -28,7 +28,6 @@ In this API Reference we will cover relevant classes and functions which are par
 ## All classes from the `QtWidgets` module:
 
   - [`QApplication`](QApplication.md): Manages the GUI application's control flow and main settings.
-  - [`QMainWindow`](QMainWindow.md): Provides a framework for building an application's user interface.
   - [`QLayout`](QLayout.md): Base class of all layout objects in `QtWidgets`.  
   - [`QWidget`](QWidget.md): Base class of all widget objects in `QtWidgets`.
 <br>
@@ -40,6 +39,7 @@ In this API Reference we will cover relevant classes and functions which are par
 <br> 
 
 - ### Subclasses derived from `QWidget`:
+    - [`QMainWindow`](QMainWindow.md): Provides a framework for building an application's user interface.
     - [`QGroupBox`](QGroupBox.md): Provides a frame, a title on top, and can display various other widgets inside itself.
     - [`QTextEdit`](QTextEdit.md): Displays text and allows the user to edit it.
     - [`QCheckBox`](QCheckBox.md): Toggle button with a checkbox indicator.  

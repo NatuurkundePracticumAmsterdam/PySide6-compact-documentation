@@ -61,7 +61,6 @@ nav:
   - API Reference: 
     - Overview: QtWidgets/index.md
     - QtWidgets/QApplication.md
-    - QtWidgets/QMainWindow.md
     - QtWidgets/QLayout.md
     - QtWidgets/QWidget.md
 
@@ -70,6 +69,7 @@ nav:
       - QtWidgets/QVBoxLayout.md
       - QtWidgets/QGridLayout.md
     - QWidgets:
+      - QtWidgets/QMainWindow.md
       - QtWidgets/QGroupBox.md
       - QtWidgets/QTextEdit.md
       - QtWidgets/QCheckBox.md
