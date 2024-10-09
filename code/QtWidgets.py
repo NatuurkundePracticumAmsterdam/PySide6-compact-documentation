@@ -40,8 +40,8 @@ class QWidget:
     <h3>Methods</h3>
 
     <ul>
-        <li><a href="#QtWidgets.QWidget.resize"><code>resize</code></a></li>
-        <li><a href="#QtWidgets.QWidget.show"><code>show</code></a></li>
+        <li><a href="#code.QtWidgets.QWidget.resize"><code>resize</code></a></li>
+        <li><a href="#code.QtWidgets.QWidget.show"><code>show</code></a></li>
     </ul>
 
     <br>
@@ -56,7 +56,21 @@ class QWidget:
     button = QPushButton("press me")
     button.resize(100, 50)
     ```
-    In the above code we show that we can apply the <a href="#QtWidgets.QWidget.resize"><code>resize</code></a></li> method to all widgets that inherit from `QWidget` such as <a href="../QPushButtom"><code>QPushButton</code></a>
+    In the above code we show that we can apply the <a href="#code.QtWidgets.QWidget.resize"><code>resize</code></a> method to all widgets that inherit from `QWidget` such as <a href="../QPushButton"><code>QPushButton</code></a>.
+    Another example with <a href="../QPushButton"><code>QMainWindow</code></a> is shown below:
+
+    ``` py
+    # QApplication is required to run the application
+    app = QApplication()
+
+    # QMainWindow is a subclass of QWidget
+    window = QMainWindow()
+    window.resize(500, 300)
+
+    # Displays an empty window with a size of 500x300 pixels
+    window.show()
+    app.exec()
+    ```
 
     <hr>
     <br>
@@ -564,7 +578,7 @@ class QApplication:
     <h3>Methods</h3>
 
     <ul>
-        <li><a href="#QtWidgets.QApplication.exec"><code>exec</code></a></li>
+        <li><a href="#code.QtWidgets.QApplication.exec"><code>exec</code></a></li>
     </ul>
 
     <br>
@@ -723,8 +737,8 @@ class QMainWindow:
 
     <h3>Methods</h3>
     <ul>
-        <li><a href="#QtWidgets.QMainWindow.setCentralWidget"><code>setCentralWidget</code></a></li>
-        <li><a href="#QtWidgets.QMainWindow.show"><code>show</code></a></li>
+        <li><a href="#code.QtWidgets.QMainWindow.setCentralWidget"><code>setCentralWidget</code></a></li>
+        <li><a href="#code.QtWidgets.QMainWindow.show"><code>show</code></a></li>
     </ul>
 
     <br>
@@ -879,8 +893,8 @@ class QHBoxLayout:
 
     <h3>Methods</h3>
     <ul>
-        <li><a href="#QtWidgets.QHBoxLayout.addLayout"><code>addLayout</code></a></li>
-        <li><a href="#QtWidgets.QHBoxLayout.addWidget"><code>addWidget</code></a></li>
+        <li><a href="#code.QtWidgets.QHBoxLayout.addLayout"><code>addLayout</code></a></li>
+        <li><a href="#code.QtWidgets.QHBoxLayout.addWidget"><code>addWidget</code></a></li>
     </ul>
 
     <br>
@@ -951,8 +965,8 @@ class QVBoxLayout:
 
     <h3>Methods</h3>
     <ul>
-        <li><a href="#QtWidgets.QVBoxLayout.addLayout"><code>addLayout</code></a></li>
-        <li><a href="#QtWidgets.QVBoxLayout.addWidget"><code>addWidget</code></a></li>
+        <li><a href="#code.QtWidgets.QVBoxLayout.addLayout"><code>addLayout</code></a></li>
+        <li><a href="#code.QtWidgets.QVBoxLayout.addWidget"><code>addWidget</code></a></li>
     </ul>
 
     <br>
@@ -1410,8 +1424,8 @@ class QCheckBox:
 
     <h3>Methods</h3>
     <ul>
-        <li><a href="#QtWidgets.QCheckBox.IsChecked"><code>IsChecked</code></a></li>
-        <li><a href="#QtWidgets.QCheckBox.setChecked"><code>setChecked</code></a></li>
+        <li><a href="#code.QtWidgets.QCheckBox.IsChecked"><code>IsChecked</code></a></li>
+        <li><a href="#code.QtWidgets.QCheckBox.setChecked"><code>setChecked</code></a></li>
     </ul>
 
     <br>
@@ -1490,8 +1504,8 @@ class QLabel:
 
     <h3>Methods</h3>
     <ul>
-        <li><a href="#QtWidgets.QLabel.setText"><code>setText</code></a></li>
-        <li><a href="#QtWidgets.QLabel.text"><code>text</code></a></li>
+        <li><a href="#code.QtWidgets.QLabel.setText"><code>setText</code></a></li>
+        <li><a href="#code.QtWidgets.QLabel.text"><code>text</code></a></li>
     </ul>
 
     <br>
@@ -1605,14 +1619,14 @@ class QComboBox:
 
     <h3>Methods</h3>
     <ul>
-        <li><a href="#QtWidgets.QComboBox.addItem"><code>addItem</code></a></li>
-        <li><a href="#QtWidgets.QComboBox.addItems"><code>addItems</code></a></li>
-        <li><a href="#QtWidgets.QComboBox.clear"><code>clear</code></a></li>
-        <li><a href="#QtWidgets.QComboBox.currentIndex"><code>currentIndex</code></a></li>
-        <li><a href="#QtWidgets.QComboBox.currentText"><code>currentText</code></a></li>
-        <li><a href="#QtWidgets.QComboBox.removeItem"><code>removeItem</code></a></li>
-        <li><a href="#QtWidgets.QComboBox.setCurrentIndex"><code>setCurrentIndex</code></a></li>
-        <li><a href="#QtWidgets.QComboBox.setCurrentText"><code>setCurrentText</code></a></li>
+        <li><a href="#code.QtWidgets.QComboBox.addItem"><code>addItem</code></a></li>
+        <li><a href="#code.QtWidgets.QComboBox.addItems"><code>addItems</code></a></li>
+        <li><a href="#code.QtWidgets.QComboBox.clear"><code>clear</code></a></li>
+        <li><a href="#code.QtWidgets.QComboBox.currentIndex"><code>currentIndex</code></a></li>
+        <li><a href="#code.QtWidgets.QComboBox.currentText"><code>currentText</code></a></li>
+        <li><a href="#code.QtWidgets.QComboBox.removeItem"><code>removeItem</code></a></li>
+        <li><a href="#code.QtWidgets.QComboBox.setCurrentIndex"><code>setCurrentIndex</code></a></li>
+        <li><a href="#code.QtWidgets.QComboBox.setCurrentText"><code>setCurrentText</code></a></li>
     </ul>
 
     <br>
@@ -1854,11 +1868,11 @@ class QSpinBox:
 
     <h3>Methods</h3>
     <ul>
-        <li><a href="#QtWidgets.QSpinBox.setMaximum"><code>setMaximum</code></a></li>
-        <li><a href="#QtWidgets.QSpinBox.setMinimum"><code>setMinimum</code></a></li>
-        <li><a href="#QtWidgets.QSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
-        <li><a href="#QtWidgets.QSpinBox.setValue"><code>setValue</code></a></li>
-        <li><a href="#QtWidgets.QSpinBox.value"><code>value</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setMaximum"><code>setMaximum</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setMinimum"><code>setMinimum</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setValue"><code>setValue</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.value"><code>value</code></a></li>
     </ul>
 
     <br>
@@ -1983,11 +1997,11 @@ class QDoubleSpinBox:
 
     <h3>Methods</h3>
     <ul>
-        <li><a href="#QtWidgets.QDoubleSpinBox.setMaximum"><code>setMaximum</code></a></li>
-        <li><a href="#QtWidgets.QDoubleSpinBox.setMinimum"><code>setMinimum</code></a></li>
-        <li><a href="#QtWidgets.QDoubleSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
-        <li><a href="#QtWidgets.QDoubleSpinBox.setValue"><code>setValue</code></a></li>
-        <li><a href="#QtWidgets.QDoubleSpinBox.value"><code>value</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setMaximum"><code>setMaximum</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setMinimum"><code>setMinimum</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setValue"><code>setValue</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.value"><code>value</code></a></li>
     </ul>
 
     <br>
@@ -2107,8 +2121,8 @@ class QPushButton:
 
     <h3>Methods</h3>
     <ul>
-        <li><a href="#QtWidgets.QPushButton.text"><code>text</code></a></li>
-        <li><a href="#QtWidgets.QPushButton.setText"><code>setText</code></a></li>
+        <li><a href="#code.QtWidgets.QPushButton.text"><code>text</code></a></li>
+        <li><a href="#code.QtWidgets.QPushButton.setText"><code>setText</code></a></li>
     </ul>
 
     <br>

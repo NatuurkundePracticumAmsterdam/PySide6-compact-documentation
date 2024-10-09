@@ -4,7 +4,11 @@ hide:
   - footer
 ---
 
-In this API Reference we will cover relevant classes and functions which are part of the `QtWidgets` module. The `QtWidgets` module contains classes that provide a set of UI elements to create classic desktop-style graphical user interfaces (GUI's). The `QWidget` class is the base class for all UI objects, and the `QLayout` class is the base class for all layout objects. An overview of the classes and functions in the `QtWidgets` module is provided below.
+In this API Reference we will cover relevant classes and functions which are part of the `QtWidgets` module. The `QtWidgets` module contains classes that provide a set of UI elements to create classic desktop-style graphical user interfaces (GUI's). The `QWidget` class is the base class for all UI objects, and the `QLayout` class is the base class for all layout objects. An overview of the classes and functions in the `QtWidgets` module is provided at the bottom of this page.
+
+
+!!! note
+    Methods from parent classes (i.e. `QWidget` and `QLayout`) are not repeated in the reference of each subclass. However, as always in Python ( :nerd: ), these methods are applicable to all subclasses. 
 
 
 !!! note
@@ -17,7 +21,7 @@ In this API Reference we will cover relevant classes and functions which are par
     widget = QtWidgets.QWidget()
     widget = QWidget()
     ```
-    In the above code we create an instance of the **`QWidget`** in two ways. In practice we do not use direct instances of `QWidget` to build our GUI, but rather use its subclasses (see the list below). 
+    In the above code we create an instance of the `QWidget` in two ways. In practice we do not use direct instances of `QWidget` to build our GUI, but rather use its subclasses (see the list below). 
 
 <hr>
 
