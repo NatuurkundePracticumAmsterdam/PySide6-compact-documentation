@@ -41,6 +41,7 @@ class QWidget:
 
     <ul>
         <li><a href="#code.QtWidgets.QWidget.resize"><code>resize</code></a></li>
+        <li><a href="#code.QtWidgets.QWidget.setLayout"><code>setLayout</code></a></li>
         <li><a href="#code.QtWidgets.QWidget.show"><code>show</code></a></li>
     </ul>
 
@@ -70,6 +71,22 @@ class QWidget:
     # Displays an empty window with a size of 500x300 pixels
     window.show()
     app.exec()
+    ```
+
+    <br>
+    The following example shows two methods to set a layout manager for a `QWidget`. The two methods are equivalent.
+    ```py
+    # Create a main window with a central widget
+    window = QMainWindow()
+    widget = QWidget()
+    window.setCentralWidget(widget)
+
+    # method 1
+    layout = QVBoxLayout()
+    widget.setLayout(layout)
+
+    # method 2
+    layout = QVBoxLayout(widget)
     ```
 
     <hr>
@@ -311,7 +328,6 @@ class QWidget:
             h (int): The height of the widget in pixels.
 
         <br>
-        <br>
         """
 
     #     def resizeEvent(self, event: PySide6.QtGui.QResizeEvent) -> None: ...
@@ -361,7 +377,17 @@ class QWidget:
     #     def setGraphicsEffect(self, effect: PySide6.QtWidgets.QGraphicsEffect) -> None: ...
     #     def setHidden(self, hidden: bool) -> None: ...
     #     def setInputMethodHints(self, hints: PySide6.QtCore.Qt.InputMethodHint) -> None: ...
-    #     def setLayout(self, arg__1: PySide6.QtWidgets.QLayout) -> None: ...
+    def setLayout(self, layout: PySide6.QtWidgets.QLayout) -> None:
+        """
+        Sets the layout manager for this widget. An alternative to calling this function is to pass
+        this widget to the layout's constructor, as shown in the last example above.
+
+        Args:
+            layout (PySide6.QtWidgets.QLayout): The layout manager to set for this widget.
+
+        <br>
+        """
+
     #     def setLayoutDirection(self, direction: PySide6.QtCore.Qt.LayoutDirection) -> None: ...
     #     def setLocale(self, locale: Union[PySide6.QtCore.QLocale, PySide6.QtCore.QLocale.Language]) -> None: ...
     #     @overload
@@ -423,6 +449,9 @@ class QWidget:
     def show(self) -> None:
         """
         Shows the widget and its child widgets.
+
+        <br>
+        <br>
         """
 
 
@@ -489,26 +518,59 @@ class QLayout:
 
     <hr>
 
+    <h3>Methods</h3>
+
+    <ul>
+        <li><a href="#code.QtWidgets.QLayout.addWidget"><code>addWidget</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+    <hr>
+    ```py
+    yes_button = QPushButton("press me")
+    no_button = QPushButton("don't press me")
+
+    # QVBoxLayout is a subclass of QLayout
+    layout = QVBoxLayout()
+    layout.addWidget(button)
+    layout.addWidget(no_button)
+    ```
+    In this example, we create two buttons and add them to a <a href="../QVBoxLayout"><code>QVBoxLayout</code></a> layout.
+    We can use the `addWidget` method because `QVBoxLayout` is a subclass of `QLayout`.
+
+    <hr>
     <br>
     """
 
+    #     class SizeConstraint(enum.Enum):
 
-#     class SizeConstraint(enum.Enum):
+    #         SetDefaultConstraint     : QLayout.SizeConstraint = ... # 0x0
+    #         SetNoConstraint          : QLayout.SizeConstraint = ... # 0x1
+    #         SetMinimumSize           : QLayout.SizeConstraint = ... # 0x2
+    #         SetFixedSize             : QLayout.SizeConstraint = ... # 0x3
+    #         SetMaximumSize           : QLayout.SizeConstraint = ... # 0x4
+    #         SetMinAndMaxSize         : QLayout.SizeConstraint = ... # 0x5
 
-#         SetDefaultConstraint     : QLayout.SizeConstraint = ... # 0x0
-#         SetNoConstraint          : QLayout.SizeConstraint = ... # 0x1
-#         SetMinimumSize           : QLayout.SizeConstraint = ... # 0x2
-#         SetFixedSize             : QLayout.SizeConstraint = ... # 0x3
-#         SetMaximumSize           : QLayout.SizeConstraint = ... # 0x4
-#         SetMinAndMaxSize         : QLayout.SizeConstraint = ... # 0x5
+    #     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
 
-#     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+    #     def activate(self) -> bool: ...
+    #     def addChildLayout(self, l: PySide6.QtWidgets.QLayout) -> None: ...
+    #     def addChildWidget(self, w: PySide6.QtWidgets.QWidget) -> None: ...
+    #     def addItem(self, arg__1: PySide6.QtWidgets.QLayoutItem) -> None: ...
+    def addWidget(self, w: PySide6.QtWidgets.QWidget) -> None:
+        """
+        Adds the widget `w` to the layout.
 
-#     def activate(self) -> bool: ...
-#     def addChildLayout(self, l: PySide6.QtWidgets.QLayout) -> None: ...
-#     def addChildWidget(self, w: PySide6.QtWidgets.QWidget) -> None: ...
-#     def addItem(self, arg__1: PySide6.QtWidgets.QLayoutItem) -> None: ...
-#     def addWidget(self, w: PySide6.QtWidgets.QWidget) -> None: ...
+        Args:
+            w (PySide6.QtWidgets.QWidget): The widget to add to the layout.
+
+        <br>
+        <br>
+        """
+
+
 #     def adoptLayout(self, layout: PySide6.QtWidgets.QLayout) -> bool: ...
 #     def alignmentRect(self, arg__1: PySide6.QtCore.QRect) -> PySide6.QtCore.QRect: ...
 #     def childEvent(self, e: PySide6.QtCore.QChildEvent) -> None: ...
@@ -727,8 +789,7 @@ class QMainWindow:
     <hr>
 
     A main window provides a framework for building an application's user interface.
-    Every user interface has to have a <code>QMainWindow</code>. It has to
-    have a central widget, which is the main widget in the window. The central widget
+    Every user interface must have a <code>QMainWindow</code> in PySide6. A `QMainWindow` must have a central widget, which is the main widget in the window. The central widget
     can be a <a href="../../PyQtWidgets"><code>QWidget</code></a> or any other widget subclass.
     To this central widget, you can add other layouts, such as <a href="../QHBoxLayout"><code>QHBoxLayout</code></a>
     and <a href="../QVBoxLayout"><code>QVBoxLayout</code></a>.
@@ -891,7 +952,6 @@ class QHBoxLayout:
     <h3>Methods</h3>
     <ul>
         <li><a href="#code.QtWidgets.QHBoxLayout.addLayout"><code>addLayout</code></a></li>
-        <li><a href="#code.QtWidgets.QHBoxLayout.addWidget"><code>addWidget</code></a></li>
     </ul>
 
     <br>
@@ -904,16 +964,16 @@ class QHBoxLayout:
     layout.addWidget(QPushButton("Button 1"))
     layout.addWidget(QPushButton("Button 2"))
     ```
-    In the above example, a horizontal layout is created, added to a central
-    widget, and two buttons are added to it. The buttons will be displayed
-    horizontally.
+    In the above example, a horizontal layout is created, and two buttons are added to it
+    using the `addWidget` method from the parent [`QLayout`](../QLayout) parent class. The buttons will be aligned horizontally.
 
     <br>
 
     ``` py
-    central_widget = QtWidgets.QWidget()
-    layout = QHBoxLayout(central_widget)
-    layout.addLayout(QVBoxLayout())
+    central_widget = QWidget()
+    h_layout = QHBoxLayout(central_widget)
+    v_layout = QVBoxLayout()
+    h_layout.addLayout(v_layout)
     ```
     In the above example, a horizontal layout is created, added to a central
     widget, and a vertical layout is added to it.
@@ -924,19 +984,11 @@ class QHBoxLayout:
 
     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
-    def addLayout(self, layout: PySide6.QtWidgets.QBoxLayout) -> None:
+    def addLayout(self, layout: PySide6.QtWidgets.QLayout) -> None:
         """Adds a layout to the horizontal box layout
 
         Args:
-            Layout (PySide6.QtWidgets.QBoxLayout): Layout
-        <br>
-        """
-
-    def addWidget(self, widget: PySide6.QtWidgets.QWidget) -> None:
-        """Adds a widget to the horizontal box layout
-
-        Args:
-            widget (PySide6.QtWidgets.QWidget): Widget
+            Layout (PySide6.QtWidgets.QLayout): Layout
         <br>
         <br>
         """
@@ -963,7 +1015,6 @@ class QVBoxLayout:
     <h3>Methods</h3>
     <ul>
         <li><a href="#code.QtWidgets.QVBoxLayout.addLayout"><code>addLayout</code></a></li>
-        <li><a href="#code.QtWidgets.QVBoxLayout.addWidget"><code>addWidget</code></a></li>
     </ul>
 
     <br>
@@ -971,11 +1022,14 @@ class QVBoxLayout:
     **Examples**
     <hr>
     ``` py
-    vbox = QVBoxLayout()
+    central_widget = QWidget()
+    vbox = QVBoxLayout(central_widget)
     textedit = QTextEdit()
     vbox.addWidget(textedit)
     ```
-    In the above example, a vertical layout is created and a QTextEdit widget is added to it.
+    In the above example, a vertical layout is created and a [`QTextEdit`](../QTextEdit) widget is added to it using the `addWidget` method from the parent class [`QLayout`](../QLayout).
+
+    <br>
 
     ``` py
     vbox = QVBoxLayout()
@@ -990,19 +1044,11 @@ class QVBoxLayout:
 
     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
-    def addLayout(self, layout: PySide6.QtWidgets.QBoxLayout) -> None:
+    def addLayout(self, layout: PySide6.QtWidgets.QLayout) -> None:
         """Adds a layout to the vertical box layout
 
         Args:
-            Layout (PySide6.QtWidgets.QBoxLayout): Layout
-        <br>
-        """
-
-    def addWidget(self, widget: PySide6.QtWidgets.QWidget) -> None:
-        """Adds a widget to the vertical box layout
-
-        Args:
-            widget (PySide6.QtWidgets.QWidget): Widget
+            Layout (PySide6.QtWidgets.QLayout): Layout
         <br>
         <br>
         """
