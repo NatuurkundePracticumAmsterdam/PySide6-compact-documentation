@@ -586,8 +586,8 @@ class QApplication:
     **Examples**
     <hr>
     ``` py
-    app = QtWidgets.QApplication()
-    window = QtWidgets.QMainWindow()
+    app = QApplication()
+    window = QMainWindow()
     window.show()
     app.exec()
     ```
@@ -747,26 +747,23 @@ class QMainWindow:
         <hr>
         ``` py
 
-        from PySide6 import QtWidgets
-        import sys
-
-        class UserInterface(QtWidgets.QMainWindow):
+        class UserInterface(QMainWindow):
             def __init__(self):
 
                 # Call the QMainWindow __init__ method.
                 super().__init__()
 
                 # Set the central widget; every QMainWindow must have a central widget.
-                central_widget = QtWidgets.QWidget()
-                self.setCentralWidget(QtWidgets.QWidget())
+                central_widget = QWidget()
+                self.setCentralWidget(QWidget())
 
                 # Add a layout to the central widget.
-                layout = QtWidgets.QVBoxLayout(central_widget)
+                layout = QVBoxLayout(central_widget)
 
         def main():
 
             # Create the application object.
-            app = QtWidgets.QApplication(sys.argv)
+            app = QApplication()
 
             # Create the main window, show it, and start the event loop.
             window = UserInterface()
@@ -902,7 +899,7 @@ class QHBoxLayout:
     **Examples**
     <hr>
     ``` py
-    central_widget = QtWidgets.QWidget()
+    central_widget = QWidget()
     layout = QHBoxLayout(central_widget)
     layout.addWidget(QPushButton("Button 1"))
     layout.addWidget(QPushButton("Button 2"))
