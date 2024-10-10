@@ -36,6 +36,7 @@ In this API Reference we will cover relevant classes and functions which are par
     - [`QHBoxLayout`](QHBoxLayout.md): Manages a horizontal layout of widgets. 
     - [`QVBoxLayout`](QVBoxLayout.md): Manages a vertical layout of other widgets. 
     - [`QGridLayout`](QGridLayout.md): Manages a grid layout where space is divided up into rows and columns.
+    - [`QFormLayout`](QFormLayout.md): Manages a layout where space is divided in a left column with labels and right column with widgets.
 <br> 
 
 - ### Subclasses derived from `QWidget`:
