@@ -43,7 +43,7 @@ from PySide6.QtCore import Slot
 
 !!! note
 
-    After every one of the three steps, the progress in the GUI will be shown (i.e. the result of running `simple_gui.py`). The window that is displayed may look slightly different depending on your operating system. The screenshots in this tutorial were taken on a Windows machine.
+    After every one of the three steps, the progress in the GUI will be shown (i.e. the result of running `simple_gui.py`). The window that is displayed may look slightly different depending on your operating system. The screenshots in this tutorial were taken on a Windows :material-microsoft-windows: machine.
 
 <br>
 
