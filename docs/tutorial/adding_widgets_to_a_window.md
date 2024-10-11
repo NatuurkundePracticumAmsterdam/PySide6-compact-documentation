@@ -4,11 +4,11 @@ To add widgets to the window, we need to create the widgets and set their proper
 
 ## Adding a layout
 
-First we need to keep in mind that every [`QMainWindow`](../QtWidgets/QMainWindow.md) has to have a central widget. This can simply be a [`QWidget`](../QtWidgets/QWidget.md) object. Next, we will add a layout to the central widget. A layout is a container that manages the position of child widgets. In this case, we will use a [`QVBoxLayout`](../QtWidgets/QVBoxLayout.md) to manage the position of widgets in our window. The newly added code is highlighted below:
+First we need to keep in mind that every [`QMainWindow`](../QtWidgets/QMainWindow.md) has to have a central widget. This usually is a generic [`QWidget`](../QtWidgets/QWidget.md) object. Next, we will add a layout to the central widget. A layout is a container that manages the position of child widgets. In this case, we will use a [`QVBoxLayout`](../QtWidgets/QVBoxLayout.md) ('V' for 'vertical') to manage the position of widgets in our window. The newly added code is highlighted below:
 
 ```python title="simple_gui.py" hl_lines="8-14" linenums="1"
 
-import PySide6.QtWidgets as QtWidgets
+from PySide6 import QtWidgets
 from PySide6.QtCore import Slot
 
 
@@ -21,7 +21,7 @@ window.setCentralWidget(central_widget)
 
 # Adding a layout to the central widget
 vbox = QtWidgets.QVBoxLayout()
-central_widget.setLayout(layout)
+central_widget.setLayout(vbox)
 
 window.show()
 app.exec()
@@ -56,7 +56,7 @@ Let's add this code to `simple_gui.py` and see how the window looks:
 
 ```python title="simple_gui.py" hl_lines="16-24" linenums="1"
 
-import PySide6.QtWidgets as QtWidgets
+from PySide6 import QtWidgets
 from PySide6.QtCore import Slot
 
 

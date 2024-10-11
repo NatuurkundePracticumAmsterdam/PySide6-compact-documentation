@@ -9,7 +9,7 @@ In this tutorial, we will cover the steps to create a simple GUI (Graphical User
 For this tutorial, we will only use the widgets inherited from the [`QtWidgets`](../QtWidgets/index.md)  class and the `Slot` class from the `QtCore` module. As a starting point let's create a new Python file `simple_gui.py` and import the necessary modules:
 
 ``` py title="simple_gui.py" linenums="1"
-import PySide6.QtWidgets as QtWidgets
+from PySide6 import QtWidgets
 from PySide6.QtCore import Slot
 ```
 
