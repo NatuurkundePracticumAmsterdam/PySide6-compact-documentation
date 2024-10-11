@@ -1680,7 +1680,7 @@ class QComboBox:
         ``` py
         combo = QComboBox()
         combo.addItem("Option 1")
-        combo.addItems("[Option 2, Option 3]")
+        combo.addItems(["Option 2", "Option 3"])
         print(combo.currentText())
         ```
         ```'Option 1'```
