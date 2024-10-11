@@ -4,7 +4,7 @@ To add widgets to the window, we need to create the widgets and set their proper
 
 ## Adding a layout
 
-First we need to keep in mind that every [`QMainWindow`](../../QtWidgets/QMainWindow) has to have a central widget. This can simply be a [`QWidget`](../../QtWidgets/QWidget) object. Next, we will add a layout to the central widget. A layout is a container that manages the position of child widgets. In this case, we will use a [`QVBoxLayout`](../../QtWidgets/QVBoxLayout) to manage the position of widgets in our window. The newly added code is highlighted below:
+First we need to keep in mind that every [`QMainWindow`](../QtWidgets/QMainWindow.md) has to have a central widget. This can simply be a [`QWidget`](../QtWidgets/QWidget.md) object. Next, we will add a layout to the central widget. A layout is a container that manages the position of child widgets. In this case, we will use a [`QVBoxLayout`](../QtWidgets/QVBoxLayout.md) to manage the position of widgets in our window. The newly added code is highlighted below:
 
 ```python title="simple_gui.py" hl_lines="8-14" linenums="1"
 
@@ -34,7 +34,7 @@ Running the code above will still show an empty window, as we have added an empt
 
 ## Adding widgets to the layout
 
-We can create a button using the [`QPushButton`](../../QtWidgets/QPushButton) class and a label using the [`QLabel`](../../QtWidgets/QLabel) class as follows:
+We can create a button using the [`QPushButton`](../QtWidgets/QPushButton.md) class and a label using the [`QLabel`](../QtWidgets/QLabel.md) class as follows:
 
 ```python 
 

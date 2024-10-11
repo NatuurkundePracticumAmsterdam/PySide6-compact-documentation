@@ -6,14 +6,14 @@ hide:
 
 In this tutorial, we will cover the steps to create a simple GUI (Graphical User Interface) application using PySide6. We will create a simple window with a button and a label. When the button is clicked, the label will display a message. First, it is necessary to install PySide6. Installation instructions can be found [here](../Installation_Guide.md). 
 
-For this tutorial, we will only use the widgets inherited from the [`QtWidgets`](../QtWidgets)  class and the `Slot` class from the `QtCore` module. As a starting point let's create a new Python file `simple_gui.py` and import the necessary modules:
+For this tutorial, we will only use the widgets inherited from the [`QtWidgets`](../QtWidgets/index.md)  class and the `Slot` class from the `QtCore` module. As a starting point let's create a new Python file `simple_gui.py` and import the necessary modules:
 
 ``` py title="simple_gui.py" linenums="1"
 import PySide6.QtWidgets as QtWidgets
 from PySide6.QtCore import Slot
 ```
 
-`QtWidgets` contains all the classes that provide a set of elements to create a graphical user interface, such as buttons, labels and layouts. Some of the most common classes from `QtWidgets` are documented in the [API reference](../QtWidgets). We will use the import statements above as a starting point for our code and build upon it. We will build `simple_gui.py` in three steps:
+`QtWidgets` contains all the classes that provide a set of elements to create a graphical user interface, such as buttons, labels and layouts. Some of the most common classes from `QtWidgets` are documented in the [API reference](../QtWidgets/index.md). We will use the import statements above as a starting point for our code and build upon it. We will build `simple_gui.py` in three steps:
 
 <style>
     ul.no-bullets {
@@ -31,7 +31,7 @@ from PySide6.QtCore import Slot
 
 !!! note
 
-    Code snippets in this tutorial are added to `simple_gui.py` in every step. The final code can be found [at the end of the tutorial](/tutorial/connecting_widgets_to_a_function/#final-result).
+    Code snippets in this tutorial are added to `simple_gui.py` in every step. The final code can be found [at the end of the tutorial](connecting_widgets_to_a_function.md#final-result).
     Code snippets that are added to the script will be highlighted in the code block like this:
     ``` python title="example.py" hl_lines="4 5"
     # This code was already in example.py
