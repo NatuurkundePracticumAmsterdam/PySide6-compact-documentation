@@ -9,18 +9,22 @@
       
       
       
+        <link rel="prev" href="../">
       
       
-      <link rel="icon" href="/favicon.ico">
+        <link rel="next" href="../adding_widgets_to_a_window/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
-        <title>PySide6 Compact Documentation</title>
+        <title>1. Creating a simple window - PySide6 Compact Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
       
 
@@ -39,11 +43,11 @@
       
     
     
-      <link rel="stylesheet" href="/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="/assets/hl_color.css">
+      <link rel="stylesheet" href="../../assets/hl_color.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +75,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="PySide6 Compact Documentation" class="md-header__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
+    <a href="../.." title="PySide6 Compact Documentation" class="md-header__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              1. Creating a simple window
             
           </span>
         </div>
@@ -160,7 +164,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -177,7 +181,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/Installation_Guide/" class="md-tabs__link">
+      <a href="../../Installation_Guide/" class="md-tabs__link">
         
   
     
@@ -192,11 +196,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/tutorial/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Tutorial
@@ -214,7 +220,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/QtWidgets/" class="md-tabs__link">
+        <a href="../../QtWidgets/" class="md-tabs__link">
           
   
   API Reference
@@ -236,6 +242,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -247,7 +255,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="PySide6 Compact Documentation" class="md-nav__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
+    <a href="../.." title="PySide6 Compact Documentation" class="md-nav__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -265,7 +273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -285,7 +293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Installation_Guide/" class="md-nav__link">
+      <a href="../../Installation_Guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -302,25 +310,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -331,7 +344,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Tutorial
@@ -345,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tutorial/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -363,10 +376,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/tutorial/creating_a_simple_window/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -375,6 +395,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -387,7 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tutorial/adding_widgets_to_a_window/" class="md-nav__link">
+      <a href="../adding_widgets_to_a_window/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -408,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tutorial/connecting_widgets_to_a_function/" class="md-nav__link">
+      <a href="../connecting_widgets_to_a_function/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -429,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tutorial/next_steps/" class="md-nav__link">
+      <a href="../next_steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -497,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/" class="md-nav__link">
+      <a href="../../QtWidgets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -518,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QApplication/" class="md-nav__link">
+      <a href="../../QtWidgets/QApplication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -539,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QLayout/" class="md-nav__link">
+      <a href="../../QtWidgets/QLayout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -560,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QWidget/" class="md-nav__link">
+      <a href="../../QtWidgets/QWidget/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -621,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QHBoxLayout/" class="md-nav__link">
+      <a href="../../QtWidgets/QHBoxLayout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -642,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QVBoxLayout/" class="md-nav__link">
+      <a href="../../QtWidgets/QVBoxLayout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -663,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QGridLayout/" class="md-nav__link">
+      <a href="../../QtWidgets/QGridLayout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -684,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QFormLayout/" class="md-nav__link">
+      <a href="../../QtWidgets/QFormLayout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -753,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QMainWindow/" class="md-nav__link">
+      <a href="../../QtWidgets/QMainWindow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -774,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QGroupBox/" class="md-nav__link">
+      <a href="../../QtWidgets/QGroupBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -795,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QTextEdit/" class="md-nav__link">
+      <a href="../../QtWidgets/QTextEdit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -816,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QCheckBox/" class="md-nav__link">
+      <a href="../../QtWidgets/QCheckBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -837,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QLabel/" class="md-nav__link">
+      <a href="../../QtWidgets/QLabel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -858,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QComboBox/" class="md-nav__link">
+      <a href="../../QtWidgets/QComboBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -879,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QSpinBox/" class="md-nav__link">
+      <a href="../../QtWidgets/QSpinBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -900,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QDoubleSpinBox/" class="md-nav__link">
+      <a href="../../QtWidgets/QDoubleSpinBox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -921,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/QtWidgets/QPushButton/" class="md-nav__link">
+      <a href="../../QtWidgets/QPushButton/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -958,7 +979,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -978,8 +1001,50 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  <h1>1. Creating a simple window</h1>
+
+<p>To create an empty window, we need two ingredients: a <a href="../../QtWidgets/QApplication/"><code>QApplication</code></a> object and a <a href="../../QtWidgets/QMainWindow/"><code>QMainWindow</code></a> object. The <code>QApplication</code> object manages the GUI application's control flow and main settings, while the <code>QMainWindow</code> object provides the framework for building an application's user interface. </p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">simple_gui.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">PySide6</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="n">Slot</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="hll"><span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">()</span>
+</span></span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="hll"><span class="n">window</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">()</span>
+</span></span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="hll"><span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="hll"><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+</span></span></code></pre></div></td></tr></table></div>
+<p>The code above creates an empty window. The <a class="autorefs autorefs-internal" href="../../QtWidgets/QMainWindow/#code.QtWidgets.QMainWindow.show"><code>show()</code></a> method displays the window, and the <a class="autorefs autorefs-internal" href="../../QtWidgets/QApplication/#code.QtWidgets.QApplication.exec"><code>exec()</code></a> method starts the application's event loop. The event loop is a loop that waits for events to happen and then dispatches them to the appropriate event handlers. Examples of events are clicking on buttons in your application or typing text into a text field. Adding the above code to the script will show an empty window:</p>
+<p><img src="../images/empty_window.png" alt="Empty window" width="300"></p>
+<p><br></p>
+<hr>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
               </article>
             </div>
           
@@ -997,6 +1062,46 @@
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../adding_widgets_to_a_window/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Adding widgets to a window">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. Adding widgets to a window
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1023,10 +1128,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.footer", "navigation.sections"], "search": "/assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.footer", "navigation.sections"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>
