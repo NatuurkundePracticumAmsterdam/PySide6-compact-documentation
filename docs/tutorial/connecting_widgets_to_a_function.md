@@ -1,4 +1,4 @@
-To make a widget interactive, you need to connect it to a function. We can do this by using a signal-slot mechanism. A signal is emitted when a particular event occurs, and a slot is a function that is called in response to the signal. In PySide6, you can connect a signal to a slot using the `connect` method of the signal object. 
+To make a widget interactive, you need to connect it to a function. In PySide6 this is done using a signal-slot mechanism. A signal is emitted when a particular event occurs, and a slot is a function that is called in response to the signal. In PySide6, you can connect a signal to a slot using the `connect` method of the signal object. 
 
 <hr>
 
