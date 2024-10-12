@@ -57,8 +57,8 @@ class QWidget:
     button = QPushButton("press me")
     button.resize(100, 50)
     ```
-    In the above code we show that we can apply the <a href="#code.QtWidgets.QWidget.resize"><code>resize</code></a> method to all widgets that inherit from `QWidget` such as <a href="../QPushButton"><code>QPushButton</code></a>.
-    Another example with <a href="../QPushButton"><code>QMainWindow</code></a> is shown below:
+    In the above code we show that we can apply the <a href="#code.QtWidgets.QWidget.resize"><code>resize</code></a> method to all widgets that inherit from `QWidget` such as [`QPushButton`](QPushButton.md).
+    Another example with [`QMainWindow`](QMainWindow.md) is shown below:
 
     ``` py
     # QApplication is required to run the application
@@ -537,7 +537,7 @@ class QLayout:
     layout.addWidget(button)
     layout.addWidget(no_button)
     ```
-    In this example, we create two buttons and add them to a <a href="../QVBoxLayout"><code>QVBoxLayout</code></a> layout.
+    In this example, we create two buttons and add them to [`QVBoxLayout`](QVBoxLayout.md) layout.
     We can use the `addWidget` method because `QVBoxLayout` is a subclass of `QLayout`.
 
     <hr>
@@ -789,10 +789,9 @@ class QMainWindow:
     <hr>
 
     A main window provides a framework for building an application's user interface.
-    Every user interface must have a <code>QMainWindow</code> in PySide6. A `QMainWindow` must have a central widget, which is the main widget in the window. The central widget
-    can be a <a href="../../PyQtWidgets"><code>QWidget</code></a> or any other widget subclass.
-    To this central widget, you can add other layouts, such as <a href="../QHBoxLayout"><code>QHBoxLayout</code></a>
-    and <a href="../QVBoxLayout"><code>QVBoxLayout</code></a>.
+    Every user interface must have a `QMainWindow` in PySide6. A `QMainWindow` must have a central widget, which is the main widget in the window. The central widget
+    can be a [`QWidget`](QWidget.md) or any other widget subclass.
+    To this central widget, you can add other layouts, such as [`QHBoxLayout`](QHBoxLayout.md) and [`QVBoxLayout`](QVBoxLayout.md).
 
     <hr>
 
@@ -943,7 +942,7 @@ class QHBoxLayout:
     <hr>
     The <code>QHBoxLayout</code> class lines up widgets horizontally. If the widgets do not fit
     in the window, the layout will automatically wrap or resize them. For a vertical
-    layout, use <a href="../QVBoxLayout"><code>QVBoxLayout</code></a>.
+    layout, use [`QVBoxLayout`](QVBoxLayout.md).
 
     Args:
         parent (PySide6.QtWidgets.QWidget): Parent widget
@@ -965,7 +964,7 @@ class QHBoxLayout:
     layout.addWidget(QPushButton("Button 2"))
     ```
     In the above example, a horizontal layout is created, and two buttons are added to it
-    using the `addWidget` method from the parent [`QLayout`](../QLayout) parent class. The buttons will be aligned horizontally.
+    using the `addWidget` method from the parent [`QLayout`](QLayout.md) parent class. The buttons will be aligned horizontally.
 
     <br>
 
@@ -1004,7 +1003,7 @@ class QVBoxLayout:
     <hr>
     The <code>QVBoxLayout</code> class lines up widgets vertically. If the widgets do not fit
     in the window, the layout will automatically wrap or resize them. For a horizontal
-    layout, see <a href="../QHBoxLayout"><code>QHBoxLayout</code></a>.
+    layout, see [`QHBoxLayout`](QHBoxLayout.md).
 
     Args:
         parent (PySide6.QtWidgets.QWidget): Parent widget.
@@ -1027,7 +1026,7 @@ class QVBoxLayout:
     textedit = QTextEdit()
     vbox.addWidget(textedit)
     ```
-    In the above example, a vertical layout is created and a [`QTextEdit`](../QTextEdit) widget is added to it using the `addWidget` method from the parent class [`QLayout`](../QLayout).
+    In the above example, a vertical layout is created and a [`QTextEdit`](QTextEdit.md) widget is added to it using the `addWidget` method from the parent class [`QLayout`](QLayout.md).
 
     <br>
 
@@ -1896,9 +1895,9 @@ class QSpinBox:
     <hr>
     ![](buttons/spinbox.png)
 
-    <code>QSpinBox</code> is designed to handle integers and discrete sets of values. Use
-    <a href="../QDoubleSpinBox"><code>QDoubleSpinBox</code></a> for floating point values.
-    <code>QSpinBox</code> allows the user to choose a value by clicking the up and down buttons
+    `QSpinBox` is designed to handle integers and discrete sets of values. Use
+    [`QDoubleSpinBox`](QDoubleSpinBox.md) for floating point values.
+    `QSpinBox` allows the user to choose a value by clicking the up and down buttons
     to increment or decrement the value displayed. The value can also be changed by typing
     in a value. The range of valid values and the number of decimal places shown is configurable.
 
@@ -2023,8 +2022,8 @@ class QDoubleSpinBox:
     <hr>
     ![](buttons/double_spinbox.png)
 
-    <code>QDoubleSpinBox</code> is designed to handle double values. For integers, use
-    <a href="../QSpinBox"><code>QSpinBox</code></a> instead. <code>QDoubleSpinBox</code>
+    `QDoubleSpinBox` is designed to handle double values. For integers, use
+    [`QSpinBox`](QSpinBox.md) instead. `QDoubleSpinBox`
     allows the user to choose a value by clicking the up and down buttons to
     increment or decrement the value displayed. The value can also be changed
     by typing in a value. The range of valid values and the number of decimal
