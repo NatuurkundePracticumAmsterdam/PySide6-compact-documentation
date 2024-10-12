@@ -5,7 +5,7 @@ To make a widget interactive, you need to connect it to a function. In PySide6 t
 
 ## Creating a slot function
 
-The slot function doesn't take any arguments. To handle this, we can group all the widgets together with all slot functions in a single class. This way, we can access the widgets inside the slot function through the `self` reference. Assuming that the following code is inside a class in which a [`QLabel`](../../QtWidgets/Qlabel) widget is defined as `self.label`, we can define a slot function as follows:
+The slot function doesn't take any arguments. To handle this, we can group all the widgets together with all slot functions in a single class. This way, we can access the widgets inside the slot function through the `self` reference. Assuming that the following code is inside a class in which a [`QLabel`](../QtWidgets/QLabel.md) widget is defined as `self.label`, we can define a slot function as follows:
 
 
 ```python
@@ -14,7 +14,7 @@ def change_label_text(self):
     self.label.setText("Hello, PySide6!")
 ```
 
-In the code above, we use the `@Slot()` decorator to indicate that the function is a slot. So, if we want to connect this slot function to the signal of the `QPushButton` in our `simple_gui.py` file, we first need to change up our code quite a bit. We can put all the code in a class that inherits from [`QMainWindow`](../../QtWidgets/QMainWindow) and let's call it `UserInterface`: 
+In the code above, we use the `@Slot()` decorator to indicate that the function is a slot. So, if we want to connect this slot function to the signal of the `QPushButton` in our `simple_gui.py` file, we first need to change up our code quite a bit. We can put all the code in a class that inherits from [`QMainWindow`](../QtWidgets/QMainWindow.md) and let's call it `UserInterface`: 
 
 === "Without class"
 
@@ -115,14 +115,14 @@ In the code above the changes made to `simple_gui.py` are highlighted. Press the
 
 ## Connecting the slot function to a widget
 
-Now we can connect a slot function to the signal of a widget. Some relevant signals of `QWidgets` are mentioned in the [API reference](../QtWidgets). We can for example connect the `CurrentTextChanged` signal of a [`QComboBox`](../../QtWidgets/QComboBox) to a slot function as follows:
+Now we can connect a slot function to the signal of a widget. Some relevant signals of `QWidgets` are mentioned in the [API reference](../QtWidgets/index.md). We can for example connect the `CurrentTextChanged` signal of a [`QComboBox`](../QtWidgets/QComboBox.md) to a slot function as follows:
 
 ```python
 combobox = QtWidgets.QComboBox()
 combobox.currentTextChanged.connect(do_something)
 ```
 
-In the code above is assumed the the `do_something` slot function is defined in the same scope as the `combobox` object. In the same way, we can connect the `clicked` signal of a [`QPushButton`](../../QtWidgets/QPushButton) to the `change_label_text` slot function in `simple_gui.py`:
+In the code above is assumed the the `do_something` slot function is defined in the same scope as the `combobox` object. In the same way, we can connect the `clicked` signal of a [`QPushButton`](../QtWidgets/QPushButton.md) to the `change_label_text` slot function in `simple_gui.py`:
 
 ```python title="simple_gui.py" linenums="1" hl_lines="27-32" 
 
