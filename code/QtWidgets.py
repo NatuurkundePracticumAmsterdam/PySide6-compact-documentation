@@ -910,6 +910,7 @@ class QMainWindow:
         Shows the main window.
 
         <br>
+        <br>
         """
 
     # def setCorner(self, corner: PySide6.QtCore.Qt.Corner, area: PySide6.QtCore.Qt.DockWidgetArea) -> None: ...
