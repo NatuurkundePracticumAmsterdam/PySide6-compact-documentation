@@ -984,10 +984,10 @@ class QHBoxLayout:
     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
     def addLayout(self, layout: PySide6.QtWidgets.QLayout) -> None:
-        """Adds a layout to the horizontal box layout
+        """Adds a layout to the horizontal box layout. The layout will be added to the right of the existing layouts.
 
         Args:
-            Layout (PySide6.QtWidgets.QLayout): Layout
+            layout (PySide6.QtWidgets.QLayout): the layout to add.
         <br>
         <br>
         """
@@ -1044,10 +1044,10 @@ class QVBoxLayout:
     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
     def addLayout(self, layout: PySide6.QtWidgets.QLayout) -> None:
-        """Adds a layout to the vertical box layout
+        """Adds a layout to the vertical box layout. The layout will be added below the existing layouts.
 
         Args:
-            Layout (PySide6.QtWidgets.QLayout): Layout
+            layout (PySide6.QtWidgets.QLayout): the layout to add
         <br>
         <br>
         """
@@ -1185,11 +1185,7 @@ class QFormLayout:
 
 
 class QGroupBox:
-    """_summary_
-
-    Args:
-        PySide6 (_type_): _description_
-    """
+    """_summary_"""
 
     ...
     # clicked                  : ClassVar[Signal] = ... # clicked()
@@ -1224,11 +1220,7 @@ class QGroupBox:
 
 
 class QTextEdit:
-    """_summary_
-
-    Args:
-        PySide6 (_type_): _description_
-    """
+    """_summary_"""
 
     copyAvailable: ClassVar[Signal] = ...  # copyAvailable(bool)
     currentCharFormatChanged: ClassVar[Signal] = (
