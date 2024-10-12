@@ -19,7 +19,7 @@ In the code above, we use the `@Slot()` decorator to indicate that the function 
 === "Without class"
 
     ```python title="simple_gui.py" linenums="1"
-    import PySide6.QtWidgets as QtWidgets
+    from PySide6 import QtWidgets
     from PySide6.QtCore import Slot
 
 
@@ -53,7 +53,7 @@ In the code above, we use the `@Slot()` decorator to indicate that the function 
 
     ```python title="simple_gui.py" linenums="1" hl_lines="5-7 11 18-19 24 28-30" 
 
-    import PySide6.QtWidgets as QtWidgets
+    from PySide6 import QtWidgets
     from PySide6.QtCore import Slot
 
 
@@ -126,7 +126,7 @@ In the code above is assumed the the `do_something` slot function is defined in 
 
 ```python title="simple_gui.py" linenums="1" hl_lines="27-32" 
 
-import PySide6.QtWidgets as QtWidgets
+from PySide6 import QtWidgets
 from PySide6.QtCore import Slot
 
 
