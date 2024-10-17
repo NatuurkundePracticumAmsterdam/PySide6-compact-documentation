@@ -1490,7 +1490,47 @@ class QGridLayout:
 
 
 class QGroupBox:
-    """_summary_"""
+    """
+    <hr>
+
+    `QGroupBox` is a widget that groups other widgets together. It provides a title and a frame around the widgets it contains.
+
+    Args:
+        title (str): The title of the group box.
+        parent (PySide6.QtWidgets.QWidget): The parent widget.
+
+    <hr>
+
+    <h3>Signals</h3>
+    <ul>
+        <li><code>clicked</code>: Emitted when the group box is clicked.</li>
+    </ul>
+
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#code.QtWidgets.QGroupBox.setTitle"><code>setTitle</code></a></li>
+        <li><a href="#code.QtWidgets.QGroupBox.title"><code>title</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+        <hr>
+        ``` py
+        group_box = QtWidgets.QGroupBox("Group Box")
+        layout = QtWidgets.QVBoxLayout()
+        layout.addWidget(QPushButton("Button 1"))
+        layout.addWidget(QPushButton("Button 2"))
+
+        group_box.setLayout(layout)
+        ```
+        Running the above code will create a group box with the title "Group Box" and two buttons aligned vertically inside it.
+        Note that the layout is set using the `setLayout` method from the parent [`QWidget`](QWidget.md) class.
+        <hr>
+
+    <br>
+    """
 
     ...
     # clicked                  : ClassVar[Signal] = ... # clicked()
@@ -1498,8 +1538,10 @@ class QGroupBox:
 
     # @overload
     # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    # @overload
-    # def __init__(self, title: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+
+    def __init__(
+        self, title: str = None, parent: Optional[PySide6.QtWidgets.QWidget] = None
+    ) -> None: ...
 
     # def alignment(self) -> PySide6.QtCore.Qt.AlignmentFlag: ...
     # def changeEvent(self, event: PySide6.QtCore.QEvent) -> None: ...
@@ -1520,8 +1562,26 @@ class QGroupBox:
     # def setCheckable(self, checkable: bool) -> None: ...
     # def setChecked(self, checked: bool) -> None: ...
     # def setFlat(self, flat: bool) -> None: ...
-    # def setTitle(self, title: str) -> None: ...
-    # def title(self) -> str: ...
+    def setTitle(self, title: str) -> None:
+        """
+        Set the title of the group box.
+
+        Args:
+            title (str): The title of the group box.
+
+        <br>
+        """
+
+    def title(self) -> str:
+        """
+        Get the title of the group box.
+
+        Returns:
+            str: The title of the group box.
+
+        <br>
+        <br>
+        """
 
 
 class QTextEdit:
