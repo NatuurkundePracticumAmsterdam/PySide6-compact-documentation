@@ -50,11 +50,11 @@ class QWidget:
     **Examples**
     <hr>
     ``` py
-    widget = QWidget()
+    widget = QtWidgets.QWidget()
     widget.resize(250, 150)
 
     # QPushButton is a subclass of QWidget
-    button = QPushButton("press me")
+    button = QtWidgets.QPushButton("press me")
     button.resize(100, 50)
     ```
     In the above code we show that we can apply the <a href="#code.QtWidgets.QWidget.resize"><code>resize</code></a> method to all widgets that inherit from `QWidget` such as [`QPushButton`](QPushButton.md).
@@ -62,10 +62,10 @@ class QWidget:
 
     ``` py
     # QApplication is required to run the application
-    app = QApplication()
+    app = QtWidgets.QApplication()
 
     # QMainWindow is a subclass of QWidget
-    window = QMainWindow()
+    window = QtWidgets.QMainWindow()
     window.resize(500, 300)
 
     # Displays an empty window with a size of 500x300 pixels
@@ -77,16 +77,16 @@ class QWidget:
     The following example shows two methods to set a layout manager for a `QWidget`. The two methods are equivalent.
     ```py
     # Create a main window with a central widget
-    window = QMainWindow()
-    widget = QWidget()
+    window = QtWidgets.QMainWindow()
+    widget = QtWidgets.QWidget()
     window.setCentralWidget(widget)
 
     # method 1
-    layout = QVBoxLayout()
+    layout = QtWidgets.QVBoxLayout()
     widget.setLayout(layout)
 
     # method 2
-    layout = QVBoxLayout(widget)
+    layout = QtWidgets.QVBoxLayout(widget)
     ```
 
     <hr>
@@ -522,6 +522,9 @@ class QLayout:
 
     <ul>
         <li><a href="#code.QtWidgets.QLayout.addWidget"><code>addWidget</code></a></li>
+        <li><a href="#code.QtWidgets.QLayout.setSpacing"><code>setSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QLayout.spacing"><code>spacing</code></a></li>
+
     </ul>
 
     <br>
@@ -529,11 +532,11 @@ class QLayout:
     **Examples**
     <hr>
     ```py
-    yes_button = QPushButton("press me")
-    no_button = QPushButton("don't press me")
+    yes_button = QtWidgets.QPushButton("press me")
+    no_button = QtWidgets.QPushButton("don't press me")
 
     # QVBoxLayout is a subclass of QLayout
-    layout = QVBoxLayout()
+    layout = QtWidgets.QVBoxLayout()
     layout.addWidget(button)
     layout.addWidget(no_button)
     ```
@@ -567,55 +570,73 @@ class QLayout:
             w (PySide6.QtWidgets.QWidget): The widget to add to the layout.
 
         <br>
+        """
+
+    #     def adoptLayout(self, layout: PySide6.QtWidgets.QLayout) -> bool: ...
+    #     def alignmentRect(self, arg__1: PySide6.QtCore.QRect) -> PySide6.QtCore.QRect: ...
+    #     def childEvent(self, e: PySide6.QtCore.QChildEvent) -> None: ...
+    #     @staticmethod
+    #     def closestAcceptableSize(w: PySide6.QtWidgets.QWidget, s: PySide6.QtCore.QSize) -> PySide6.QtCore.QSize: ...
+    #     def contentsMargins(self) -> PySide6.QtCore.QMargins: ...
+    #     def contentsRect(self) -> PySide6.QtCore.QRect: ...
+    #     def controlTypes(self) -> PySide6.QtWidgets.QSizePolicy.ControlType: ...
+    #     def count(self) -> int: ...
+    #     def expandingDirections(self) -> PySide6.QtCore.Qt.Orientation: ...
+    #     def geometry(self) -> PySide6.QtCore.QRect: ...
+    #     def getContentsMargins(self) -> object: ...
+    #     @overload
+    #     def indexOf(self, arg__1: PySide6.QtWidgets.QLayoutItem) -> int: ...
+    #     @overload
+    #     def indexOf(self, arg__1: PySide6.QtWidgets.QWidget) -> int: ...
+    #     def invalidate(self) -> None: ...
+    #     def isEmpty(self) -> bool: ...
+    #     def isEnabled(self) -> bool: ...
+    #     def itemAt(self, index: int) -> PySide6.QtWidgets.QLayoutItem: ...
+    #     def layout(self) -> PySide6.QtWidgets.QLayout: ...
+    #     def maximumSize(self) -> PySide6.QtCore.QSize: ...
+    #     def menuBar(self) -> PySide6.QtWidgets.QWidget: ...
+    #     def minimumSize(self) -> PySide6.QtCore.QSize: ...
+    #     def parentWidget(self) -> PySide6.QtWidgets.QWidget: ...
+    #     def removeItem(self, arg__1: PySide6.QtWidgets.QLayoutItem) -> None: ...
+    #     def removeWidget(self, w: PySide6.QtWidgets.QWidget) -> None: ...
+    #     def replaceWidget(self, from_: PySide6.QtWidgets.QWidget, to: PySide6.QtWidgets.QWidget, options: PySide6.QtCore.Qt.FindChildOption = ...) -> PySide6.QtWidgets.QLayoutItem: ...
+    #     @overload
+    #     def setAlignment(self, arg__1: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
+    #     @overload
+    #     def setAlignment(self, l: PySide6.QtWidgets.QLayout, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> bool: ...
+    #     @overload
+    #     def setAlignment(self, w: PySide6.QtWidgets.QWidget, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> bool: ...
+    #     @overload
+    #     def setContentsMargins(self, left: int, top: int, right: int, bottom: int) -> None: ...
+    #     @overload
+    #     def setContentsMargins(self, margins: PySide6.QtCore.QMargins) -> None: ...
+    #     def setEnabled(self, arg__1: bool) -> None: ...
+    #     def setGeometry(self, arg__1: PySide6.QtCore.QRect) -> None: ...
+    #     def setMenuBar(self, w: PySide6.QtWidgets.QWidget) -> None: ...
+    #     def setSizeConstraint(self, arg__1: PySide6.QtWidgets.QLayout.SizeConstraint) -> None: ...
+    def setSpacing(self, space: int) -> None:
+        """
+        Sets the spacing between the items in the layout to `space`.
+
+        Args:
+            space (int): The spacing between the items in the layout.
+
+        <br>
+        """
+
+    #     def sizeConstraint(self) -> PySide6.QtWidgets.QLayout.SizeConstraint: ...
+    def spacing(self) -> int:
+        """
+        Gets the spacing between the items in the layout.
+
+        Returns:
+            The spacing between the items in the layout.
+
+        <br>
         <br>
         """
 
 
-#     def adoptLayout(self, layout: PySide6.QtWidgets.QLayout) -> bool: ...
-#     def alignmentRect(self, arg__1: PySide6.QtCore.QRect) -> PySide6.QtCore.QRect: ...
-#     def childEvent(self, e: PySide6.QtCore.QChildEvent) -> None: ...
-#     @staticmethod
-#     def closestAcceptableSize(w: PySide6.QtWidgets.QWidget, s: PySide6.QtCore.QSize) -> PySide6.QtCore.QSize: ...
-#     def contentsMargins(self) -> PySide6.QtCore.QMargins: ...
-#     def contentsRect(self) -> PySide6.QtCore.QRect: ...
-#     def controlTypes(self) -> PySide6.QtWidgets.QSizePolicy.ControlType: ...
-#     def count(self) -> int: ...
-#     def expandingDirections(self) -> PySide6.QtCore.Qt.Orientation: ...
-#     def geometry(self) -> PySide6.QtCore.QRect: ...
-#     def getContentsMargins(self) -> object: ...
-#     @overload
-#     def indexOf(self, arg__1: PySide6.QtWidgets.QLayoutItem) -> int: ...
-#     @overload
-#     def indexOf(self, arg__1: PySide6.QtWidgets.QWidget) -> int: ...
-#     def invalidate(self) -> None: ...
-#     def isEmpty(self) -> bool: ...
-#     def isEnabled(self) -> bool: ...
-#     def itemAt(self, index: int) -> PySide6.QtWidgets.QLayoutItem: ...
-#     def layout(self) -> PySide6.QtWidgets.QLayout: ...
-#     def maximumSize(self) -> PySide6.QtCore.QSize: ...
-#     def menuBar(self) -> PySide6.QtWidgets.QWidget: ...
-#     def minimumSize(self) -> PySide6.QtCore.QSize: ...
-#     def parentWidget(self) -> PySide6.QtWidgets.QWidget: ...
-#     def removeItem(self, arg__1: PySide6.QtWidgets.QLayoutItem) -> None: ...
-#     def removeWidget(self, w: PySide6.QtWidgets.QWidget) -> None: ...
-#     def replaceWidget(self, from_: PySide6.QtWidgets.QWidget, to: PySide6.QtWidgets.QWidget, options: PySide6.QtCore.Qt.FindChildOption = ...) -> PySide6.QtWidgets.QLayoutItem: ...
-#     @overload
-#     def setAlignment(self, arg__1: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
-#     @overload
-#     def setAlignment(self, l: PySide6.QtWidgets.QLayout, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> bool: ...
-#     @overload
-#     def setAlignment(self, w: PySide6.QtWidgets.QWidget, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> bool: ...
-#     @overload
-#     def setContentsMargins(self, left: int, top: int, right: int, bottom: int) -> None: ...
-#     @overload
-#     def setContentsMargins(self, margins: PySide6.QtCore.QMargins) -> None: ...
-#     def setEnabled(self, arg__1: bool) -> None: ...
-#     def setGeometry(self, arg__1: PySide6.QtCore.QRect) -> None: ...
-#     def setMenuBar(self, w: PySide6.QtWidgets.QWidget) -> None: ...
-#     def setSizeConstraint(self, arg__1: PySide6.QtWidgets.QLayout.SizeConstraint) -> None: ...
-#     def setSpacing(self, arg__1: int) -> None: ...
-#     def sizeConstraint(self) -> PySide6.QtWidgets.QLayout.SizeConstraint: ...
-#     def spacing(self) -> int: ...
 #     def takeAt(self, index: int) -> PySide6.QtWidgets.QLayoutItem: ...
 #     def totalHeightForWidth(self, w: int) -> int: ...
 #     def totalMaximumSize(self) -> PySide6.QtCore.QSize: ...
@@ -648,8 +669,8 @@ class QApplication:
     **Examples**
     <hr>
     ``` py
-    app = QApplication()
-    window = QMainWindow()
+    app = QtWidgets.QApplication()
+    window = QtWidgets.QMainWindow()
     window.show()
     app.exec()
     ```
@@ -807,23 +828,23 @@ class QMainWindow:
         <hr>
         ``` py
 
-        class UserInterface(QMainWindow):
+        class UserInterface(QtWidgets.QMainWindow):
             def __init__(self):
 
                 # Call the QMainWindow __init__ method.
                 super().__init__()
 
                 # Set the central widget; every QMainWindow must have a central widget.
-                central_widget = QWidget()
+                central_widget = QtWidgets.QWidget()
                 self.setCentralWidget(QWidget())
 
                 # Add a layout to the central widget.
-                layout = QVBoxLayout(central_widget)
+                layout = QtWidgets.QVBoxLayout(central_widget)
 
         def main():
 
             # Create the application object.
-            app = QApplication()
+            app = QtWidgets.QApplication()
 
             # Create the main window, show it, and start the event loop.
             window = UserInterface()
@@ -959,8 +980,7 @@ class QHBoxLayout:
     **Examples**
     <hr>
     ``` py
-    central_widget = QWidget()
-    layout = QHBoxLayout(central_widget)
+    layout = QtWidgets.QHBoxLayout()
     layout.addWidget(QPushButton("Button 1"))
     layout.addWidget(QPushButton("Button 2"))
     ```
@@ -970,9 +990,8 @@ class QHBoxLayout:
     <br>
 
     ``` py
-    central_widget = QWidget()
-    h_layout = QHBoxLayout(central_widget)
-    v_layout = QVBoxLayout()
+    h_layout = QtWidgets.QHBoxLayout()
+    v_layout = QtWidgets.QVBoxLayout()
     h_layout.addLayout(v_layout)
     ```
     In the above example, a horizontal layout is created, added to a central
@@ -1022,9 +1041,8 @@ class QVBoxLayout:
     **Examples**
     <hr>
     ``` py
-    central_widget = QWidget()
-    vbox = QVBoxLayout(central_widget)
-    textedit = QTextEdit()
+    vbox = QtWidgets.QVBoxLayout()
+    textedit = QtWidgets.QTextEdit()
     vbox.addWidget(textedit)
     ```
     In the above example, a vertical layout is created and a [`QTextEdit`](QTextEdit.md) widget is added to it using the `addWidget` method from the parent class [`QLayout`](QLayout.md).
@@ -1032,8 +1050,8 @@ class QVBoxLayout:
     <br>
 
     ``` py
-    vbox = QVBoxLayout()
-    hbox = QHBoxLayout()
+    vbox = QtWidgets.QVBoxLayout()
+    hbox = QtWidgets.QHBoxLayout()
     vbox.addLayout(hbox)
     ```
     In the above example, a vertical layout is created and a horizontal layout is added to it.
@@ -1183,6 +1201,188 @@ class QFormLayout:
     # @overload
     # def takeRow(self, widget: PySide6.QtWidgets.QWidget) -> PySide6.QtWidgets.QFormLayout.TakeRowResult: ...
     # def verticalSpacing(self) -> int: ...
+
+
+class QGridLayout:
+    """
+    <hr>
+    The `QGridLayout` class lays out widgets in a grid, which has a variable number of rows and columns. The grid layout is used
+    to create a more complex layout than the [`QHBoxLayout`](QHBoxLayout.md) and [`QVBoxLayout`](QVBoxLayout.md) classes,
+    which only allow for horizontal and vertical layouts, respectively.
+
+    Args:
+        parent (PySide6.QtWidgets.QLayout): The parent layout.
+
+    <hr>
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#code.QtWidgets.QGridLayout.addLayout"><code>addLayout</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.addWidget"><code>addWidget</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.columnCount"><code>columnCount</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.rowCount"><code>rowCount</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.setHorizontalSpacing"><code>setHorizontalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.setVerticalSpacing"><code>setVerticalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.horizontalSpacing"><code>horizontalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.verticalSpacing"><code>verticalSpacing</code></a></li>
+
+    </ul>
+
+    <br>
+
+    **Examples**
+    <hr>
+    ```py
+    layout = QtWidgets.QGridLayout()
+    layout.setHorizontalSpacing(10)
+    layout.setVerticalSpacing(10)
+
+    print(layout.horizontalSpacing(), layout.verticalSpacing())
+    ```
+    `2 2`
+    ```py
+    layout.addWidget(QPushButton("Button 1"), 0, 0)
+    layout.addWidget(QPushButton("Button 2"), 0, 1)
+    layout.addWidget(QPushButton("Button 3"), 1, 0)
+    layout.addWidget(QPushButton("Button 4"), 1, 1)
+
+    print(layout.columnCount(), layout.rowCount())
+    ```
+    `10 10`
+
+    <hr>
+
+    <br>
+    """
+
+    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
+
+    #     @overload
+    #     def addItem(self, arg__1: PySide6.QtWidgets.QLayoutItem) -> None: ...
+    #     @overload
+    #     def addItem(self, item: PySide6.QtWidgets.QLayoutItem, row: int, column: int, rowSpan: int = ..., columnSpan: int = ..., alignment: PySide6.QtCore.Qt.AlignmentFlag = ...) -> None: ...
+
+    def addLayout(
+        self, layout: PySide6.QtWidgets.QLayout, row: int, column: int
+    ) -> None:
+        """
+        Add a layout to the grid layout at the specified row and column.
+
+        Args:
+            layout (PySide6.QtWidgets.QLayout): The layout to add.
+            row (int): The row to add the layout to.
+            column (int): The column to add the layout to.
+
+        <br>
+        """
+
+    def addWidget(
+        self,
+        widget: PySide6.QtWidgets.QWidget,
+        row: int,
+        column: int,
+    ) -> None:
+        """
+        Add a widget to the grid layout at the specified row and column.
+
+        Args:
+            widget (PySide6.QtWidgets.QWidget): The widget to add.
+            row (int): The row to add the widget to.
+            column (int): The column to add the widget to.
+
+        <br>
+        """
+
+    #     @overload
+    #     def addWidget(self, w: PySide6.QtWidgets.QWidget) -> None: ...
+    #     def cellRect(self, row: int, column: int) -> PySide6.QtCore.QRect: ...
+    def columnCount(self) -> int:
+        """
+        Get the number of columns in the grid layout.
+
+        Returns:
+            int: The number of columns in the grid layout.
+
+        <br>
+        """
+
+    #     def columnMinimumWidth(self, column: int) -> int: ...
+    #     def columnStretch(self, column: int) -> int: ...
+    #     def count(self) -> int: ...
+    #     def expandingDirections(self) -> PySide6.QtCore.Qt.Orientation: ...
+    #     def getItemPosition(self, idx: int) -> object: ...
+    #     def hasHeightForWidth(self) -> bool: ...
+    #     def heightForWidth(self, arg__1: int) -> int: ...
+    def horizontalSpacing(self) -> int:
+        """
+        Get the horizontal spacing between items in the grid layout.
+
+        Returns:
+            int: The horizontal spacing between items in the grid layout.
+
+        <br>
+        """
+
+    #     def invalidate(self) -> None: ...
+    #     def itemAt(self, index: int) -> PySide6.QtWidgets.QLayoutItem: ...
+    #     def itemAtPosition(self, row: int, column: int) -> PySide6.QtWidgets.QLayoutItem: ...
+    #     def maximumSize(self) -> PySide6.QtCore.QSize: ...
+    #     def minimumHeightForWidth(self, arg__1: int) -> int: ...
+    #     def minimumSize(self) -> PySide6.QtCore.QSize: ...
+    #     def originCorner(self) -> PySide6.QtCore.Qt.Corner: ...
+    def rowCount(self) -> int:
+        """
+        Get the number of rows in the grid layout.
+
+        Returns:
+            int: The number of rows in the grid layout.
+
+        <br>
+        """
+
+    #     def rowMinimumHeight(self, row: int) -> int: ...
+    #     def rowStretch(self, row: int) -> int: ...
+    #     def setColumnMinimumWidth(self, column: int, minSize: int) -> None: ...
+    #     def setColumnStretch(self, column: int, stretch: int) -> None: ...
+    #     def setDefaultPositioning(self, n: int, orient: PySide6.QtCore.Qt.Orientation) -> None: ...
+    #     def setGeometry(self, arg__1: PySide6.QtCore.QRect) -> None: ...
+    def setHorizontalSpacing(self, spacing: int) -> None:
+        """
+        Set the horizontal spacing between items in the grid layout.
+
+        Args:
+            spacing (int): The horizontal spacing between items in the grid layout.
+
+        <br>
+        """
+
+    #     def setOriginCorner(self, arg__1: PySide6.QtCore.Qt.Corner) -> None: ...
+    #     def setRowMinimumHeight(self, row: int, minSize: int) -> None: ...
+    #     def setRowStretch(self, row: int, stretch: int) -> None: ...
+    #     def setSpacing(self, spacing: int) -> None:
+
+    def setVerticalSpacing(self, spacing: int) -> None:
+        """
+        Set the vertical spacing between items in the grid layout.
+
+        Args:
+            spacing (int): The vertical spacing between items in the grid layout.
+
+        <br>
+        """
+
+    #     def sizeHint(self) -> PySide6.QtCore.QSize: ...
+    #     def takeAt(self, index: int) -> PySide6.QtWidgets.QLayoutItem: ...
+    def verticalSpacing(self) -> int:
+        """
+        Get the vertical spacing between items in the grid layout.
+
+        Returns:
+            int: The vertical spacing between items in the grid layout.
+
+        <br>
+        <br>
+        """
 
 
 class QGroupBox:
@@ -1469,7 +1669,7 @@ class QCheckBox:
     **Examples**
         <hr>
         ``` py
-        checkbox = QCheckBox()
+        checkbox = QtWidgets.QCheckBox()
         print(checkbox.IsChecked())
         ```
         ```False```
@@ -1550,7 +1750,7 @@ class QLabel:
     **Examples**
         <hr>
         ``` py
-        label = QLabel()
+        label = QtWidgets.QLabel()
         label.setText("Hello World!")
         print(label.text())
         ```
@@ -1670,7 +1870,7 @@ class QComboBox:
     **Examples**
         <hr>
         ``` py
-        combo = QComboBox()
+        combo = QtWidgets.QComboBox()
         combo.addItem("Option 1")
         combo.addItems(["Option 2", "Option 3"])
         print(combo.currentText())
@@ -1915,7 +2115,7 @@ class QSpinBox:
     **Examples**
         <hr>
         ``` py
-        spin_box = QSpinBox()
+        spin_box = QtWidgets.QSpinBox()
         spin_box.setMaximum(100)
         spin_box.setMinimum(0)
         spin_box.setSingleStep(5)
@@ -2044,7 +2244,7 @@ class QDoubleSpinBox:
     **Examples**
         <hr>
         ``` py
-        spin_box = QDoubleSpinBox()
+        spin_box = QtWidgets.QDoubleSpinBox()
         spin_box.setMaximum(100)
         spin_box.setMinimum(0)
         spin_box.setSingleStep(0.1)
@@ -2165,7 +2365,7 @@ class QPushButton:
     **Examples**
         <hr>
         ``` py
-        button = QPushButton()
+        button = QtWidgets.QPushButton()
         button.setText("Click me!")
         print(button.text())
         ```

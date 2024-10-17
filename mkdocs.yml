@@ -29,6 +29,7 @@ plugins:
 markdown_extensions:
   - pymdownx.details
   - pymdownx.highlight:
+      use_pygments: true
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
@@ -48,6 +49,7 @@ markdown_extensions:
 
 extra_css:
   - assets/hl_color.css
+  - assets/syntax_color.css
 
 nav:
   - Home: index.md
