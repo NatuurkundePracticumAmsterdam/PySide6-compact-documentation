@@ -50,11 +50,11 @@ class QWidget:
     **Examples**
     <hr>
     ``` py
-    widget = QWidget()
+    widget = QtWidgets.QWidget()
     widget.resize(250, 150)
 
     # QPushButton is a subclass of QWidget
-    button = QPushButton("press me")
+    button = QtWidgets.QPushButton("press me")
     button.resize(100, 50)
     ```
     In the above code we show that we can apply the <a href="#code.QtWidgets.QWidget.resize"><code>resize</code></a> method to all widgets that inherit from `QWidget` such as [`QPushButton`](QPushButton.md).
@@ -62,10 +62,10 @@ class QWidget:
 
     ``` py
     # QApplication is required to run the application
-    app = QApplication()
+    app = QtWidgets.QApplication()
 
     # QMainWindow is a subclass of QWidget
-    window = QMainWindow()
+    window = QtWidgets.QMainWindow()
     window.resize(500, 300)
 
     # Displays an empty window with a size of 500x300 pixels
@@ -77,16 +77,16 @@ class QWidget:
     The following example shows two methods to set a layout manager for a `QWidget`. The two methods are equivalent.
     ```py
     # Create a main window with a central widget
-    window = QMainWindow()
-    widget = QWidget()
+    window = QtWidgets.QMainWindow()
+    widget = QtWidgets.QWidget()
     window.setCentralWidget(widget)
 
     # method 1
-    layout = QVBoxLayout()
+    layout = QtWidgets.QVBoxLayout()
     widget.setLayout(layout)
 
     # method 2
-    layout = QVBoxLayout(widget)
+    layout = QtWidgets.QVBoxLayout(widget)
     ```
 
     <hr>
@@ -532,11 +532,11 @@ class QLayout:
     **Examples**
     <hr>
     ```py
-    yes_button = QPushButton("press me")
-    no_button = QPushButton("don't press me")
+    yes_button = QtWidgets.QPushButton("press me")
+    no_button = QtWidgets.QPushButton("don't press me")
 
     # QVBoxLayout is a subclass of QLayout
-    layout = QVBoxLayout()
+    layout = QtWidgets.QVBoxLayout()
     layout.addWidget(button)
     layout.addWidget(no_button)
     ```
@@ -669,8 +669,8 @@ class QApplication:
     **Examples**
     <hr>
     ``` py
-    app = QApplication()
-    window = QMainWindow()
+    app = QtWidgets.QApplication()
+    window = QtWidgets.QMainWindow()
     window.show()
     app.exec()
     ```
@@ -828,23 +828,23 @@ class QMainWindow:
         <hr>
         ``` py
 
-        class UserInterface(QMainWindow):
+        class UserInterface(QtWidgets.QMainWindow):
             def __init__(self):
 
                 # Call the QMainWindow __init__ method.
                 super().__init__()
 
                 # Set the central widget; every QMainWindow must have a central widget.
-                central_widget = QWidget()
+                central_widget = QtWidgets.QWidget()
                 self.setCentralWidget(QWidget())
 
                 # Add a layout to the central widget.
-                layout = QVBoxLayout(central_widget)
+                layout = QtWidgets.QVBoxLayout(central_widget)
 
         def main():
 
             # Create the application object.
-            app = QApplication()
+            app = QtWidgets.QApplication()
 
             # Create the main window, show it, and start the event loop.
             window = UserInterface()
@@ -980,8 +980,8 @@ class QHBoxLayout:
     **Examples**
     <hr>
     ``` py
-    central_widget = QWidget()
-    layout = QHBoxLayout(central_widget)
+    central_widget = QtWidgets.QWidget()
+    layout = QtWidgets.QHBoxLayout(central_widget)
     layout.addWidget(QPushButton("Button 1"))
     layout.addWidget(QPushButton("Button 2"))
     ```
@@ -991,9 +991,9 @@ class QHBoxLayout:
     <br>
 
     ``` py
-    central_widget = QWidget()
-    h_layout = QHBoxLayout(central_widget)
-    v_layout = QVBoxLayout()
+    central_widget = QtWidgets.QWidget()
+    h_layout = QtWidgets.QHBoxLayout(central_widget)
+    v_layout = QtWidgets.QVBoxLayout()
     h_layout.addLayout(v_layout)
     ```
     In the above example, a horizontal layout is created, added to a central
@@ -1043,9 +1043,9 @@ class QVBoxLayout:
     **Examples**
     <hr>
     ``` py
-    central_widget = QWidget()
-    vbox = QVBoxLayout(central_widget)
-    textedit = QTextEdit()
+    central_widget = QtWidgets.QWidget()
+    vbox = QtWidgets.QVBoxLayout(central_widget)
+    textedit = QtWidgets.QTextEdit()
     vbox.addWidget(textedit)
     ```
     In the above example, a vertical layout is created and a [`QTextEdit`](QTextEdit.md) widget is added to it using the `addWidget` method from the parent class [`QLayout`](QLayout.md).
@@ -1053,8 +1053,8 @@ class QVBoxLayout:
     <br>
 
     ``` py
-    vbox = QVBoxLayout()
-    hbox = QHBoxLayout()
+    vbox = QtWidgets.QVBoxLayout()
+    hbox = QtWidgets.QHBoxLayout()
     vbox.addLayout(hbox)
     ```
     In the above example, a vertical layout is created and a horizontal layout is added to it.
@@ -1671,7 +1671,7 @@ class QCheckBox:
     **Examples**
         <hr>
         ``` py
-        checkbox = QCheckBox()
+        checkbox = QtWidgets.QCheckBox()
         print(checkbox.IsChecked())
         ```
         ```False```
@@ -1752,7 +1752,7 @@ class QLabel:
     **Examples**
         <hr>
         ``` py
-        label = QLabel()
+        label = QtWidgets.QLabel()
         label.setText("Hello World!")
         print(label.text())
         ```
@@ -1872,7 +1872,7 @@ class QComboBox:
     **Examples**
         <hr>
         ``` py
-        combo = QComboBox()
+        combo = QtWidgets.QComboBox()
         combo.addItem("Option 1")
         combo.addItems(["Option 2", "Option 3"])
         print(combo.currentText())
@@ -2117,7 +2117,7 @@ class QSpinBox:
     **Examples**
         <hr>
         ``` py
-        spin_box = QSpinBox()
+        spin_box = QtWidgets.QSpinBox()
         spin_box.setMaximum(100)
         spin_box.setMinimum(0)
         spin_box.setSingleStep(5)
@@ -2246,7 +2246,7 @@ class QDoubleSpinBox:
     **Examples**
         <hr>
         ``` py
-        spin_box = QDoubleSpinBox()
+        spin_box = QtWidgets.QDoubleSpinBox()
         spin_box.setMaximum(100)
         spin_box.setMinimum(0)
         spin_box.setSingleStep(0.1)
@@ -2367,7 +2367,7 @@ class QPushButton:
     **Examples**
         <hr>
         ``` py
-        button = QPushButton()
+        button = QtWidgets.QPushButton()
         button.setText("Click me!")
         print(button.text())
         ```
