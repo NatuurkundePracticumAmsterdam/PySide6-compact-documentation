@@ -980,8 +980,7 @@ class QHBoxLayout:
     **Examples**
     <hr>
     ``` py
-    central_widget = QtWidgets.QWidget()
-    layout = QtWidgets.QHBoxLayout(central_widget)
+    layout = QtWidgets.QHBoxLayout()
     layout.addWidget(QPushButton("Button 1"))
     layout.addWidget(QPushButton("Button 2"))
     ```
@@ -991,8 +990,7 @@ class QHBoxLayout:
     <br>
 
     ``` py
-    central_widget = QtWidgets.QWidget()
-    h_layout = QtWidgets.QHBoxLayout(central_widget)
+    h_layout = QtWidgets.QHBoxLayout()
     v_layout = QtWidgets.QVBoxLayout()
     h_layout.addLayout(v_layout)
     ```
@@ -1043,8 +1041,7 @@ class QVBoxLayout:
     **Examples**
     <hr>
     ``` py
-    central_widget = QtWidgets.QWidget()
-    vbox = QtWidgets.QVBoxLayout(central_widget)
+    vbox = QtWidgets.QVBoxLayout()
     textedit = QtWidgets.QTextEdit()
     vbox.addWidget(textedit)
     ```
@@ -1235,21 +1232,22 @@ class QGridLayout:
 
     **Examples**
     <hr>
-    ``` py
-    central_widget = QWidget()
-    layout = QGridLayout(central_widget)
+    ```py
+    layout = QtWidgets.QGridLayout()
     layout.setHorizontalSpacing(10)
     layout.setVerticalSpacing(10)
 
+    print(layout.horizontalSpacing(), layout.verticalSpacing())
+    ```
+    `2 2`
+    ```py
     layout.addWidget(QPushButton("Button 1"), 0, 0)
     layout.addWidget(QPushButton("Button 2"), 0, 1)
     layout.addWidget(QPushButton("Button 3"), 1, 0)
     layout.addWidget(QPushButton("Button 4"), 1, 1)
 
     print(layout.columnCount(), layout.rowCount())
-    print(layout.horizontalSpacing(), layout.verticalSpacing())
     ```
-    `2 2` <br>
     `10 10`
 
     <hr>
