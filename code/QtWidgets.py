@@ -1078,54 +1078,101 @@ class QVBoxLayout:
 
 
 class QFormLayout:
-    """_summary_"""
+    """
+    <hr>
+    `QFormLayout` is a layout manager that arranges widgets in a two-column layout. The left column
+    contains labels, and the right column contains widgets. This layout can also be achieved using
+    [`QGridLayout`](QGridLayout.md) but `QFormLayout` provides a more convenient way to create
+    form-like layouts.
 
-    class FieldGrowthPolicy(enum.Enum):
+    Args:
+        parent (PySide6.QtWidgets.QWidget): The parent widget.
 
-        FieldsStayAtSizeHint: QFormLayout.FieldGrowthPolicy = ...  # 0x0
-        ExpandingFieldsGrow: QFormLayout.FieldGrowthPolicy = ...  # 0x1
-        AllNonFixedFieldsGrow: QFormLayout.FieldGrowthPolicy = ...  # 0x2
+    <hr>
 
-    class ItemRole(enum.Enum):
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#code.QtWidgets.QFormLayout.addRow"><code>addRow</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.horizontalSpacing"><code>horizontalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.sethorizontalSpacing"><code>setHorizontalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.verticalSpacing"><code>verticalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.setVerticalSpacing"><code>setVerticalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.removeRow"><code>removeRow</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.rowCount"><code>rowCount</code></a></li>
+    </ul>
 
-        LabelRole: QFormLayout.ItemRole = ...  # 0x0
-        FieldRole: QFormLayout.ItemRole = ...  # 0x1
-        SpanningRole: QFormLayout.ItemRole = ...  # 0x2
+    <br>
 
-    class RowWrapPolicy(enum.Enum):
+    **Examples**
+    <hr>
+    ``` py
+    layout = QtWidgets.QFormLayout()
+    label = QtWidgets.QLabel("Name:")
+    line_edit = QtWidgets.QLineEdit()
+    layout.addRow(label, line_edit)
 
-        DontWrapRows: QFormLayout.RowWrapPolicy = ...  # 0x0
-        WrapLongRows: QFormLayout.RowWrapPolicy = ...  # 0x1
-        WrapAllRows: QFormLayout.RowWrapPolicy = ...  # 0x2
+    print(layout.rowCount())
+    ```
+    `1`
+    ```py
+    spin_box = QtWidgets.QSpinBox()
+    layout.addRow("age", spinbox)
 
-    class TakeRowResult(Shiboken.Object):
-        @overload
-        def __init__(self) -> None: ...
-        @overload
-        def __init__(
-            self, TakeRowResult: PySide6.QtWidgets.QFormLayout.TakeRowResult
-        ) -> None: ...
-        @staticmethod
-        def __copy__() -> None: ...
+    layout.removeRow(0)
+    print(layout.rowCount())
+    ```
+    `1`
+    <hr>
+    <br>
 
-    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    def addItem(self, item: PySide6.QtWidgets.QLayoutItem) -> None: ...
-    @overload
+    """
+
+    # class FieldGrowthPolicy(enum.Enum):
+
+    #     FieldsStayAtSizeHint: QFormLayout.FieldGrowthPolicy = ...  # 0x0
+    #     ExpandingFieldsGrow: QFormLayout.FieldGrowthPolicy = ...  # 0x1
+    #     AllNonFixedFieldsGrow: QFormLayout.FieldGrowthPolicy = ...  # 0x2
+
+    # class ItemRole(enum.Enum):
+
+    #     LabelRole: QFormLayout.ItemRole = ...  # 0x0
+    #     FieldRole: QFormLayout.ItemRole = ...  # 0x1
+    #     SpanningRole: QFormLayout.ItemRole = ...  # 0x2
+
+    # class RowWrapPolicy(enum.Enum):
+
+    #     DontWrapRows: QFormLayout.RowWrapPolicy = ...  # 0x0
+    #     WrapLongRows: QFormLayout.RowWrapPolicy = ...  # 0x1
+    #     WrapAllRows: QFormLayout.RowWrapPolicy = ...  # 0x2
+
+    # class TakeRowResult(Shiboken.Object):
+    #     @overload
+    #     def __init__(self) -> None: ...
+    #     @overload
+    #     def __init__(
+    #         self, TakeRowResult: PySide6.QtWidgets.QFormLayout.TakeRowResult
+    #     ) -> None: ...
+    #     @staticmethod
+    #     def __copy__() -> None: ...
+
+    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
+
+    # def addItem(self, item: PySide6.QtWidgets.QLayoutItem) -> None: ...
     def addRow(
-        self, label: PySide6.QtWidgets.QWidget, field: PySide6.QtWidgets.QLayout
-    ) -> None: ...
-    @overload
-    def addRow(
-        self, label: PySide6.QtWidgets.QWidget, field: PySide6.QtWidgets.QWidget
-    ) -> None: ...
-    @overload
-    def addRow(self, labelText: str, field: PySide6.QtWidgets.QLayout) -> None: ...
-    @overload
-    def addRow(self, labelText: str, field: PySide6.QtWidgets.QWidget) -> None: ...
-    @overload
-    def addRow(self, layout: PySide6.QtWidgets.QLayout) -> None: ...
-    @overload
-    def addRow(self, widget: PySide6.QtWidgets.QWidget) -> None: ...
+        self,
+        label: PySide6.QtWidgets.QWidget | str,
+        field: PySide6.QtWidgets.QLayout | PySide6.QtWidgets.QWidget,
+    ) -> None:
+        """
+        Add a row to the form layout with a label and a field. The label can be a string or a widget.
+        The field can be a widget or a layout.
+
+        Args:
+            label (PySide6.QtWidgets.QWidget | str): The label for the field.
+            field (PySide6.QtWidgets.QLayout | PySide6.QtWidgets.QWidget): The field to add.
+
+        <br>
+        """
 
     # def count(self) -> int: ...
     # def expandingDirections(self) -> PySide6.QtCore.Qt.Orientation: ...
@@ -1136,7 +1183,16 @@ class QFormLayout:
     # def getWidgetPosition(self, widget: PySide6.QtWidgets.QWidget) -> object: ...
     # def hasHeightForWidth(self) -> bool: ...
     # def heightForWidth(self, width: int) -> int: ...
-    # def horizontalSpacing(self) -> int: ...
+    def horizontalSpacing(self) -> int:
+        """
+        Get the horizontal spacing between the items in the layout.
+
+        Returns:
+            The horizontal spacing between the items in the layout.
+
+        <br>
+        """
+
     # @overload
     # def insertRow(self, row: int, label: PySide6.QtWidgets.QWidget, field: PySide6.QtWidgets.QLayout) -> None: ...
     # @overload
@@ -1167,17 +1223,47 @@ class QFormLayout:
     # def labelForField(self, field: PySide6.QtWidgets.QWidget) -> PySide6.QtWidgets.QWidget: ...
     # def minimumSize(self) -> PySide6.QtCore.QSize: ...
     # @overload
-    # def removeRow(self, layout: PySide6.QtWidgets.QLayout) -> None: ...
+    def removeRow(
+        self, row: int | PySide6.QtWidgets.QWidget | PySide6.QtWidgets.QLayout
+    ) -> None:
+        """
+        Remove the row from the layout. The row can be specified by the row number, the widget, or the layout.
+
+        Args:
+            row (int | PySide6.QtWidgets.QWidget | PySide6.QtWidgets.QLayout): The row to remove.
+
+        <br>
+        """
+
     # @overload
     # def removeRow(self, row: int) -> None: ...
     # @overload
     # def removeRow(self, widget: PySide6.QtWidgets.QWidget) -> None: ...
-    # def rowCount(self) -> int: ...
+
+    def rowCount(self) -> int:
+        """
+        Get the number of rows in the layout.
+
+        Returns:
+            The number of rows in the layout.
+
+        <br>
+        """
+
     # def rowWrapPolicy(self) -> PySide6.QtWidgets.QFormLayout.RowWrapPolicy: ...
     # def setFieldGrowthPolicy(self, policy: PySide6.QtWidgets.QFormLayout.FieldGrowthPolicy) -> None: ...
     # def setFormAlignment(self, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
     # def setGeometry(self, rect: PySide6.QtCore.QRect) -> None: ...
-    # def setHorizontalSpacing(self, spacing: int) -> None: ...
+    def setHorizontalSpacing(self, spacing: int) -> None:
+        """
+        Set the horizontal spacing between the items in the layout.
+
+        Args:
+            spacing (int): The horizontal spacing between the items in the layout.
+
+        <br>
+        """
+
     # def setItem(self, row: int, role: PySide6.QtWidgets.QFormLayout.ItemRole, item: PySide6.QtWidgets.QLayoutItem) -> None: ...
     # def setLabelAlignment(self, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
     # def setLayout(self, row: int, role: PySide6.QtWidgets.QFormLayout.ItemRole, layout: PySide6.QtWidgets.QLayout) -> None: ...
@@ -1189,7 +1275,16 @@ class QFormLayout:
     # def setRowVisible(self, widget: PySide6.QtWidgets.QWidget, on: bool) -> None: ...
     # def setRowWrapPolicy(self, policy: PySide6.QtWidgets.QFormLayout.RowWrapPolicy) -> None: ...
     # def setSpacing(self, arg__1: int) -> None: ...
-    # def setVerticalSpacing(self, spacing: int) -> None: ...
+    def setVerticalSpacing(self, spacing: int) -> None:
+        """
+        Set the vertical spacing between the items in the layout.
+
+        Args:
+            spacing (int): The vertical spacing between the items in the layout.
+
+        <br>
+        """
+
     # def setWidget(self, row: int, role: PySide6.QtWidgets.QFormLayout.ItemRole, widget: PySide6.QtWidgets.QWidget) -> None: ...
     # def sizeHint(self) -> PySide6.QtCore.QSize: ...
     # def spacing(self) -> int: ...
@@ -1200,7 +1295,16 @@ class QFormLayout:
     # def takeRow(self, row: int) -> PySide6.QtWidgets.QFormLayout.TakeRowResult: ...
     # @overload
     # def takeRow(self, widget: PySide6.QtWidgets.QWidget) -> PySide6.QtWidgets.QFormLayout.TakeRowResult: ...
-    # def verticalSpacing(self) -> int: ...
+    def verticalSpacing(self) -> int:
+        """
+        Get the vertical spacing between the items in the layout.
+
+        Returns:
+            The vertical spacing between the items in the layout.
+
+        <br>
+        <br>
+        """
 
 
 class QGridLayout:

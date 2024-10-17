@@ -81,4 +81,5 @@ nav:
       - QtWidgets/QSpinBox.md
       - QtWidgets/QDoubleSpinBox.md
       - QtWidgets/QPushButton.md
+      - QtWidgets/QLineEdit.md
   
