@@ -61,7 +61,7 @@ ul li::marker {
     <p class="font-item">To get started, you can <a href="Installation_Guide">install </a> PySide6 and follow the <a href="Tutorial">tutorial</a>.</p>
   </div>
   <div class="column">
-    <h2>Compact Documentation &#128218;</h2>
+    <h2>Compact Documentation 📄</h2>
     <p class="font-item">For a clear and concise explanation of the functions and classes in PySide6, refer to the <a href="QtWidgets">API reference</a>.</p>
   </div>
   <div class="column">
@@ -69,7 +69,7 @@ ul li::marker {
     <p class="font-item"> This documentation was created for the course <a href="https://natuurkundepracticumamsterdam.github.io/ecpc/">Experiment Control with Python Course</a> (ECPC) at the University of Amsterdam. </p>
   </div>
   <div class="column">
-    <h2>Full Documentation &#128214;</h2>
+    <h2>Full Documentation &#128218;</h2>
     <p class="font-item">For the complete PySide6 documentation, visit the <a href="https://doc.qt.io/qtforpython-6/index.html">Qt for Python docs</a>.</p>
   </div>
 </div>
