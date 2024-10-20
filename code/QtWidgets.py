@@ -2108,6 +2108,9 @@ class QSpinBox:
         <li><a href="#code.QtWidgets.QSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
         <li><a href="#code.QtWidgets.QSpinBox.setValue"><code>setValue</code></a></li>
         <li><a href="#code.QtWidgets.QSpinBox.value"><code>value</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setRange"><code>setRange</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setPrefix"><code>setPrefix</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setSuffix"><code>setSuffix</code></a></li>
     </ul>
 
     <br>
@@ -2149,7 +2152,7 @@ class QSpinBox:
 
     def setMaximum(self, max: int) -> None:
         """
-        Sets the maximum value of the spin box. The default maximum value is 99.
+        Set the maximum value of the spin box. The default maximum value is 99.
 
         Args:
             max (int): The maximum value of the spin box.
@@ -2158,7 +2161,7 @@ class QSpinBox:
 
     def setMinimum(self, min: int) -> None:
         """
-        Sets the minimum value of the spin box. The default minimum value
+        Set the minimum value of the spin box. The default minimum value
         is 0.
 
         Args:
@@ -2166,12 +2169,31 @@ class QSpinBox:
         <br>
         """
 
-    # def setPrefix(self, prefix: str) -> None: ...
-    # def setRange(self, min: int, max: int) -> None: ...
+    def setPrefix(self, prefix: str) -> None:
+        """
+        Set the prefix of the spin box. The prefix is displayed before the
+        value in the spin box and is not editable by the user.
+
+        Args:
+            prefix (str): The prefix to set.
+        <br>
+        """
+
+    def setRange(self, min: int, max: int) -> None:
+        """
+        Set the minimum and maximum values of the spin box.
+        If the current value is outside the new range, the value is adjusted
+        to the nearest limit.
+
+        Args:
+            min (int): The new minimum value.
+            max (int): The new maximum value.
+        <br>
+        """
 
     def setSingleStep(self, val: int) -> None:
         """
-        Sets the value that the spin box will increment or decrement by when the
+        Set the value that the spin box will increment or decrement by when the
         up or down buttons are clicked. The default step value is 1. Setting a
         value less than 0 does nothing.
 
@@ -2181,10 +2203,19 @@ class QSpinBox:
         """
 
     # def setStepType(self, stepType: PySide6.QtWidgets.QAbstractSpinBox.StepType) -> None: ...
-    # def setSuffix(self, suffix: str) -> None: ...
+    def setSuffix(self, suffix: str) -> None:
+        """
+        Set the suffix of the spin box. The suffix is displayed after the value
+        in the spin box and is not editable by the user.
+
+        Args:
+            suffix (str): The suffix to set.
+        <br>
+        """
+
     def setValue(self, val: int) -> None:
         """
-        Sets the value of the spin box. If the value is outside the range of
+        Set the value of the spin box. If the value is outside the range of
         the spin box, the value is adjusted to the nearest limit.
 
         Args:
@@ -2237,6 +2268,9 @@ class QDoubleSpinBox:
         <li><a href="#code.QtWidgets.QDoubleSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
         <li><a href="#code.QtWidgets.QDoubleSpinBox.setValue"><code>setValue</code></a></li>
         <li><a href="#code.QtWidgets.QDoubleSpinBox.value"><code>value</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setRange"><code>setRange</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setPrefix"><code>setPrefix</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setSuffix"><code>setSuffix</code></a></li>
     </ul>
 
     <br>
@@ -2276,7 +2310,7 @@ class QDoubleSpinBox:
     # def setDecimals(self, prec: int) -> None: ...
     def setMaximum(self, max: float) -> None:
         """
-        Sets the maximum value of the spin box. The default maximum value
+        Set the maximum value of the spin box. The default maximum value
         is 99.99.
 
         Args:
@@ -2286,7 +2320,7 @@ class QDoubleSpinBox:
 
     def setMinimum(self, min: float) -> None:
         """
-        Sets the minimum value of the spin box. The default minimum value
+        Set the minimum value of the spin box. The default minimum value
         is 0.0.
 
         Args:
@@ -2294,11 +2328,30 @@ class QDoubleSpinBox:
         <br>
         """
 
-    # def setPrefix(self, prefix: str) -> None: ...
-    # def setRange(self, min: float, max: float) -> None: ...
+    def setPrefix(self, prefix: str) -> None:
+        """
+        Set the prefix of the spin box. The prefix is displayed before the
+        value in the spin box and is not editable by the user.
+
+        Args:
+            prefix: The new prefix.
+        <br>
+        """
+
+    def setRange(self, min: float, max: float) -> None:
+        """
+        Set the minimum and maximum values of the spin box. If the current
+        value is outside the new range, the value is adjusted to the nearest limit.
+
+        Args:
+            min: The new minimum value.
+            max: The new maximum value.
+        <br>
+        """
+
     def setSingleStep(self, val: float) -> None:
         """
-        Sets the value that the spin box will increment or decrement by when the
+        Set the value that the spin box will increment or decrement by when the
         up or down buttons are clicked. The default step value is 1.0. Setting a
         singleStep value of less than 0 does nothing.
 
@@ -2308,10 +2361,19 @@ class QDoubleSpinBox:
         """
 
     # def setStepType(self, stepType: PySide6.QtWidgets.QAbstractSpinBox.StepType) -> None: ...
-    # def setSuffix(self, suffix: str) -> None: ...
+    def setSuffix(self, suffix: str) -> None:
+        """
+        Set the suffix of the spin box. The suffix is displayed after the value
+        in the spin box and is not editable by the user.
+
+        Args:
+            suffix: The new suffix.
+        <br>
+        """
+
     def setValue(self, val: float) -> None:
         """
-        Sets the value of the spin box. If the value is outside the range of the
+        Set the value of the spin box. If the value is outside the range of the
         spin box, the value is adjusted to the nearest limit.
 
         Args:
