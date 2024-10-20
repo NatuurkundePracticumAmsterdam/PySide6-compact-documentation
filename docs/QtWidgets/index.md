@@ -50,6 +50,7 @@ In this API Reference we will cover relevant classes and functions which are par
     - [`QDoubleSpinBox`](QDoubleSpinBox.md): A widget that allows the user to choose a floating-point number from a range.
     - [`QPushButton`](QPushButton.md): A push button that can be clicked by the user.
     - [`QLineEdit`](QLineEdit.md): A widget that allows the user to enter and edit a single line of plain text.
+    - [`QFileDialog`](QFileDialog.md): Provides a dialog that allows the user to select files or directories.
 
 <br>
 <br>

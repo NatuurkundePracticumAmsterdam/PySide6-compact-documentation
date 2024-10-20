@@ -1080,6 +1080,9 @@ class QVBoxLayout:
 class QFormLayout:
     """
     <hr>
+
+    ![](layouts/form_layout.png)
+
     `QFormLayout` is a layout manager that arranges widgets in a two-column layout. The left column
     contains labels, and the right column contains widgets. This layout can also be achieved using
     [`QGridLayout`](QGridLayout.md) but `QFormLayout` provides a more convenient way to create
@@ -1307,6 +1310,9 @@ class QFormLayout:
 class QGridLayout:
     """
     <hr>
+
+    ![](layouts/grid_layout.png)
+
     The `QGridLayout` class lays out widgets in a grid, which has a variable number of rows and columns. The grid layout is used
     to create a more complex layout than the [`QHBoxLayout`](QHBoxLayout.md) and [`QVBoxLayout`](QVBoxLayout.md) classes,
     which only allow for horizontal and vertical layouts, respectively.
@@ -1486,6 +1492,8 @@ class QGridLayout:
 class QGroupBox:
     """
     <hr>
+
+    ![](layouts/group_box.png)
 
     `QGroupBox` is a widget that groups other widgets together. It provides a title and a frame around the widgets it contains.
 
