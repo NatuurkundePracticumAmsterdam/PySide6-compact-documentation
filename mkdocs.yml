@@ -83,5 +83,5 @@ nav:
       - QtWidgets/QDoubleSpinBox.md
       - QtWidgets/QPushButton.md
       - QtWidgets/QLineEdit.md
-      - QtWidget/QFileDialog.md
+      - QtWidgets/QFileDialog.md
   
