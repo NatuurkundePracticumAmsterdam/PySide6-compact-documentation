@@ -1491,7 +1491,6 @@ class QGroupBox:
 
     Args:
         title (str): The title of the group box.
-        parent (PySide6.QtWidgets.QWidget): The parent widget.
 
     <hr>
 
@@ -1533,9 +1532,7 @@ class QGroupBox:
     # @overload
     # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
 
-    def __init__(
-        self, title: str = None, parent: Optional[PySide6.QtWidgets.QWidget] = None
-    ) -> None: ...
+    def __init__(self, title: str = None) -> None: ...
 
     # def alignment(self) -> PySide6.QtCore.Qt.AlignmentFlag: ...
     # def changeEvent(self, event: PySide6.QtCore.QEvent) -> None: ...
