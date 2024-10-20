@@ -2,6 +2,7 @@ site_name: PySide6 Compact Documentation
 
 theme:
   name: material
+  logo: logo.svg
   favicon: favicon.ico
   features:
     - content.code.copy
