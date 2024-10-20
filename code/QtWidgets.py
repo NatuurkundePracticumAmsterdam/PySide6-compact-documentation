@@ -35,6 +35,9 @@ class QWidget:
 
     The `QWidget` class is the base class of all user interface objects in PySide6.QtWidgets.
 
+    Args:
+        parent (PySide6.QtWidgets.QWidget): The parent widget of this widget.
+
     <hr>
 
     <h3>Methods</h3>
@@ -104,7 +107,7 @@ class QWidget:
     #         DrawChildren             : QWidget.RenderFlag = ... # 0x2
     #         IgnoreMask               : QWidget.RenderFlag = ... # 0x4
 
-    #     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ..., f: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
+    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
     #     def acceptDrops(self) -> bool: ...
     #     def accessibleDescription(self) -> str: ...
@@ -514,7 +517,10 @@ class QLayout:
     """
     <hr>
 
-    QLayout is the base class of all layout objects in PySide6.QtWidgets.
+    `QLayout` is the base class of all layout objects in PySide6.QtWidgets.
+
+    Args:
+        parent (PySide6.QtWidgets.QWidget): The parent widget of the layout.
 
     <hr>
 
@@ -556,7 +562,7 @@ class QLayout:
     #         SetMaximumSize           : QLayout.SizeConstraint = ... # 0x4
     #         SetMinAndMaxSize         : QLayout.SizeConstraint = ... # 0x5
 
-    #     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
     #     def activate(self) -> bool: ...
     #     def addChildLayout(self, l: PySide6.QtWidgets.QLayout) -> None: ...
@@ -965,9 +971,6 @@ class QHBoxLayout:
     The <code>QHBoxLayout</code> class lines up widgets horizontally. If the widgets do not fit
     in the window, the layout will automatically wrap or resize them. For a vertical
     layout, use [`QVBoxLayout`](QVBoxLayout.md).
-
-    Args:
-        parent (PySide6.QtWidgets.QWidget): Parent widget
     <hr>
 
     <h3>Methods</h3>
@@ -1025,9 +1028,6 @@ class QVBoxLayout:
     in the window, the layout will automatically wrap or resize them. For a horizontal
     layout, see [`QHBoxLayout`](QHBoxLayout.md).
 
-    Args:
-        parent (PySide6.QtWidgets.QWidget): Parent widget.
-
     <hr>
 
 
@@ -1084,9 +1084,6 @@ class QFormLayout:
     contains labels, and the right column contains widgets. This layout can also be achieved using
     [`QGridLayout`](QGridLayout.md) but `QFormLayout` provides a more convenient way to create
     form-like layouts.
-
-    Args:
-        parent (PySide6.QtWidgets.QWidget): The parent widget.
 
     <hr>
 
@@ -1313,9 +1310,6 @@ class QGridLayout:
     The `QGridLayout` class lays out widgets in a grid, which has a variable number of rows and columns. The grid layout is used
     to create a more complex layout than the [`QHBoxLayout`](QHBoxLayout.md) and [`QVBoxLayout`](QVBoxLayout.md) classes,
     which only allow for horizontal and vertical layouts, respectively.
-
-    Args:
-        parent (PySide6.QtWidgets.QLayout): The parent layout.
 
     <hr>
 
@@ -1814,6 +1808,9 @@ class QCheckBox:
     can be enabled or disabled without affecting others. By default, a checkbox
     is unchecked.
 
+    Args:
+        text (str): The text to display next to the checkbox.
+
     <hr>
 
     <h3>Signal</h3>
@@ -1825,6 +1822,8 @@ class QCheckBox:
     <ul>
         <li><a href="#code.QtWidgets.QCheckBox.IsChecked"><code>IsChecked</code></a></li>
         <li><a href="#code.QtWidgets.QCheckBox.setChecked"><code>setChecked</code></a></li>
+        <li><a href="#code.QtWidgets.QCheckBox.setText"><code>setText</code></a></li>
+        <li><a href="#code.QtWidgets.QCheckBox.text"><code>text</code></a></li>
     </ul>
 
     <br>
@@ -1847,6 +1846,8 @@ class QCheckBox:
     <br>
     """
 
+    def __init__(self, text: str = None) -> None: ...
+
     def IsChecked() -> bool:
         """
         Returns True if the checkbox is checked; otherwise returns False.
@@ -1865,15 +1866,31 @@ class QCheckBox:
         Args:
             checked (bool): True to check the checkbox; otherwise False.
         <br>
-        <br>
         """
 
     # stateChanged             : ClassVar[Signal] = ... # stateChanged(int)
 
     # @overload
     # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    # @overload
-    # def __init__(self, text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+
+    def setText(self, text: str) -> None:
+        """
+        Set the text to display next to the checkbox.
+
+        Args:
+            text (str): The text to display next to the checkbox.
+        <br>
+        """
+
+    def text(self) -> str:
+        """
+        Get the text displayed next to the checkbox.
+
+        Returns:
+            str: The text displayed next to the checkbox.
+        <br>
+        <br>
+        """
 
     # def checkState(self) -> PySide6.QtCore.Qt.CheckState: ...
     # def checkStateSet(self) -> None: ...
@@ -1898,6 +1915,9 @@ class QLabel:
     <code>QLabel</code> is used for displaying text or an image. No user interaction
     functionality is provided.
 
+    Args:
+        text (str): The text to display.
+
     <hr>
 
 
@@ -1914,11 +1934,15 @@ class QLabel:
     **Examples**
         <hr>
         ``` py
-        label = QtWidgets.QLabel()
-        label.setText("Hello World!")
+        label = QtWidgets.QLabel("Hello World!")
         print(label.text())
         ```
         ```'Hello World!'```
+        ``` py
+        label.setText("Goodbye World!")
+        print(label.text())
+        ```
+        ```'Goodbye World!'```
         <hr>
 
     <br>
@@ -1929,8 +1953,8 @@ class QLabel:
 
     # @overload
     # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ..., f: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
-    # @overload
-    # def __init__(self, text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ..., f: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
+
+    def __init__(self, text: str = None) -> None: ...
 
     # def alignment(self) -> PySide6.QtCore.Qt.AlignmentFlag: ...
     # def buddy(self) -> PySide6.QtWidgets.QWidget: ...
@@ -2573,6 +2597,9 @@ class QPushButton:
     to perform some action, or to answer a question. Typical buttons are OK, Apply,
     Cancel, Close, Yes, No and Help.
 
+    args:
+        text (str): The text to display on the button.
+
     <hr>
 
     <h3>Signals</h3>
@@ -2591,11 +2618,15 @@ class QPushButton:
     **Examples**
         <hr>
         ``` py
-        button = QtWidgets.QPushButton()
-        button.setText("Click me!")
+        button = QtWidgets.QPushButton("Click me!")
         print(button.text())
         ```
         ```'Click me!'```
+        ``` py
+        button.setText("Don't click me!")
+        print(button.text())
+        ```
+        ```'Don't click me!'```
         <hr>
 
     <br>
@@ -2626,8 +2657,8 @@ class QPushButton:
     # def __init__(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
     # @overload
     # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    # @overload
-    # def __init__(self, text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+
+    def __init__(self, text: str = None) -> None: ...
 
     # def autoDefault(self) -> bool: ...
     # def event(self, e: PySide6.QtCore.QEvent) -> bool: ...
