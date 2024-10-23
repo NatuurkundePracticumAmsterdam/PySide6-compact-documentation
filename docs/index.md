@@ -14,7 +14,8 @@ hide:
 }
 </style>
 <p class="large-text" style="padding-left: 100px; padding-right: 100px;"> 
-  Welcome to the <strong>PySide6 Compact Documentation</strong>. This guide is designed for beginners and aims to provide clear and explanatory information about PySide6, the official Python module from the Qt for Python project. <br> </br>
+  Welcome to the <strong>PySide6 Compact Documentation</strong>! This guide is designed for beginners and aims to provide clear and explanatory information about the PySide6 Python package. <br> </br> 
+  PySide6 is derived from the <a href = https://doc.qt.io/qt-6/index.html> C++ library Qt </a>, a well-known framework for building graphical user interfaces.
 
 </center>
 <style type="text/css">
