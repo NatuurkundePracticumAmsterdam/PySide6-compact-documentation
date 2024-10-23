@@ -59,7 +59,7 @@ ul li::marker {
 <div class="grid-container">
   <div class="column">
     <h2>Getting Started &#128640;</h2>
-    <p class="font-item">To get started, you can <a href="Installation_Guide">install </a> PySide6 and follow the <a href="Tutorial">tutorial</a>.</p>
+    <p class="font-item">To get started, you can <a href="Installation_Guide">install </a> PySide6 and follow the <a href="Tutorial">tutorial</a>. <br> </br></p>
   </div>
   <div class="column">
     <h2>Compact Documentation 📄</h2>
