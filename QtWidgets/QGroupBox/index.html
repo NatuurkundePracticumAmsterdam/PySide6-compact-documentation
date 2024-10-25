@@ -84,8 +84,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PySide6 Compact Documentation" class="md-header__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -264,8 +263,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PySide6 Compact Documentation" class="md-nav__button md-logo" aria-label="PySide6 Compact Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../logo.svg" alt="logo">
 
     </a>
     PySide6 Compact Documentation
@@ -852,6 +850,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#code.QtWidgets.QGroupBox.setTitle" class="md-nav__link">
+    <span class="md-ellipsis">
+      setTitle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code.QtWidgets.QGroupBox.title" class="md-nav__link">
+    <span class="md-ellipsis">
+      title
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -873,6 +889,48 @@
   
   <span class="md-ellipsis">
     QTextEdit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QLineEdit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    QLineEdit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QFileDialog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    QFileDialog
   </span>
   
 
@@ -1058,6 +1116,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#code.QtWidgets.QGroupBox.setTitle" class="md-nav__link">
+    <span class="md-ellipsis">
+      setTitle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code.QtWidgets.QGroupBox.title" class="md-nav__link">
+    <span class="md-ellipsis">
+      title
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1083,8 +1159,172 @@
     <div class="doc doc-contents first">
 
 
-        <p><em>summary</em></p>
+        <hr>
 
+<p><img alt="" src="../layouts/group_box.png" /></p>
+<p><code>QGroupBox</code> is a widget that groups other widgets together. It provides a title and a frame around the widgets it contains.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>title</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The title of the group box.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <hr>
+
+<h3>Signals</h3>
+<ul>
+    <li><code>clicked</code>: Emitted when the group box is clicked.</li>
+</ul>
+
+<h3>Methods</h3>
+<ul>
+    <li><a href="#code.QtWidgets.QGroupBox.setTitle"><code>setTitle</code></a></li>
+    <li><a href="#code.QtWidgets.QGroupBox.title"><code>title</code></a></li>
+</ul>
+
+<p><br></p>
+<p><strong>Examples</strong>
+    <hr>
+    <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">group_box</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QGroupBox</span><span class="p">(</span><span class="s2">&quot;Group Box&quot;</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">layout</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QVBoxLayout</span><span class="p">()</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;Button 1&quot;</span><span class="p">))</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;Button 2&quot;</span><span class="p">))</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">group_box</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+</span></code></pre></div>
+    Running the above code will create a group box with the title "Group Box" and two buttons aligned vertically inside it.
+    Note that the layout is set using the <code>setLayout</code> method from the parent <a href="../QWidget/"><code>QWidget</code></a> class.
+    <hr></p>
+<p><br></p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="code.QtWidgets.QGroupBox.setTitle" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">setTitle</span><span class="p">(</span><span class="n">title</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Set the title of the group box.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>title</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The title of the group box.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p><br></p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="code.QtWidgets.QGroupBox.title" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">title</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the title of the group box.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>str</code></td>            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The title of the group box.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p><br>
+<br></p>
+
+    </div>
+
+</div>
+
+
+
+  </div>
 
     </div>
 
