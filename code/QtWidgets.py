@@ -1709,6 +1709,7 @@ class QTextEdit:
         <li><a href="#code.QtWidgets.QTextEdit.setFontItalic"><code>setFontItalic</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.setFontUnderline"><code>setFontUnderline</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.setFontWeight"><code>setFontWeight</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setFontPointSize"><code>setFontPointSize</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.setText"><code>setText</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.setHtml"><code>toHtml</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.setMarkdown"><code>setMarkdown</code></a></li>
@@ -1724,21 +1725,25 @@ class QTextEdit:
     **Examples**
     <hr>
     ``` py
-    foo = Foo(42)
-    foo.bar(10, 3.14)
-    foo.baz()
+    text_edit = QtWidgets.QTextEdit()
+    text_edit.setHtml("<b>Hello, World!</b>")
+
+    print(text_edit.toPlainText())
+    print(text_edit.toHtml())
     ```
-    This is the description of the example above. The example does absolutely nothing.
-
-    <br>
-
+    `Hello, World!` <br>
+    `<b>Hello, World!</b>`
     ``` py
-    foo = Foo(5)
-    foo.baz()
-    ```
-    This is the description of the example above. The example also does absolutely nothing.
-    <hr>
+    text_edit.setMarkdown("**Hello, World!**")
 
+    print(text_edit.toPlainText())
+    print(text_edit.Markdown())
+    ```
+    `Hello, World!` <br>
+    `**Hello, World!**` <br> <br>
+    The above code shows how to set the text of a `QTextEdit` widget using HTML and Markdown and how to get the text in plain text, HTML, and Markdown formats.
+
+    <hr>
     <br>
     """
 
@@ -1790,6 +1795,7 @@ class QTextEdit:
 
         Args:
             text (str): The text to append.
+
         <br>
         """
 
@@ -1959,7 +1965,16 @@ class QTextEdit:
         <br>
         """
 
-    # def setFontPointSize(self, s: float) -> None: ...
+    def setFontPointSize(self, s: float) -> None:
+        """
+        Set the font size of the text edit. All text added to the text edit after a call with a specific size will be displayed with that size.
+
+        Args:
+            s (float): The font size to set.
+
+        <br>
+        """
+
     def setFontUnderline(self, b: bool) -> None:
         """
         Set the underline font style of the text edit. All text added to the text edit after a call with `True` will be displayed with an underline.
@@ -1970,24 +1985,74 @@ class QTextEdit:
         <br>
         """
 
-    def setFontWeight(self, w: int) -> None: ...
-    def setHtml(self, text: str) -> None: ...
+    def setFontWeight(self, w: int) -> None:
+        """
+        Set the font weight of the text edit. Font weight is a numerical value that determines the thickness of the characters in the text edit.
+        All text added to the text edit after a call with a specific weight will be displayed with that weight.
+
+        Args:
+            w (int): The font weight to set.
+
+        <br>
+        """
+
+    def setHtml(self, text: str) -> None:
+        """
+        Set the text edit contents to the specified HTML text.
+
+        Args:
+            text (str): The HTML text to set.
+
+        <br>
+        """
 
     # def setLineWrapColumnOrWidth(self, w: int) -> None: ...
     # def setLineWrapMode(
     #     self, mode: PySide6.QtWidgets.QTextEdit.LineWrapMode
     # ) -> None: ...
-    def setMarkdown(self, markdown: str) -> None: ...
+    def setMarkdown(self, markdown: str) -> None:
+        """
+        Set the text edit contents to the specified Markdown text.
+
+        Args:
+            markdown (str): The Markdown text to set.
+
+        <br>
+        """
 
     # def setOverwriteMode(self, overwrite: bool) -> None: ...
-    def setPlaceholderText(self, placeholderText: str) -> None: ...
+    def setPlaceholderText(self, placeholderText: str) -> None:
+        """
+        Set the placeholder text of the text edit. Placeholder text is grayed out and displayed when the text edit is empty.
+
+        Args:
+            placeholderText (str): The placeholder text to set.
+
+        <br>
+        """
 
     # def setPlainText(self, text: str) -> None: ...
-    def setReadOnly(self, ro: bool) -> None: ...
+    def setReadOnly(self, ro: bool) -> None:
+        """
+        Set whether the text edit is read-only. If the text edit is read-only, the user cannot edit the text.
+
+        Args:
+            ro (bool): True to set the text edit to read-only, False otherwise.
+
+        <br>
+        """
 
     # def setTabChangesFocus(self, b: bool) -> None: ...
     # def setTabStopDistance(self, distance: float) -> None: ...
-    def setText(self, text: str) -> None: ...
+    def setText(self, text: str) -> None:
+        """
+        Set the contents of the text edit to the specified text. The text is displayed as plain text.
+
+        Args:
+            text (str): The text to set.
+
+        <br>
+        """
 
     # def setTextBackgroundColor(
     #     self,
@@ -2025,19 +2090,66 @@ class QTextEdit:
     # def textCursor(self) -> PySide6.QtGui.QTextCursor: ...
     # def textInteractionFlags(self) -> PySide6.QtCore.Qt.TextInteractionFlag: ...
     # def timerEvent(self, e: PySide6.QtCore.QTimerEvent) -> None: ...
-    def toHtml(self) -> str: ...
-    def toMarkdown(
-        self, features: PySide6.QtGui.QTextDocument.MarkdownFeature = ...
-    ) -> str: ...
-    def toPlainText(self) -> str: ...
-    def undo(self) -> None: ...
+    def toHtml(self) -> str:
+        """
+        Get the text edit contents as HTML text.
+
+        Returns:
+            str: The text edit contents as HTML text.
+
+        <br>
+        """
+
+    def toMarkdown(self) -> str:
+        """
+        Get the text edit contents as Markdown text.
+
+        Returns:
+            str: The text edit contents as Markdown text.
+
+        <br>
+        """
+
+    def toPlainText(self) -> str:
+        """
+        Get the text edit contents as plain text. For example if the text edit contains the HTML text `<b>bold</b>`, the returned text will be `bold`.
+
+        Returns:
+            str: The text edit contents as plain text.
+
+        <br>
+        """
+
+    def undo(self) -> None:
+        """
+        Undo the last operation in the text edit.
+
+        <br>
+        """
 
     # def wheelEvent(self, e: PySide6.QtGui.QWheelEvent) -> None: ...
     # def wordWrapMode(self) -> PySide6.QtGui.QTextOption.WrapMode: ...
-    def zoomIn(self, range: int = ...) -> None: ...
+    def zoomIn(self, r: int) -> None:
+        """
+        Zoom in the text edit by the specified range.
+
+        Args:
+            r (int): The range to zoom in by.
+
+        <br>
+        """
 
     # def zoomInF(self, range: float) -> None: ...
-    def zoomOut(self, range: int = ...) -> None: ...
+    def zoomOut(self, r: int) -> None:
+        """
+        Zoom out the text edit by the specified range.
+
+        Args:
+            r (int): The range to zoom out by.
+
+        <br>
+        <br>
+        """
 
 
 class QCheckBox:
@@ -3052,7 +3164,7 @@ class QLineEdit:
     #     def changeEvent(self, arg__1: PySide6.QtCore.QEvent) -> None: ...
     def clear(self) -> None:
         """
-        Clears the text in the line edit.
+        Clear the text in the line edit.
 
         <br>
         """
@@ -3061,7 +3173,7 @@ class QLineEdit:
     #     def contextMenuEvent(self, arg__1: PySide6.QtGui.QContextMenuEvent) -> None: ...
     def copy(self) -> None:
         """
-        Copies the selected text to the clipboard.
+        Copy the selected text in the line edit to the clipboard.
 
         <br>
         """
@@ -3077,7 +3189,7 @@ class QLineEdit:
     #     def cursorWordForward(self, mark: bool) -> None: ...
     def cut(self) -> None:
         """
-        Cuts the selected text to the clipboard.
+        Cut the selected text in the line edit to the clipboard.
 
         <br>
         """
@@ -3164,7 +3276,7 @@ class QLineEdit:
 
     def redo(self) -> None:
         """
-        Redo the last operation.
+        Redo the last operation in the line edit.
 
         <br>
         """
@@ -3195,7 +3307,7 @@ class QLineEdit:
     #     def setModified(self, arg__1: bool) -> None: ...
     def setPlaceholderText(self, text: str) -> None:
         """
-        Set the placeholder text displayed in the line edit when it is empty.
+        Set the placeholder text displayed in the line edit when it is empty. The placeholder text is displayed in gray.
 
         Args:
             text (str): The placeholder text.
@@ -3204,7 +3316,7 @@ class QLineEdit:
 
     def setReadOnly(self, read_only: bool) -> None:
         """
-        Set the line edit to read-only.
+        Set the line edit to read-only. If the line edit is read-only, the user cannot edit the text.
 
         Args:
             read_only: True to set the line edit to read-only, False otherwise.
@@ -3214,7 +3326,7 @@ class QLineEdit:
     #     def setSelection(self, arg__1: int, arg__2: int) -> None: ...
     def setText(self, text: str) -> None:
         """
-        Set the text in the line edit.
+        Set the content of the line edit to the specified text.
 
         Args:
             text (str): The text to set in the line edit.
@@ -3234,15 +3346,16 @@ class QLineEdit:
         Returns:
             The text in the line edit.
         <br>
-        <br>
         """
 
     #     def textMargins(self) -> PySide6.QtCore.QMargins: ...
     #     def timerEvent(self, arg__1: PySide6.QtCore.QTimerEvent) -> None: ...
     def undo(self) -> None:
         """
-        Undo the last operation.
+        Undo the last operation in the line edit.
 
+        <br>
+        <br>
         """
 
 

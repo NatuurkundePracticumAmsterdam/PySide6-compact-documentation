@@ -43,14 +43,14 @@ In this API Reference we will cover relevant classes and functions which are par
     - [`QMainWindow`](QMainWindow.md): Provides a framework for building an application's user interface.
     - [`QGroupBox`](QGroupBox.md): Provides a frame, a title on top, and can display various other widgets inside itself.
     - [`QTextEdit`](QTextEdit.md): Displays text and allows the user to edit it.
+    - [`QLineEdit`](QLineEdit.md): A widget that allows the user to enter and edit a single line of plain text.
+    - [`QFileDialog`](QFileDialog.md): Provides a dialog that allows the user to select files or directories.
     - [`QCheckBox`](QCheckBox.md): Toggle button with a checkbox indicator.  
     - [`QLabel`](QLabel.md): A widget that displays text.
     - [`QComboBox`](QComboBox.md): A widget that allows the user to choose from a list of options. 
     - [`QSpinBox`](QSpinBox.md): A widget that allows the user to choose a number from a range.
     - [`QDoubleSpinBox`](QDoubleSpinBox.md): A widget that allows the user to choose a floating-point number from a range.
     - [`QPushButton`](QPushButton.md): A push button that can be clicked by the user.
-    - [`QLineEdit`](QLineEdit.md): A widget that allows the user to enter and edit a single line of plain text.
-    - [`QFileDialog`](QFileDialog.md): Provides a dialog that allows the user to select files or directories.
 
 <br>
 <br>

@@ -27,7 +27,6 @@ class UserInterface(QtWidgets.QMainWindow):
         combo_box_label = QtWidgets.QLabel("Choose an option")
 
         self.text_edit = QtWidgets.QTextEdit()
-        self.text_edit.setPlaceholderText("Enter some text here")
         self.text_edit.setMarkdown(
             "## Tutorial \n You can use markdown in this text edit: \n``` py\nprint('Hello, PySide6!')\n``` "
         )
@@ -51,7 +50,7 @@ class UserInterface(QtWidgets.QMainWindow):
     @Slot()
     def zoom(self):
         self.text_edit.zoomIn(2)
-        print(self.text_edit.toMarkdown())
+        print(self.text_edit.toPlainText())
         self.text_edit.toMarkdown()
 
 

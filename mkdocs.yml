@@ -76,12 +76,13 @@ nav:
       - QtWidgets/QMainWindow.md
       - QtWidgets/QGroupBox.md
       - QtWidgets/QTextEdit.md
+      - QtWidgets/QLineEdit.md
+      - QtWidgets/QFileDialog.md
       - QtWidgets/QCheckBox.md
       - QtWidgets/QLabel.md
       - QtWidgets/QComboBox.md
       - QtWidgets/QSpinBox.md
       - QtWidgets/QDoubleSpinBox.md
       - QtWidgets/QPushButton.md
-      - QtWidgets/QLineEdit.md
-      - QtWidgets/QFileDialog.md
+      
   
