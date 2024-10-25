@@ -35,6 +35,9 @@ class QWidget:
 
     The `QWidget` class is the base class of all user interface objects in PySide6.QtWidgets.
 
+    Args:
+        parent (PySide6.QtWidgets.QWidget): The parent widget of this widget.
+
     <hr>
 
     <h3>Methods</h3>
@@ -104,7 +107,7 @@ class QWidget:
     #         DrawChildren             : QWidget.RenderFlag = ... # 0x2
     #         IgnoreMask               : QWidget.RenderFlag = ... # 0x4
 
-    #     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ..., f: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
+    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
     #     def acceptDrops(self) -> bool: ...
     #     def accessibleDescription(self) -> str: ...
@@ -514,7 +517,10 @@ class QLayout:
     """
     <hr>
 
-    QLayout is the base class of all layout objects in PySide6.QtWidgets.
+    `QLayout` is the base class of all layout objects in PySide6.QtWidgets.
+
+    Args:
+        parent (PySide6.QtWidgets.QWidget): The parent widget of the layout.
 
     <hr>
 
@@ -556,7 +562,7 @@ class QLayout:
     #         SetMaximumSize           : QLayout.SizeConstraint = ... # 0x4
     #         SetMinAndMaxSize         : QLayout.SizeConstraint = ... # 0x5
 
-    #     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
 
     #     def activate(self) -> bool: ...
     #     def addChildLayout(self, l: PySide6.QtWidgets.QLayout) -> None: ...
@@ -965,9 +971,6 @@ class QHBoxLayout:
     The <code>QHBoxLayout</code> class lines up widgets horizontally. If the widgets do not fit
     in the window, the layout will automatically wrap or resize them. For a vertical
     layout, use [`QVBoxLayout`](QVBoxLayout.md).
-
-    Args:
-        parent (PySide6.QtWidgets.QWidget): Parent widget
     <hr>
 
     <h3>Methods</h3>
@@ -1025,9 +1028,6 @@ class QVBoxLayout:
     in the window, the layout will automatically wrap or resize them. For a horizontal
     layout, see [`QHBoxLayout`](QHBoxLayout.md).
 
-    Args:
-        parent (PySide6.QtWidgets.QWidget): Parent widget.
-
     <hr>
 
 
@@ -1078,54 +1078,101 @@ class QVBoxLayout:
 
 
 class QFormLayout:
-    """_summary_"""
+    """
+    <hr>
 
-    class FieldGrowthPolicy(enum.Enum):
+    ![](layouts/form_layout.png)
 
-        FieldsStayAtSizeHint: QFormLayout.FieldGrowthPolicy = ...  # 0x0
-        ExpandingFieldsGrow: QFormLayout.FieldGrowthPolicy = ...  # 0x1
-        AllNonFixedFieldsGrow: QFormLayout.FieldGrowthPolicy = ...  # 0x2
+    `QFormLayout` is a layout manager that arranges widgets in a two-column layout. The left column
+    contains labels, and the right column contains widgets. This layout can also be achieved using
+    [`QGridLayout`](QGridLayout.md) but `QFormLayout` provides a more convenient way to create
+    form-like layouts.
 
-    class ItemRole(enum.Enum):
+    <hr>
 
-        LabelRole: QFormLayout.ItemRole = ...  # 0x0
-        FieldRole: QFormLayout.ItemRole = ...  # 0x1
-        SpanningRole: QFormLayout.ItemRole = ...  # 0x2
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#code.QtWidgets.QFormLayout.addRow"><code>addRow</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.horizontalSpacing"><code>horizontalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.sethorizontalSpacing"><code>setHorizontalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.verticalSpacing"><code>verticalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.setVerticalSpacing"><code>setVerticalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.removeRow"><code>removeRow</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.rowCount"><code>rowCount</code></a></li>
+    </ul>
 
-    class RowWrapPolicy(enum.Enum):
+    <br>
 
-        DontWrapRows: QFormLayout.RowWrapPolicy = ...  # 0x0
-        WrapLongRows: QFormLayout.RowWrapPolicy = ...  # 0x1
-        WrapAllRows: QFormLayout.RowWrapPolicy = ...  # 0x2
+    **Examples**
+    <hr>
+    ``` py
+    layout = QtWidgets.QFormLayout()
+    label = QtWidgets.QLabel("Name:")
+    line_edit = QtWidgets.QLineEdit()
+    layout.addRow(label, line_edit)
 
-    class TakeRowResult(Shiboken.Object):
-        @overload
-        def __init__(self) -> None: ...
-        @overload
-        def __init__(
-            self, TakeRowResult: PySide6.QtWidgets.QFormLayout.TakeRowResult
-        ) -> None: ...
-        @staticmethod
-        def __copy__() -> None: ...
+    print(layout.rowCount())
+    ```
+    `1`
+    ```py
+    spin_box = QtWidgets.QSpinBox()
+    layout.addRow("age", spinbox)
 
-    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    def addItem(self, item: PySide6.QtWidgets.QLayoutItem) -> None: ...
-    @overload
+    layout.removeRow(0)
+    print(layout.rowCount())
+    ```
+    `1`
+    <hr>
+    <br>
+
+    """
+
+    # class FieldGrowthPolicy(enum.Enum):
+
+    #     FieldsStayAtSizeHint: QFormLayout.FieldGrowthPolicy = ...  # 0x0
+    #     ExpandingFieldsGrow: QFormLayout.FieldGrowthPolicy = ...  # 0x1
+    #     AllNonFixedFieldsGrow: QFormLayout.FieldGrowthPolicy = ...  # 0x2
+
+    # class ItemRole(enum.Enum):
+
+    #     LabelRole: QFormLayout.ItemRole = ...  # 0x0
+    #     FieldRole: QFormLayout.ItemRole = ...  # 0x1
+    #     SpanningRole: QFormLayout.ItemRole = ...  # 0x2
+
+    # class RowWrapPolicy(enum.Enum):
+
+    #     DontWrapRows: QFormLayout.RowWrapPolicy = ...  # 0x0
+    #     WrapLongRows: QFormLayout.RowWrapPolicy = ...  # 0x1
+    #     WrapAllRows: QFormLayout.RowWrapPolicy = ...  # 0x2
+
+    # class TakeRowResult(Shiboken.Object):
+    #     @overload
+    #     def __init__(self) -> None: ...
+    #     @overload
+    #     def __init__(
+    #         self, TakeRowResult: PySide6.QtWidgets.QFormLayout.TakeRowResult
+    #     ) -> None: ...
+    #     @staticmethod
+    #     def __copy__() -> None: ...
+
+    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = None) -> None: ...
+
+    # def addItem(self, item: PySide6.QtWidgets.QLayoutItem) -> None: ...
     def addRow(
-        self, label: PySide6.QtWidgets.QWidget, field: PySide6.QtWidgets.QLayout
-    ) -> None: ...
-    @overload
-    def addRow(
-        self, label: PySide6.QtWidgets.QWidget, field: PySide6.QtWidgets.QWidget
-    ) -> None: ...
-    @overload
-    def addRow(self, labelText: str, field: PySide6.QtWidgets.QLayout) -> None: ...
-    @overload
-    def addRow(self, labelText: str, field: PySide6.QtWidgets.QWidget) -> None: ...
-    @overload
-    def addRow(self, layout: PySide6.QtWidgets.QLayout) -> None: ...
-    @overload
-    def addRow(self, widget: PySide6.QtWidgets.QWidget) -> None: ...
+        self,
+        label: PySide6.QtWidgets.QWidget | str,
+        field: PySide6.QtWidgets.QLayout | PySide6.QtWidgets.QWidget,
+    ) -> None:
+        """
+        Add a row to the form layout with a label and a field. The label can be a string or a widget.
+        The field can be a widget or a layout.
+
+        Args:
+            label (PySide6.QtWidgets.QWidget | str): The label for the field.
+            field (PySide6.QtWidgets.QLayout | PySide6.QtWidgets.QWidget): The field to add.
+
+        <br>
+        """
 
     # def count(self) -> int: ...
     # def expandingDirections(self) -> PySide6.QtCore.Qt.Orientation: ...
@@ -1136,7 +1183,16 @@ class QFormLayout:
     # def getWidgetPosition(self, widget: PySide6.QtWidgets.QWidget) -> object: ...
     # def hasHeightForWidth(self) -> bool: ...
     # def heightForWidth(self, width: int) -> int: ...
-    # def horizontalSpacing(self) -> int: ...
+    def horizontalSpacing(self) -> int:
+        """
+        Get the horizontal spacing between the items in the layout.
+
+        Returns:
+            The horizontal spacing between the items in the layout.
+
+        <br>
+        """
+
     # @overload
     # def insertRow(self, row: int, label: PySide6.QtWidgets.QWidget, field: PySide6.QtWidgets.QLayout) -> None: ...
     # @overload
@@ -1167,17 +1223,47 @@ class QFormLayout:
     # def labelForField(self, field: PySide6.QtWidgets.QWidget) -> PySide6.QtWidgets.QWidget: ...
     # def minimumSize(self) -> PySide6.QtCore.QSize: ...
     # @overload
-    # def removeRow(self, layout: PySide6.QtWidgets.QLayout) -> None: ...
+    def removeRow(
+        self, row: int | PySide6.QtWidgets.QWidget | PySide6.QtWidgets.QLayout
+    ) -> None:
+        """
+        Remove the row from the layout. The row can be specified by the row number, the widget, or the layout.
+
+        Args:
+            row (int | PySide6.QtWidgets.QWidget | PySide6.QtWidgets.QLayout): The row to remove.
+
+        <br>
+        """
+
     # @overload
     # def removeRow(self, row: int) -> None: ...
     # @overload
     # def removeRow(self, widget: PySide6.QtWidgets.QWidget) -> None: ...
-    # def rowCount(self) -> int: ...
+
+    def rowCount(self) -> int:
+        """
+        Get the number of rows in the layout.
+
+        Returns:
+            The number of rows in the layout.
+
+        <br>
+        """
+
     # def rowWrapPolicy(self) -> PySide6.QtWidgets.QFormLayout.RowWrapPolicy: ...
     # def setFieldGrowthPolicy(self, policy: PySide6.QtWidgets.QFormLayout.FieldGrowthPolicy) -> None: ...
     # def setFormAlignment(self, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
     # def setGeometry(self, rect: PySide6.QtCore.QRect) -> None: ...
-    # def setHorizontalSpacing(self, spacing: int) -> None: ...
+    def setHorizontalSpacing(self, spacing: int) -> None:
+        """
+        Set the horizontal spacing between the items in the layout.
+
+        Args:
+            spacing (int): The horizontal spacing between the items in the layout.
+
+        <br>
+        """
+
     # def setItem(self, row: int, role: PySide6.QtWidgets.QFormLayout.ItemRole, item: PySide6.QtWidgets.QLayoutItem) -> None: ...
     # def setLabelAlignment(self, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
     # def setLayout(self, row: int, role: PySide6.QtWidgets.QFormLayout.ItemRole, layout: PySide6.QtWidgets.QLayout) -> None: ...
@@ -1189,7 +1275,16 @@ class QFormLayout:
     # def setRowVisible(self, widget: PySide6.QtWidgets.QWidget, on: bool) -> None: ...
     # def setRowWrapPolicy(self, policy: PySide6.QtWidgets.QFormLayout.RowWrapPolicy) -> None: ...
     # def setSpacing(self, arg__1: int) -> None: ...
-    # def setVerticalSpacing(self, spacing: int) -> None: ...
+    def setVerticalSpacing(self, spacing: int) -> None:
+        """
+        Set the vertical spacing between the items in the layout.
+
+        Args:
+            spacing (int): The vertical spacing between the items in the layout.
+
+        <br>
+        """
+
     # def setWidget(self, row: int, role: PySide6.QtWidgets.QFormLayout.ItemRole, widget: PySide6.QtWidgets.QWidget) -> None: ...
     # def sizeHint(self) -> PySide6.QtCore.QSize: ...
     # def spacing(self) -> int: ...
@@ -1200,18 +1295,27 @@ class QFormLayout:
     # def takeRow(self, row: int) -> PySide6.QtWidgets.QFormLayout.TakeRowResult: ...
     # @overload
     # def takeRow(self, widget: PySide6.QtWidgets.QWidget) -> PySide6.QtWidgets.QFormLayout.TakeRowResult: ...
-    # def verticalSpacing(self) -> int: ...
+    def verticalSpacing(self) -> int:
+        """
+        Get the vertical spacing between the items in the layout.
+
+        Returns:
+            The vertical spacing between the items in the layout.
+
+        <br>
+        <br>
+        """
 
 
 class QGridLayout:
     """
     <hr>
+
+    ![](layouts/grid_layout.png)
+
     The `QGridLayout` class lays out widgets in a grid, which has a variable number of rows and columns. The grid layout is used
     to create a more complex layout than the [`QHBoxLayout`](QHBoxLayout.md) and [`QVBoxLayout`](QVBoxLayout.md) classes,
     which only allow for horizontal and vertical layouts, respectively.
-
-    Args:
-        parent (PySide6.QtWidgets.QLayout): The parent layout.
 
     <hr>
 
@@ -1223,8 +1327,16 @@ class QGridLayout:
         <li><a href="#code.QtWidgets.QGridLayout.rowCount"><code>rowCount</code></a></li>
         <li><a href="#code.QtWidgets.QGridLayout.setHorizontalSpacing"><code>setHorizontalSpacing</code></a></li>
         <li><a href="#code.QtWidgets.QGridLayout.setVerticalSpacing"><code>setVerticalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.setColumnMinimumWidth"><code>setColumnMinimumWidth</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.setRowMinimumHeight"><code>setRowMinimumHeight</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.setColumnStretch"><code>setColumnStretch</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.setRowStretch"><code>setRowStretch</code></a></li>
         <li><a href="#code.QtWidgets.QGridLayout.horizontalSpacing"><code>horizontalSpacing</code></a></li>
         <li><a href="#code.QtWidgets.QGridLayout.verticalSpacing"><code>verticalSpacing</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.columnMinimumWidth"><code>columnMinimumWidth</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.rowMinimumHeight"><code>rowMinimumHeight</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.columnStretch"><code>columnStretch</code></a></li>
+        <li><a href="#code.QtWidgets.QGridLayout.rowStretch"><code>rowStretch</code></a></li>
 
     </ul>
 
@@ -1239,7 +1351,7 @@ class QGridLayout:
 
     print(layout.horizontalSpacing(), layout.verticalSpacing())
     ```
-    `2 2`
+    `10 10`
     ```py
     layout.addWidget(QPushButton("Button 1"), 0, 0)
     layout.addWidget(QPushButton("Button 2"), 0, 1)
@@ -1248,7 +1360,7 @@ class QGridLayout:
 
     print(layout.columnCount(), layout.rowCount())
     ```
-    `10 10`
+    `2 2`
 
     <hr>
 
@@ -1306,8 +1418,31 @@ class QGridLayout:
         <br>
         """
 
-    #     def columnMinimumWidth(self, column: int) -> int: ...
-    #     def columnStretch(self, column: int) -> int: ...
+    def columnMinimumWidth(self, column: int) -> int:
+        """
+        Get the minimum width of the specified column in the grid layout.
+
+        Args:
+            column (int): The column to get the minimum width of.
+
+        Returns:
+            The minimum width of the specified column in the grid layout.
+
+        <br>
+        """
+
+    def columnStretch(self, column: int) -> int:
+        """
+        Get the stretch factor of the specified column in the grid layout.
+
+        Args:
+            column (int): The column to get the stretch factor of.
+
+        Returns:
+            int: The stretch factor of the specified column in the grid layout.
+        <br>
+        """
+
     #     def count(self) -> int: ...
     #     def expandingDirections(self) -> PySide6.QtCore.Qt.Orientation: ...
     #     def getItemPosition(self, idx: int) -> object: ...
@@ -1340,10 +1475,54 @@ class QGridLayout:
         <br>
         """
 
-    #     def rowMinimumHeight(self, row: int) -> int: ...
-    #     def rowStretch(self, row: int) -> int: ...
-    #     def setColumnMinimumWidth(self, column: int, minSize: int) -> None: ...
-    #     def setColumnStretch(self, column: int, stretch: int) -> None: ...
+    def rowMinimumHeight(self, row: int) -> int:
+        """
+        Get the minimum height of the specified row in the grid layout.
+
+        Args:
+            row (int): The row to get the minimum height of.
+
+        Returns:
+            int: The minimum height of the specified row in the grid layout.
+
+        <br>
+        """
+
+    def rowStretch(self, row: int) -> int:
+        """
+        Get the stretch factor of the specified row in the grid layout.
+
+        Args:
+            row (int): The row to get the stretch factor of.
+
+        Returns:
+            int: The stretch factor of the specified row in the grid layout.
+
+        <br>
+        """
+
+    def setColumnMinimumWidth(self, column: int, minSize: int) -> None:
+        """
+        Set the minimum width of the specified column in the grid layout.
+
+        Args:
+            column (int): The column to set the minimum width of.
+            minSize (int): The minimum width of the specified column.
+
+        <br>
+        """
+
+    def setColumnStretch(self, column: int, stretch: int) -> None:
+        """
+        Set the stretch factor of the specified column in the grid layout.
+
+        Args:
+            column (int): The column to set the stretch factor of.
+            stretch (int): The stretch factor of the specified column.
+
+        <br>
+        """
+
     #     def setDefaultPositioning(self, n: int, orient: PySide6.QtCore.Qt.Orientation) -> None: ...
     #     def setGeometry(self, arg__1: PySide6.QtCore.QRect) -> None: ...
     def setHorizontalSpacing(self, spacing: int) -> None:
@@ -1357,8 +1536,28 @@ class QGridLayout:
         """
 
     #     def setOriginCorner(self, arg__1: PySide6.QtCore.Qt.Corner) -> None: ...
-    #     def setRowMinimumHeight(self, row: int, minSize: int) -> None: ...
-    #     def setRowStretch(self, row: int, stretch: int) -> None: ...
+    def setRowMinimumHeight(self, row: int, minSize: int) -> None:
+        """
+        Set the minimum height of the specified row in the grid layout.
+
+        Args:
+            row (int): The row to set the minimum height of.
+            minSize (int): The minimum height of the specified row.
+
+        <br>
+        """
+
+    def setRowStretch(self, row: int, stretch: int) -> None:
+        """
+        Set the stretch factor of the specified row in the grid layout.
+
+        Args:
+            row (int): The row to set the stretch factor of.
+            stretch (int): The stretch factor of the specified row.
+
+        <br>
+        """
+
     #     def setSpacing(self, spacing: int) -> None:
 
     def setVerticalSpacing(self, spacing: int) -> None:
@@ -1386,7 +1585,48 @@ class QGridLayout:
 
 
 class QGroupBox:
-    """_summary_"""
+    """
+    <hr>
+
+    ![](layouts/group_box.png)
+
+    `QGroupBox` is a widget that groups other widgets together. It provides a title and a frame around the widgets it contains.
+
+    Args:
+        title (str): The title of the group box.
+
+    <hr>
+
+    <h3>Signals</h3>
+    <ul>
+        <li><code>clicked</code>: Emitted when the group box is clicked.</li>
+    </ul>
+
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#code.QtWidgets.QGroupBox.setTitle"><code>setTitle</code></a></li>
+        <li><a href="#code.QtWidgets.QGroupBox.title"><code>title</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+        <hr>
+        ``` py
+        group_box = QtWidgets.QGroupBox("Group Box")
+        layout = QtWidgets.QVBoxLayout()
+        layout.addWidget(QPushButton("Button 1"))
+        layout.addWidget(QPushButton("Button 2"))
+
+        group_box.setLayout(layout)
+        ```
+        Running the above code will create a group box with the title "Group Box" and two buttons aligned vertically inside it.
+        Note that the layout is set using the `setLayout` method from the parent [`QWidget`](QWidget.md) class.
+        <hr>
+
+    <br>
+    """
 
     ...
     # clicked                  : ClassVar[Signal] = ... # clicked()
@@ -1394,8 +1634,8 @@ class QGroupBox:
 
     # @overload
     # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    # @overload
-    # def __init__(self, title: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+
+    def __init__(self, title: str = None) -> None: ...
 
     # def alignment(self) -> PySide6.QtCore.Qt.AlignmentFlag: ...
     # def changeEvent(self, event: PySide6.QtCore.QEvent) -> None: ...
@@ -1416,228 +1656,500 @@ class QGroupBox:
     # def setCheckable(self, checkable: bool) -> None: ...
     # def setChecked(self, checked: bool) -> None: ...
     # def setFlat(self, flat: bool) -> None: ...
-    # def setTitle(self, title: str) -> None: ...
-    # def title(self) -> str: ...
+    def setTitle(self, title: str) -> None:
+        """
+        Set the title of the group box.
+
+        Args:
+            title (str): The title of the group box.
+
+        <br>
+        """
+
+    def title(self) -> str:
+        """
+        Get the title of the group box.
+
+        Returns:
+            str: The title of the group box.
+
+        <br>
+        <br>
+        """
 
 
 class QTextEdit:
-    """_summary_"""
+    """
+    <hr>
+    ![QTextEdit](buttons/text_edit.png)
 
-    copyAvailable: ClassVar[Signal] = ...  # copyAvailable(bool)
-    currentCharFormatChanged: ClassVar[Signal] = (
-        ...
-    )  # currentCharFormatChanged(QTextCharFormat)
+    `QTextEdit` is an advanced text editor that provides a rich text display and editing features.
+    It can be used to display and edit formatted text, such as HTML and Markdown.
+    <hr>
+
+    <h3>Signals</h3>
+    <ul>
+        <li><code>cursorPositionChanged</code>: Emitted when the cursor position changes.</li>
+        <li><code>textChanged</code>: Emitted when the text changes.</li>
+    </ul>
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#code.QtWidgets.QTextEdit.clear"><code>clear</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.copy"><code>copy</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.paste"><code>paste</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.redo"><code>redo</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.undo"><code>undo</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.cut"><code>cut</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.append"><code>append</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setPlaceholderText"><code>setPlaceholderText</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.placeholderText"><code>placeholderText</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setReadOnly"><code>setReadOnly</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.isReadOnly"><code>isReadOnly</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setFontItalic"><code>setFontItalic</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setFontUnderline"><code>setFontUnderline</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setFontWeight"><code>setFontWeight</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setFontPointSize"><code>setFontPointSize</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setText"><code>setText</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setHtml"><code>toHtml</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.setMarkdown"><code>setMarkdown</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.toPlainText"><code>toPlainText</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.toHtml"><code>toHtml</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.toMarkdown"><code>toMarkdown</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.zoomIn"><code>zoomIn</code></a></li>
+        <li><a href="#code.QtWidgets.QTextEdit.zoomOut"><code>zoomOut</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+    <hr>
+    ``` py
+    text_edit = QtWidgets.QTextEdit()
+    text_edit.setHtml("<b>Hello, World!</b>")
+
+    print(text_edit.toPlainText())
+    print(text_edit.toHtml())
+    ```
+    `Hello, World!` <br>
+    `<b>Hello, World!</b>`
+    ``` py
+    text_edit.setMarkdown("**Hello, World!**")
+
+    print(text_edit.toPlainText())
+    print(text_edit.Markdown())
+    ```
+    `Hello, World!` <br>
+    `**Hello, World!**` <br> <br>
+    The above code shows how to set the text of a `QTextEdit` widget using HTML and Markdown and how to get the text in plain text, HTML, and Markdown formats.
+
+    <hr>
+    <br>
+    """
+
+    # copyAvailable: ClassVar[Signal] = ...  # copyAvailable(bool)
+    # currentCharFormatChanged: ClassVar[Signal] = (
+    #    ...
+    # )  currentCharFormatChanged(QTextCharFormat)
     cursorPositionChanged: ClassVar[Signal] = ...  # cursorPositionChanged()
-    redoAvailable: ClassVar[Signal] = ...  # redoAvailable(bool)
-    selectionChanged: ClassVar[Signal] = ...  # selectionChanged()
+    # redoAvailable: ClassVar[Signal] = ...  # redoAvailable(bool)
+    # selectionChanged: ClassVar[Signal] = ...  # selectionChanged()
     textChanged: ClassVar[Signal] = ...  # textChanged()
-    undoAvailable: ClassVar[Signal] = ...  # undoAvailable(bool)
+    # undoAvailable: ClassVar[Signal] = ...  # undoAvailable(bool)
 
-    class AutoFormattingFlag(enum.Flag):
+    # class AutoFormattingFlag(enum.Flag):
 
-        AutoAll: QTextEdit.AutoFormattingFlag = ...  # -0x1
-        AutoNone: QTextEdit.AutoFormattingFlag = ...  # 0x0
-        AutoBulletList: QTextEdit.AutoFormattingFlag = ...  # 0x1
+    #     AutoAll: QTextEdit.AutoFormattingFlag = ...  # -0x1
+    #     AutoNone: QTextEdit.AutoFormattingFlag = ...  # 0x0
+    #     AutoBulletList: QTextEdit.AutoFormattingFlag = ...  # 0x1
 
-    class ExtraSelection(Shiboken.Object):
-        @overload
-        def __init__(self) -> None: ...
-        @overload
-        def __init__(
-            self, ExtraSelection: PySide6.QtWidgets.QTextEdit.ExtraSelection
-        ) -> None: ...
-        @staticmethod
-        def __copy__() -> None: ...
+    # class ExtraSelection(Shiboken.Object):
+    #     @overload
+    #     def __init__(self) -> None: ...
+    #     @overload
+    #     def __init__(
+    #         self, ExtraSelection: PySide6.QtWidgets.QTextEdit.ExtraSelection
+    #     ) -> None: ...
+    #     @staticmethod
+    #     def __copy__() -> None: ...
 
-    class LineWrapMode(enum.Enum):
+    # class LineWrapMode(enum.Enum):
 
-        NoWrap: QTextEdit.LineWrapMode = ...  # 0x0
-        WidgetWidth: QTextEdit.LineWrapMode = ...  # 0x1
-        FixedPixelWidth: QTextEdit.LineWrapMode = ...  # 0x2
-        FixedColumnWidth: QTextEdit.LineWrapMode = ...  # 0x3
+    #     NoWrap: QTextEdit.LineWrapMode = ...  # 0x0
+    #     WidgetWidth: QTextEdit.LineWrapMode = ...  # 0x1
+    #     FixedPixelWidth: QTextEdit.LineWrapMode = ...  # 0x2
+    #     FixedColumnWidth: QTextEdit.LineWrapMode = ...  # 0x3
 
-    @overload
-    def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    @overload
-    def __init__(
-        self, text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...
-    ) -> None: ...
-    def acceptRichText(self) -> bool: ...
-    def alignment(self) -> PySide6.QtCore.Qt.AlignmentFlag: ...
-    def anchorAt(self, pos: PySide6.QtCore.QPoint) -> str: ...
-    def append(self, text: str) -> None: ...
-    def autoFormatting(self) -> PySide6.QtWidgets.QTextEdit.AutoFormattingFlag: ...
-    def canInsertFromMimeData(self, source: PySide6.QtCore.QMimeData) -> bool: ...
-    def canPaste(self) -> bool: ...
-    def changeEvent(self, e: PySide6.QtCore.QEvent) -> None: ...
-    def clear(self) -> None: ...
-    def contextMenuEvent(self, e: PySide6.QtGui.QContextMenuEvent) -> None: ...
-    def copy(self) -> None: ...
-    def createMimeDataFromSelection(self) -> PySide6.QtCore.QMimeData: ...
-    @overload
-    def createStandardContextMenu(self) -> PySide6.QtWidgets.QMenu: ...
-    @overload
-    def createStandardContextMenu(
-        self, position: PySide6.QtCore.QPoint
-    ) -> PySide6.QtWidgets.QMenu: ...
-    def currentCharFormat(self) -> PySide6.QtGui.QTextCharFormat: ...
-    def currentFont(self) -> PySide6.QtGui.QFont: ...
-    def cursorForPosition(
-        self, pos: PySide6.QtCore.QPoint
-    ) -> PySide6.QtGui.QTextCursor: ...
-    @overload
-    def cursorRect(self) -> PySide6.QtCore.QRect: ...
-    @overload
-    def cursorRect(self, cursor: PySide6.QtGui.QTextCursor) -> PySide6.QtCore.QRect: ...
-    def cursorWidth(self) -> int: ...
-    def cut(self) -> None: ...
-    def doSetTextCursor(self, cursor: PySide6.QtGui.QTextCursor) -> None: ...
-    def document(self) -> PySide6.QtGui.QTextDocument: ...
-    def documentTitle(self) -> str: ...
-    def dragEnterEvent(self, e: PySide6.QtGui.QDragEnterEvent) -> None: ...
-    def dragLeaveEvent(self, e: PySide6.QtGui.QDragLeaveEvent) -> None: ...
-    def dragMoveEvent(self, e: PySide6.QtGui.QDragMoveEvent) -> None: ...
-    def dropEvent(self, e: PySide6.QtGui.QDropEvent) -> None: ...
-    def ensureCursorVisible(self) -> None: ...
-    def event(self, e: PySide6.QtCore.QEvent) -> bool: ...
-    def extraSelections(self) -> List[PySide6.QtWidgets.QTextEdit.ExtraSelection]: ...
-    @overload
-    def find(
-        self, exp: str, options: PySide6.QtGui.QTextDocument.FindFlag = ...
-    ) -> bool: ...
-    @overload
-    def find(
-        self,
-        exp: Union[PySide6.QtCore.QRegularExpression, str],
-        options: PySide6.QtGui.QTextDocument.FindFlag = ...,
-    ) -> bool: ...
-    def focusInEvent(self, e: PySide6.QtGui.QFocusEvent) -> None: ...
-    def focusNextPrevChild(self, next: bool) -> bool: ...
-    def focusOutEvent(self, e: PySide6.QtGui.QFocusEvent) -> None: ...
-    def fontFamily(self) -> str: ...
-    def fontItalic(self) -> bool: ...
-    def fontPointSize(self) -> float: ...
-    def fontUnderline(self) -> bool: ...
-    def fontWeight(self) -> int: ...
-    def inputMethodEvent(self, arg__1: PySide6.QtGui.QInputMethodEvent) -> None: ...
-    @overload
-    def inputMethodQuery(self, property: PySide6.QtCore.Qt.InputMethodQuery) -> Any: ...
-    @overload
-    def inputMethodQuery(
-        self, query: PySide6.QtCore.Qt.InputMethodQuery, argument: Any
-    ) -> Any: ...
-    def insertFromMimeData(self, source: PySide6.QtCore.QMimeData) -> None: ...
-    def insertHtml(self, text: str) -> None: ...
-    def insertPlainText(self, text: str) -> None: ...
-    def isReadOnly(self) -> bool: ...
-    def isUndoRedoEnabled(self) -> bool: ...
-    def keyPressEvent(self, e: PySide6.QtGui.QKeyEvent) -> None: ...
-    def keyReleaseEvent(self, e: PySide6.QtGui.QKeyEvent) -> None: ...
-    def lineWrapColumnOrWidth(self) -> int: ...
-    def lineWrapMode(self) -> PySide6.QtWidgets.QTextEdit.LineWrapMode: ...
-    def loadResource(self, type: int, name: Union[PySide6.QtCore.QUrl, str]) -> Any: ...
-    def mergeCurrentCharFormat(
-        self, modifier: PySide6.QtGui.QTextCharFormat
-    ) -> None: ...
-    def mouseDoubleClickEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
-    def mouseMoveEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
-    def mousePressEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
-    def mouseReleaseEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
-    def moveCursor(
-        self,
-        operation: PySide6.QtGui.QTextCursor.MoveOperation,
-        mode: PySide6.QtGui.QTextCursor.MoveMode = ...,
-    ) -> None: ...
-    def overwriteMode(self) -> bool: ...
-    def paintEvent(self, e: PySide6.QtGui.QPaintEvent) -> None: ...
-    def paste(self) -> None: ...
-    def placeholderText(self) -> str: ...
-    def print_(self, printer: PySide6.QtGui.QPagedPaintDevice) -> None: ...
-    def redo(self) -> None: ...
-    def resizeEvent(self, e: PySide6.QtGui.QResizeEvent) -> None: ...
-    def scrollContentsBy(self, dx: int, dy: int) -> None: ...
-    def scrollToAnchor(self, name: str) -> None: ...
-    def selectAll(self) -> None: ...
-    def setAcceptRichText(self, accept: bool) -> None: ...
-    def setAlignment(self, a: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
-    def setAutoFormatting(
-        self, features: PySide6.QtWidgets.QTextEdit.AutoFormattingFlag
-    ) -> None: ...
-    def setCurrentCharFormat(self, format: PySide6.QtGui.QTextCharFormat) -> None: ...
-    def setCurrentFont(
-        self, f: Union[PySide6.QtGui.QFont, str, Sequence[str]]
-    ) -> None: ...
-    def setCursorWidth(self, width: int) -> None: ...
-    def setDocument(self, document: PySide6.QtGui.QTextDocument) -> None: ...
-    def setDocumentTitle(self, title: str) -> None: ...
-    def setExtraSelections(
-        self, selections: Sequence[PySide6.QtWidgets.QTextEdit.ExtraSelection]
-    ) -> None: ...
-    def setFontFamily(self, fontFamily: str) -> None: ...
-    def setFontItalic(self, b: bool) -> None: ...
-    def setFontPointSize(self, s: float) -> None: ...
-    def setFontUnderline(self, b: bool) -> None: ...
-    def setFontWeight(self, w: int) -> None: ...
-    def setHtml(self, text: str) -> None: ...
-    def setLineWrapColumnOrWidth(self, w: int) -> None: ...
-    def setLineWrapMode(
-        self, mode: PySide6.QtWidgets.QTextEdit.LineWrapMode
-    ) -> None: ...
-    def setMarkdown(self, markdown: str) -> None: ...
-    def setOverwriteMode(self, overwrite: bool) -> None: ...
-    def setPlaceholderText(self, placeholderText: str) -> None: ...
-    def setPlainText(self, text: str) -> None: ...
-    def setReadOnly(self, ro: bool) -> None: ...
-    def setTabChangesFocus(self, b: bool) -> None: ...
-    def setTabStopDistance(self, distance: float) -> None: ...
-    def setText(self, text: str) -> None: ...
-    def setTextBackgroundColor(
-        self,
-        c: Union[
-            PySide6.QtGui.QColor,
-            PySide6.QtGui.QRgba64,
-            Any,
-            PySide6.QtCore.Qt.GlobalColor,
-            str,
-            int,
-        ],
-    ) -> None: ...
-    def setTextColor(
-        self,
-        c: Union[
-            PySide6.QtGui.QColor,
-            PySide6.QtGui.QRgba64,
-            Any,
-            PySide6.QtCore.Qt.GlobalColor,
-            str,
-            int,
-        ],
-    ) -> None: ...
-    def setTextCursor(self, cursor: PySide6.QtGui.QTextCursor) -> None: ...
-    def setTextInteractionFlags(
-        self, flags: PySide6.QtCore.Qt.TextInteractionFlag
-    ) -> None: ...
-    def setUndoRedoEnabled(self, enable: bool) -> None: ...
-    def setWordWrapMode(self, policy: PySide6.QtGui.QTextOption.WrapMode) -> None: ...
-    def showEvent(self, arg__1: PySide6.QtGui.QShowEvent) -> None: ...
-    def tabChangesFocus(self) -> bool: ...
-    def tabStopDistance(self) -> float: ...
-    def textBackgroundColor(self) -> PySide6.QtGui.QColor: ...
-    def textColor(self) -> PySide6.QtGui.QColor: ...
-    def textCursor(self) -> PySide6.QtGui.QTextCursor: ...
-    def textInteractionFlags(self) -> PySide6.QtCore.Qt.TextInteractionFlag: ...
-    def timerEvent(self, e: PySide6.QtCore.QTimerEvent) -> None: ...
-    def toHtml(self) -> str: ...
-    def toMarkdown(
-        self, features: PySide6.QtGui.QTextDocument.MarkdownFeature = ...
-    ) -> str: ...
-    def toPlainText(self) -> str: ...
-    def undo(self) -> None: ...
-    def wheelEvent(self, e: PySide6.QtGui.QWheelEvent) -> None: ...
-    def wordWrapMode(self) -> PySide6.QtGui.QTextOption.WrapMode: ...
-    def zoomIn(self, range: int = ...) -> None: ...
-    def zoomInF(self, range: float) -> None: ...
-    def zoomOut(self, range: int = ...) -> None: ...
+    # @overload
+    # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+    # @overload
+    # def __init__(
+    #     self, text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...
+    # ) -> None: ...
+    # def acceptRichText(self) -> bool: ...
+    # def alignment(self) -> PySide6.QtCore.Qt.AlignmentFlag: ...
+    # def anchorAt(self, pos: PySide6.QtCore.QPoint) -> str: ...
+    def append(self, text: str) -> None:
+        """
+        Append text to the end of the text edit.
+
+        Args:
+            text (str): The text to append.
+
+        <br>
+        """
+
+    # def autoFormatting(self) -> PySide6.QtWidgets.QTextEdit.AutoFormattingFlag: ...
+    # def canInsertFromMimeData(self, source: PySide6.QtCore.QMimeData) -> bool: ...
+    # def canPaste(self) -> bool: ...
+    # def changeEvent(self, e: PySide6.QtCore.QEvent) -> None: ...
+    def clear(self) -> None:
+        """
+        Clear the text in the text edit.
+
+        <br>
+        """
+
+    # def contextMenuEvent(self, e: PySide6.QtGui.QContextMenuEvent) -> None: ...
+    def copy(self) -> None:
+        """
+        Copiy any selected text to the clipboard.
+
+        <br>
+        """
+
+    # def createMimeDataFromSelection(self) -> PySide6.QtCore.QMimeData: ...
+    # @overload
+    # def createStandardContextMenu(self) -> PySide6.QtWidgets.QMenu: ...
+    # @overload
+    # def createStandardContextMenu(
+    #     self, position: PySide6.QtCore.QPoint
+    # ) -> PySide6.QtWidgets.QMenu: ...
+    # def currentCharFormat(self) -> PySide6.QtGui.QTextCharFormat: ...
+    # def currentFont(self) -> PySide6.QtGui.QFont: ...
+    # def cursorForPosition(
+    #     self, pos: PySide6.QtCore.QPoint
+    # ) -> PySide6.QtGui.QTextCursor: ...
+    # @overload
+    # def cursorRect(self) -> PySide6.QtCore.QRect: ...
+    # @overload
+    # def cursorRect(self, cursor: PySide6.QtGui.QTextCursor) -> PySide6.QtCore.QRect: ...
+    # def cursorWidth(self) -> int: ...
+    def cut(self) -> None:
+        """
+        Cut any selected text to the clipboard.
+
+        <br>
+        """
+
+    # def doSetTextCursor(self, cursor: PySide6.QtGui.QTextCursor) -> None: ...
+    # def document(self) -> PySide6.QtGui.QTextDocument: ...
+    # def documentTitle(self) -> str: ...
+    # def dragEnterEvent(self, e: PySide6.QtGui.QDragEnterEvent) -> None: ...
+    # def dragLeaveEvent(self, e: PySide6.QtGui.QDragLeaveEvent) -> None: ...
+    # def dragMoveEvent(self, e: PySide6.QtGui.QDragMoveEvent) -> None: ...
+    # def dropEvent(self, e: PySide6.QtGui.QDropEvent) -> None: ...
+    # def ensureCursorVisible(self) -> None: ...
+    # def event(self, e: PySide6.QtCore.QEvent) -> bool: ...
+    # def extraSelections(self) -> List[PySide6.QtWidgets.QTextEdit.ExtraSelection]: ...
+    # @overload
+    # def find(
+    #     self, exp: str, options: PySide6.QtGui.QTextDocument.FindFlag = ...
+    # ) -> bool: ...
+    # @overload
+    # def find(
+    #     self,
+    #     exp: Union[PySide6.QtCore.QRegularExpression, str],
+    #     options: PySide6.QtGui.QTextDocument.FindFlag = ...,
+    # ) -> bool: ...
+    # def focusInEvent(self, e: PySide6.QtGui.QFocusEvent) -> None: ...
+    # def focusNextPrevChild(self, next: bool) -> bool: ...
+    # def focusOutEvent(self, e: PySide6.QtGui.QFocusEvent) -> None: ...
+    # def fontFamily(self) -> str: ...
+    # def fontItalic(self) -> bool: ...
+    # def fontPointSize(self) -> float: ...
+    # def fontUnderline(self) -> bool: ...
+    # def fontWeight(self) -> int: ...
+    # def inputMethodEvent(self, arg__1: PySide6.QtGui.QInputMethodEvent) -> None: ...
+    # @overload
+    # def inputMethodQuery(self, property: PySide6.QtCore.Qt.InputMethodQuery) -> Any: ...
+    # @overload
+    # def inputMethodQuery(
+    #     self, query: PySide6.QtCore.Qt.InputMethodQuery, argument: Any
+    # ) -> Any: ...
+    # def insertFromMimeData(self, source: PySide6.QtCore.QMimeData) -> None: ...
+    # def insertHtml(self, text: str) -> None: ...
+    # def insertPlainText(self, text: str) -> None: ...
+    def isReadOnly(self) -> bool:
+        """
+        Check if the text edit is read-only.
+
+        Returns:
+            bool: True if the text edit is read-only, False otherwise.
+
+        <br>
+        """
+
+    # def isUndoRedoEnabled(self) -> bool: ...
+    # def keyPressEvent(self, e: PySide6.QtGui.QKeyEvent) -> None: ...
+    # def keyReleaseEvent(self, e: PySide6.QtGui.QKeyEvent) -> None: ...
+    # def lineWrapColumnOrWidth(self) -> int: ...
+    # def lineWrapMode(self) -> PySide6.QtWidgets.QTextEdit.LineWrapMode: ...
+    # def loadResource(self, type: int, name: Union[PySide6.QtCore.QUrl, str]) -> Any: ...
+    # def mergeCurrentCharFormat(
+    #     self, modifier: PySide6.QtGui.QTextCharFormat
+    # ) -> None: ...
+    # def mouseDoubleClickEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
+    # def mouseMoveEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
+    # def mousePressEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
+    # def mouseReleaseEvent(self, e: PySide6.QtGui.QMouseEvent) -> None: ...
+    # def moveCursor(
+    #     self,
+    #     operation: PySide6.QtGui.QTextCursor.MoveOperation,
+    #     mode: PySide6.QtGui.QTextCursor.MoveMode = ...,
+    # ) -> None: ...
+    # def overwriteMode(self) -> bool: ...
+    # def paintEvent(self, e: PySide6.QtGui.QPaintEvent) -> None: ...
+    def paste(self) -> None:
+        """
+        Paste text from the clipboard into the text edit.
+
+        <br>
+        """
+
+    def placeholderText(self) -> str:
+        """
+        Get the placeholder text of the text edit.
+
+        Returns:
+            str: The placeholder text of the text edit.
+
+        <br>
+        """
+
+    # def print_(self, printer: PySide6.QtGui.QPagedPaintDevice) -> None: ...
+    def redo(self) -> None:
+        """
+        Redo the last operation.
+
+        <br>
+        """
+
+    # def resizeEvent(self, e: PySide6.QtGui.QResizeEvent) -> None: ...
+    # def scrollContentsBy(self, dx: int, dy: int) -> None: ...
+    # def scrollToAnchor(self, name: str) -> None: ...
+    # def selectAll(self) -> None: ...
+    # def setAcceptRichText(self, accept: bool) -> None: ...
+    # def setAlignment(self, a: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
+    # def setAutoFormatting(
+    #     self, features: PySide6.QtWidgets.QTextEdit.AutoFormattingFlag
+    # ) -> None: ...
+    # def setCurrentCharFormat(self, format: PySide6.QtGui.QTextCharFormat) -> None: ...
+    # def setCurrentFont(
+    #     self, f: Union[PySide6.QtGui.QFont, str, Sequence[str]]
+    # ) -> None: ...
+    # def setCursorWidth(self, width: int) -> None: ...
+    # def setDocument(self, document: PySide6.QtGui.QTextDocument) -> None: ...
+    # def setDocumentTitle(self, title: str) -> None: ...
+    # def setExtraSelections(
+    #     self, selections: Sequence[PySide6.QtWidgets.QTextEdit.ExtraSelection]
+    # ) -> None: ...
+    # def setFontFamily(self, fontFamily: str) -> None: ...
+    def setFontItalic(self, b: bool) -> None:
+        """
+        Set the italic font style of the text edit. All text added to the text edit after a call with `True` will be displayed in italic.
+
+        Args:
+            b (bool): True to set the font style to italic, False otherwise.
+
+        <br>
+        """
+
+    def setFontPointSize(self, s: float) -> None:
+        """
+        Set the font size of the text edit. All text added to the text edit after a call with a specific size will be displayed with that size.
+
+        Args:
+            s (float): The font size to set.
+
+        <br>
+        """
+
+    def setFontUnderline(self, b: bool) -> None:
+        """
+        Set the underline font style of the text edit. All text added to the text edit after a call with `True` will be displayed with an underline.
+
+        Args:
+            b (bool): True to set the font style to underline, False otherwise.
+
+        <br>
+        """
+
+    def setFontWeight(self, w: int) -> None:
+        """
+        Set the font weight of the text edit. Font weight is a numerical value that determines the thickness of the characters in the text edit.
+        All text added to the text edit after a call with a specific weight will be displayed with that weight.
+
+        Args:
+            w (int): The font weight to set.
+
+        <br>
+        """
+
+    def setHtml(self, text: str) -> None:
+        """
+        Set the text edit contents to the specified HTML text.
+
+        Args:
+            text (str): The HTML text to set.
+
+        <br>
+        """
+
+    # def setLineWrapColumnOrWidth(self, w: int) -> None: ...
+    # def setLineWrapMode(
+    #     self, mode: PySide6.QtWidgets.QTextEdit.LineWrapMode
+    # ) -> None: ...
+    def setMarkdown(self, markdown: str) -> None:
+        """
+        Set the text edit contents to the specified Markdown text.
+
+        Args:
+            markdown (str): The Markdown text to set.
+
+        <br>
+        """
+
+    # def setOverwriteMode(self, overwrite: bool) -> None: ...
+    def setPlaceholderText(self, placeholderText: str) -> None:
+        """
+        Set the placeholder text of the text edit. Placeholder text is grayed out and displayed when the text edit is empty.
+
+        Args:
+            placeholderText (str): The placeholder text to set.
+
+        <br>
+        """
+
+    # def setPlainText(self, text: str) -> None: ...
+    def setReadOnly(self, ro: bool) -> None:
+        """
+        Set whether the text edit is read-only. If the text edit is read-only, the user cannot edit the text.
+
+        Args:
+            ro (bool): True to set the text edit to read-only, False otherwise.
+
+        <br>
+        """
+
+    # def setTabChangesFocus(self, b: bool) -> None: ...
+    # def setTabStopDistance(self, distance: float) -> None: ...
+    def setText(self, text: str) -> None:
+        """
+        Set the contents of the text edit to the specified text. The text is displayed as plain text.
+
+        Args:
+            text (str): The text to set.
+
+        <br>
+        """
+
+    # def setTextBackgroundColor(
+    #     self,
+    #     c: Union[
+    #         PySide6.QtGui.QColor,
+    #         PySide6.QtGui.QRgba64,
+    #         Any,
+    #         PySide6.QtCore.Qt.GlobalColor,
+    #         str,
+    #         int,
+    #     ],
+    # ) -> None: ...
+    # def setTextColor(
+    #     self,
+    #     c: Union[
+    #         PySide6.QtGui.QColor,
+    #         PySide6.QtGui.QRgba64,
+    #         Any,
+    #         PySide6.QtCore.Qt.GlobalColor,
+    #         str,
+    #         int,
+    #     ],
+    # ) -> None: ...
+    # def setTextCursor(self, cursor: PySide6.QtGui.QTextCursor) -> None: ...
+    # def setTextInteractionFlags(
+    #     self, flags: PySide6.QtCore.Qt.TextInteractionFlag
+    # ) -> None: ...
+    # def setUndoRedoEnabled(self, enable: bool) -> None: ...
+    # def setWordWrapMode(self, policy: PySide6.QtGui.QTextOption.WrapMode) -> None: ...
+    # def showEvent(self, arg__1: PySide6.QtGui.QShowEvent) -> None: ...
+    # def tabChangesFocus(self) -> bool: ...
+    # def tabStopDistance(self) -> float: ...
+    # def textBackgroundColor(self) -> PySide6.QtGui.QColor: ...
+    # def textColor(self) -> PySide6.QtGui.QColor: ...
+    # def textCursor(self) -> PySide6.QtGui.QTextCursor: ...
+    # def textInteractionFlags(self) -> PySide6.QtCore.Qt.TextInteractionFlag: ...
+    # def timerEvent(self, e: PySide6.QtCore.QTimerEvent) -> None: ...
+    def toHtml(self) -> str:
+        """
+        Get the text edit contents as HTML text.
+
+        Returns:
+            str: The text edit contents as HTML text.
+
+        <br>
+        """
+
+    def toMarkdown(self) -> str:
+        """
+        Get the text edit contents as Markdown text.
+
+        Returns:
+            str: The text edit contents as Markdown text.
+
+        <br>
+        """
+
+    def toPlainText(self) -> str:
+        """
+        Get the text edit contents as plain text. For example if the text edit contains the HTML text `<b>bold</b>`, the returned text will be `bold`.
+
+        Returns:
+            str: The text edit contents as plain text.
+
+        <br>
+        """
+
+    def undo(self) -> None:
+        """
+        Undo the last operation in the text edit.
+
+        <br>
+        """
+
+    # def wheelEvent(self, e: PySide6.QtGui.QWheelEvent) -> None: ...
+    # def wordWrapMode(self) -> PySide6.QtGui.QTextOption.WrapMode: ...
+    def zoomIn(self, r: int) -> None:
+        """
+        Zoom in the text edit by the specified range.
+
+        Args:
+            r (int): The range to zoom in by.
+
+        <br>
+        """
+
+    # def zoomInF(self, range: float) -> None: ...
+    def zoomOut(self, r: int) -> None:
+        """
+        Zoom out the text edit by the specified range.
+
+        Args:
+            r (int): The range to zoom out by.
+
+        <br>
+        <br>
+        """
 
 
 class QCheckBox:
@@ -1650,9 +2162,12 @@ class QCheckBox:
     can be enabled or disabled without affecting others. By default, a checkbox
     is unchecked.
 
+    Args:
+        text (str): The text to display next to the checkbox.
+
     <hr>
 
-    <h3>Signal</h3>
+    <h3>Signals</h3>
     <ul>
         <li><code>stateChanged</code>: Emitted whenever the checkbox's state changes.</li>
     </ul>
@@ -1661,6 +2176,8 @@ class QCheckBox:
     <ul>
         <li><a href="#code.QtWidgets.QCheckBox.IsChecked"><code>IsChecked</code></a></li>
         <li><a href="#code.QtWidgets.QCheckBox.setChecked"><code>setChecked</code></a></li>
+        <li><a href="#code.QtWidgets.QCheckBox.setText"><code>setText</code></a></li>
+        <li><a href="#code.QtWidgets.QCheckBox.text"><code>text</code></a></li>
     </ul>
 
     <br>
@@ -1683,6 +2200,8 @@ class QCheckBox:
     <br>
     """
 
+    def __init__(self, text: str = None) -> None: ...
+
     def IsChecked() -> bool:
         """
         Returns True if the checkbox is checked; otherwise returns False.
@@ -1701,15 +2220,31 @@ class QCheckBox:
         Args:
             checked (bool): True to check the checkbox; otherwise False.
         <br>
-        <br>
         """
 
     # stateChanged             : ClassVar[Signal] = ... # stateChanged(int)
 
     # @overload
     # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    # @overload
-    # def __init__(self, text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+
+    def setText(self, text: str) -> None:
+        """
+        Set the text to display next to the checkbox.
+
+        Args:
+            text (str): The text to display next to the checkbox.
+        <br>
+        """
+
+    def text(self) -> str:
+        """
+        Get the text displayed next to the checkbox.
+
+        Returns:
+            str: The text displayed next to the checkbox.
+        <br>
+        <br>
+        """
 
     # def checkState(self) -> PySide6.QtCore.Qt.CheckState: ...
     # def checkStateSet(self) -> None: ...
@@ -1734,6 +2269,9 @@ class QLabel:
     <code>QLabel</code> is used for displaying text or an image. No user interaction
     functionality is provided.
 
+    Args:
+        text (str): The text to display.
+
     <hr>
 
 
@@ -1750,11 +2288,15 @@ class QLabel:
     **Examples**
         <hr>
         ``` py
-        label = QtWidgets.QLabel()
-        label.setText("Hello World!")
+        label = QtWidgets.QLabel("Hello World!")
         print(label.text())
         ```
         ```'Hello World!'```
+        ``` py
+        label.setText("Goodbye World!")
+        print(label.text())
+        ```
+        ```'Goodbye World!'```
         <hr>
 
     <br>
@@ -1765,8 +2307,8 @@ class QLabel:
 
     # @overload
     # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ..., f: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
-    # @overload
-    # def __init__(self, text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ..., f: PySide6.QtCore.Qt.WindowType = ...) -> None: ...
+
+    def __init__(self, text: str = None) -> None: ...
 
     # def alignment(self) -> PySide6.QtCore.Qt.AlignmentFlag: ...
     # def buddy(self) -> PySide6.QtWidgets.QWidget: ...
@@ -2108,6 +2650,9 @@ class QSpinBox:
         <li><a href="#code.QtWidgets.QSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
         <li><a href="#code.QtWidgets.QSpinBox.setValue"><code>setValue</code></a></li>
         <li><a href="#code.QtWidgets.QSpinBox.value"><code>value</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setRange"><code>setRange</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setPrefix"><code>setPrefix</code></a></li>
+        <li><a href="#code.QtWidgets.QSpinBox.setSuffix"><code>setSuffix</code></a></li>
     </ul>
 
     <br>
@@ -2149,7 +2694,7 @@ class QSpinBox:
 
     def setMaximum(self, max: int) -> None:
         """
-        Sets the maximum value of the spin box. The default maximum value is 99.
+        Set the maximum value of the spin box. The default maximum value is 99.
 
         Args:
             max (int): The maximum value of the spin box.
@@ -2158,7 +2703,7 @@ class QSpinBox:
 
     def setMinimum(self, min: int) -> None:
         """
-        Sets the minimum value of the spin box. The default minimum value
+        Set the minimum value of the spin box. The default minimum value
         is 0.
 
         Args:
@@ -2166,12 +2711,31 @@ class QSpinBox:
         <br>
         """
 
-    # def setPrefix(self, prefix: str) -> None: ...
-    # def setRange(self, min: int, max: int) -> None: ...
+    def setPrefix(self, prefix: str) -> None:
+        """
+        Set the prefix of the spin box. The prefix is displayed before the
+        value in the spin box and is not editable by the user.
+
+        Args:
+            prefix (str): The prefix to set.
+        <br>
+        """
+
+    def setRange(self, min: int, max: int) -> None:
+        """
+        Set the minimum and maximum values of the spin box.
+        If the current value is outside the new range, the value is adjusted
+        to the nearest limit.
+
+        Args:
+            min (int): The new minimum value.
+            max (int): The new maximum value.
+        <br>
+        """
 
     def setSingleStep(self, val: int) -> None:
         """
-        Sets the value that the spin box will increment or decrement by when the
+        Set the value that the spin box will increment or decrement by when the
         up or down buttons are clicked. The default step value is 1. Setting a
         value less than 0 does nothing.
 
@@ -2181,10 +2745,19 @@ class QSpinBox:
         """
 
     # def setStepType(self, stepType: PySide6.QtWidgets.QAbstractSpinBox.StepType) -> None: ...
-    # def setSuffix(self, suffix: str) -> None: ...
+    def setSuffix(self, suffix: str) -> None:
+        """
+        Set the suffix of the spin box. The suffix is displayed after the value
+        in the spin box and is not editable by the user.
+
+        Args:
+            suffix (str): The suffix to set.
+        <br>
+        """
+
     def setValue(self, val: int) -> None:
         """
-        Sets the value of the spin box. If the value is outside the range of
+        Set the value of the spin box. If the value is outside the range of
         the spin box, the value is adjusted to the nearest limit.
 
         Args:
@@ -2237,6 +2810,9 @@ class QDoubleSpinBox:
         <li><a href="#code.QtWidgets.QDoubleSpinBox.setSingleStep"><code>setSingleStep</code></a></li>
         <li><a href="#code.QtWidgets.QDoubleSpinBox.setValue"><code>setValue</code></a></li>
         <li><a href="#code.QtWidgets.QDoubleSpinBox.value"><code>value</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setRange"><code>setRange</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setPrefix"><code>setPrefix</code></a></li>
+        <li><a href="#code.QtWidgets.QDoubleSpinBox.setSuffix"><code>setSuffix</code></a></li>
     </ul>
 
     <br>
@@ -2276,7 +2852,7 @@ class QDoubleSpinBox:
     # def setDecimals(self, prec: int) -> None: ...
     def setMaximum(self, max: float) -> None:
         """
-        Sets the maximum value of the spin box. The default maximum value
+        Set the maximum value of the spin box. The default maximum value
         is 99.99.
 
         Args:
@@ -2286,7 +2862,7 @@ class QDoubleSpinBox:
 
     def setMinimum(self, min: float) -> None:
         """
-        Sets the minimum value of the spin box. The default minimum value
+        Set the minimum value of the spin box. The default minimum value
         is 0.0.
 
         Args:
@@ -2294,11 +2870,30 @@ class QDoubleSpinBox:
         <br>
         """
 
-    # def setPrefix(self, prefix: str) -> None: ...
-    # def setRange(self, min: float, max: float) -> None: ...
+    def setPrefix(self, prefix: str) -> None:
+        """
+        Set the prefix of the spin box. The prefix is displayed before the
+        value in the spin box and is not editable by the user.
+
+        Args:
+            prefix: The new prefix.
+        <br>
+        """
+
+    def setRange(self, min: float, max: float) -> None:
+        """
+        Set the minimum and maximum values of the spin box. If the current
+        value is outside the new range, the value is adjusted to the nearest limit.
+
+        Args:
+            min: The new minimum value.
+            max: The new maximum value.
+        <br>
+        """
+
     def setSingleStep(self, val: float) -> None:
         """
-        Sets the value that the spin box will increment or decrement by when the
+        Set the value that the spin box will increment or decrement by when the
         up or down buttons are clicked. The default step value is 1.0. Setting a
         singleStep value of less than 0 does nothing.
 
@@ -2308,10 +2903,19 @@ class QDoubleSpinBox:
         """
 
     # def setStepType(self, stepType: PySide6.QtWidgets.QAbstractSpinBox.StepType) -> None: ...
-    # def setSuffix(self, suffix: str) -> None: ...
+    def setSuffix(self, suffix: str) -> None:
+        """
+        Set the suffix of the spin box. The suffix is displayed after the value
+        in the spin box and is not editable by the user.
+
+        Args:
+            suffix: The new suffix.
+        <br>
+        """
+
     def setValue(self, val: float) -> None:
         """
-        Sets the value of the spin box. If the value is outside the range of the
+        Set the value of the spin box. If the value is outside the range of the
         spin box, the value is adjusted to the nearest limit.
 
         Args:
@@ -2347,6 +2951,9 @@ class QPushButton:
     to perform some action, or to answer a question. Typical buttons are OK, Apply,
     Cancel, Close, Yes, No and Help.
 
+    args:
+        text (str): The text to display on the button.
+
     <hr>
 
     <h3>Signals</h3>
@@ -2365,11 +2972,15 @@ class QPushButton:
     **Examples**
         <hr>
         ``` py
-        button = QtWidgets.QPushButton()
-        button.setText("Click me!")
+        button = QtWidgets.QPushButton("Click me!")
         print(button.text())
         ```
         ```'Click me!'```
+        ``` py
+        button.setText("Don't click me!")
+        print(button.text())
+        ```
+        ```'Don't click me!'```
         <hr>
 
     <br>
@@ -2400,8 +3011,8 @@ class QPushButton:
     # def __init__(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
     # @overload
     # def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
-    # @overload
-    # def __init__(self, text: str, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+
+    def __init__(self, text: str = None) -> None: ...
 
     # def autoDefault(self) -> bool: ...
     # def event(self, e: PySide6.QtCore.QEvent) -> bool: ...
@@ -2422,3 +3033,528 @@ class QPushButton:
     # def setMenu(self, menu: PySide6.QtWidgets.QMenu) -> None: ...
     # def showMenu(self) -> None: ...
     # def sizeHint(self) -> PySide6.QtCore.QSize: ...
+
+
+class QLineEdit:
+    """
+    <hr>
+    ![](buttons/line_edit.png)
+
+    `QLineEdit` is a widget that allows the user to enter and edit text. It provides
+    a single line for the user to type in text.
+
+    Args:
+        text (str): The initial text to display in the line edit.
+
+    <hr>
+
+    <h3>Signals</h3>
+    <ul>
+        <li> <code>cursorPositionChanged</code>: Emitted when the cursor position changes.</li>
+        <li> <code>editingFinished</code>: Emitted when the editing is finished.</li>
+        <li> <code>returnPressed</code>: Emitted when the return key is pressed.</li>
+        <li> <code>textChanged</code>: Emitted when the text changes.</li>
+        <li> <code>textEdited</code>: Emitted when the text is edited.</li>
+    </ul>
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#code.QtWidgets.QLineEdit.text"><code>text</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.setText"><code>setText</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.clear"><code>clear</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.copy"><code>copy</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.cut"><code>cut</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.paste"><code>paste</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.redo"><code>redo</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.undo"><code>undo</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.isModified"><code>isModified</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.isReadOnly"><code>isReadOnly</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.setReadOnly"><code>setReadOnly</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.PlaceholderText"><code>PlaceholderText</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.setPlaceholderText"><code>setPlaceholderText</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.maxLength"><code>maxLength</code></a></li>
+        <li><a href="#code.QtWidgets.QLineEdit.setMaxLength"><code>setMaxLength</code></a></li>
+    </ul>
+
+
+    <br>
+
+    **Examples**
+    <hr>
+    ``` py
+    line_edit = QtWidgets.QLineEdit("Enter text here")
+    print(line_edit.text())
+    print(line_edit.isModified())
+    ```
+    ```'Enter text here'``` <br>
+    ```False``` <br> <br>
+    Now the user modifies the text in the line edit to `'New text'`.
+    ``` py
+    print(line_edit.modified())
+    print(line_edit.text())
+    ```
+    ```True``` <br>
+    ```'New text'```
+
+    <hr>
+
+    <br>
+    """
+
+    cursorPositionChanged: ClassVar[Signal] = ...  # cursorPositionChanged(int,int)
+    editingFinished: ClassVar[Signal] = ...  # editingFinished()
+    #     inputRejected            : ClassVar[Signal] = ... # inputRejected()
+    returnPressed: ClassVar[Signal] = ...  # returnPressed()
+    #     selectionChanged: ClassVar[Signal] = ...  # selectionChanged()
+    textChanged: ClassVar[Signal] = ...  # textChanged(QString)
+    textEdited: ClassVar[Signal] = ...  # textEdited(QString)
+
+    #     class ActionPosition(enum.Enum):
+
+    #         LeadingPosition          : QLineEdit.ActionPosition = ... # 0x0
+    #         TrailingPosition         : QLineEdit.ActionPosition = ... # 0x1
+
+    #     class EchoMode(enum.Enum):
+
+    #         Normal                   : QLineEdit.EchoMode = ... # 0x0
+    #         NoEcho                   : QLineEdit.EchoMode = ... # 0x1
+    #         Password                 : QLineEdit.EchoMode = ... # 0x2
+    #         PasswordEchoOnEdit       : QLineEdit.EchoMode = ... # 0x3
+
+    #     @overload
+    def __init__(self, text: str = None) -> None: ...
+
+    #     @overload
+    #     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ...) -> None: ...
+
+    #     @overload
+    #     def addAction(self, action: PySide6.QtGui.QAction) -> None: ...
+    #     @overload
+    #     def addAction(self, action: PySide6.QtGui.QAction, position: PySide6.QtWidgets.QLineEdit.ActionPosition) -> None: ...
+    #     @overload
+    #     def addAction(self, arg__1: PySide6.QtGui.QAction) -> None: ...
+    #     @overload
+    #     def addAction(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], position: PySide6.QtWidgets.QLineEdit.ActionPosition) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, callable: object) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, receiver: PySide6.QtCore.QObject, member: bytes, type: PySide6.QtCore.Qt.ConnectionType = ...) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, shortcut: Union[PySide6.QtGui.QKeySequence, PySide6.QtCore.QKeyCombination, PySide6.QtGui.QKeySequence.StandardKey, str, int]) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, shortcut: Union[PySide6.QtGui.QKeySequence, PySide6.QtCore.QKeyCombination, PySide6.QtGui.QKeySequence.StandardKey, str, int], callable: object) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, icon: Union[PySide6.QtGui.QIcon, PySide6.QtGui.QPixmap], text: str, shortcut: Union[PySide6.QtGui.QKeySequence, PySide6.QtCore.QKeyCombination, PySide6.QtGui.QKeySequence.StandardKey, str, int], receiver: PySide6.QtCore.QObject, member: bytes, type: PySide6.QtCore.Qt.ConnectionType = ...) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, text: str) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, text: str, callable: object) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, text: str, receiver: PySide6.QtCore.QObject, member: bytes, type: PySide6.QtCore.Qt.ConnectionType = ...) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, text: str, shortcut: Union[PySide6.QtGui.QKeySequence, PySide6.QtCore.QKeyCombination, PySide6.QtGui.QKeySequence.StandardKey, str, int]) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, text: str, shortcut: Union[PySide6.QtGui.QKeySequence, PySide6.QtCore.QKeyCombination, PySide6.QtGui.QKeySequence.StandardKey, str, int], callable: object) -> PySide6.QtGui.QAction: ...
+    #     @overload
+    #     def addAction(self, text: str, shortcut: Union[PySide6.QtGui.QKeySequence, PySide6.QtCore.QKeyCombination, PySide6.QtGui.QKeySequence.StandardKey, str, int], receiver: PySide6.QtCore.QObject, member: bytes, type: PySide6.QtCore.Qt.ConnectionType = ...) -> PySide6.QtGui.QAction: ...
+    #     def alignment(self) -> PySide6.QtCore.Qt.AlignmentFlag: ...
+    #     def backspace(self) -> None: ...
+    #     def changeEvent(self, arg__1: PySide6.QtCore.QEvent) -> None: ...
+    def clear(self) -> None:
+        """
+        Clear the text in the line edit.
+
+        <br>
+        """
+
+    #     def completer(self) -> PySide6.QtWidgets.QCompleter: ...
+    #     def contextMenuEvent(self, arg__1: PySide6.QtGui.QContextMenuEvent) -> None: ...
+    def copy(self) -> None:
+        """
+        Copy the selected text in the line edit to the clipboard.
+
+        <br>
+        """
+
+    #     def createStandardContextMenu(self) -> PySide6.QtWidgets.QMenu: ...
+    #     def cursorBackward(self, mark: bool, steps: int = ...) -> None: ...
+    #     def cursorForward(self, mark: bool, steps: int = ...) -> None: ...
+    #     def cursorMoveStyle(self) -> PySide6.QtCore.Qt.CursorMoveStyle: ...
+    #     def cursorPosition(self) -> int: ...
+    #     def cursorPositionAt(self, pos: PySide6.QtCore.QPoint) -> int: ...
+    #     def cursorRect(self) -> PySide6.QtCore.QRect: ...
+    #     def cursorWordBackward(self, mark: bool) -> None: ...
+    #     def cursorWordForward(self, mark: bool) -> None: ...
+    def cut(self) -> None:
+        """
+        Cut the selected text in the line edit to the clipboard.
+
+        <br>
+        """
+
+    #     def del_(self) -> None: ...
+    #     def deselect(self) -> None: ...
+    #     def displayText(self) -> str: ...
+    #     def dragEnabled(self) -> bool: ...
+    #     def dragEnterEvent(self, arg__1: PySide6.QtGui.QDragEnterEvent) -> None: ...
+    #     def dragLeaveEvent(self, e: PySide6.QtGui.QDragLeaveEvent) -> None: ...
+    #     def dragMoveEvent(self, e: PySide6.QtGui.QDragMoveEvent) -> None: ...
+    #     def dropEvent(self, arg__1: PySide6.QtGui.QDropEvent) -> None: ...
+    #     def echoMode(self) -> PySide6.QtWidgets.QLineEdit.EchoMode: ...
+    #     def end(self, mark: bool) -> None: ...
+    #     def event(self, arg__1: PySide6.QtCore.QEvent) -> bool: ...
+    #     def focusInEvent(self, arg__1: PySide6.QtGui.QFocusEvent) -> None: ...
+    #     def focusOutEvent(self, arg__1: PySide6.QtGui.QFocusEvent) -> None: ...
+    #     def hasAcceptableInput(self) -> bool: ...
+    #     def hasFrame(self) -> bool: ...
+    #     def hasSelectedText(self) -> bool: ...
+    #     def home(self, mark: bool) -> None: ...
+    #     def initStyleOption(self, option: PySide6.QtWidgets.QStyleOptionFrame) -> None: ...
+    #     def inputMask(self) -> str: ...
+    #     def inputMethodEvent(self, arg__1: PySide6.QtGui.QInputMethodEvent) -> None: ...
+    #     @overload
+    #     def inputMethodQuery(self, arg__1: PySide6.QtCore.Qt.InputMethodQuery) -> Any: ...
+    #     @overload
+    #     def inputMethodQuery(self, property: PySide6.QtCore.Qt.InputMethodQuery, argument: Any) -> Any: ...
+    #     def insert(self, arg__1: str) -> None: ...
+    #     def isClearButtonEnabled(self) -> bool: ...
+    def isModified(self) -> bool:
+        """
+        Check if the text in the line edit has been modified by the user.
+        `setText` resets the modified flag.
+
+        Returns:
+            True if the text has been modified, False otherwise.
+        <br>
+        """
+
+    def isReadOnly(self) -> bool:
+        """
+        Check if the line edit is read-only.
+
+        Returns:
+            True if the line edit is read-only, False otherwise.
+        <br>
+        """
+
+    #     def isRedoAvailable(self) -> bool: ...
+    #     def isUndoAvailable(self) -> bool: ...
+    #     def keyPressEvent(self, arg__1: PySide6.QtGui.QKeyEvent) -> None: ...
+    #     def keyReleaseEvent(self, arg__1: PySide6.QtGui.QKeyEvent) -> None: ...
+    def maxLength(self) -> int:
+        """
+        Get the maximum length of the text in the line edit.
+
+        Returns:
+            The maximum length of the text in the line edit.
+        <br>
+        """
+
+    #     def minimumSizeHint(self) -> PySide6.QtCore.QSize: ...
+    #     def mouseDoubleClickEvent(self, arg__1: PySide6.QtGui.QMouseEvent) -> None: ...
+    #     def mouseMoveEvent(self, arg__1: PySide6.QtGui.QMouseEvent) -> None: ...
+    #     def mousePressEvent(self, arg__1: PySide6.QtGui.QMouseEvent) -> None: ...
+    #     def mouseReleaseEvent(self, arg__1: PySide6.QtGui.QMouseEvent) -> None: ...
+    #     def paintEvent(self, arg__1: PySide6.QtGui.QPaintEvent) -> None: ...
+    def paste(self) -> None:
+        """
+        Paste the text from the clipboard to the line edit.
+
+        <br>
+        """
+
+    def placeholderText(self) -> str:
+        """
+        Get the placeholder text displayed in the line edit when it is empty.
+
+        Returns:
+            The placeholder text.
+        <br>
+        """
+
+    def redo(self) -> None:
+        """
+        Redo the last operation in the line edit.
+
+        <br>
+        """
+
+    #     def selectAll(self) -> None: ...
+    #     def selectedText(self) -> str: ...
+    #     def selectionEnd(self) -> int: ...
+    #     def selectionLength(self) -> int: ...
+    #     def selectionStart(self) -> int: ...
+    #     def setAlignment(self, flag: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
+    #     def setClearButtonEnabled(self, enable: bool) -> None: ...
+    #     def setCompleter(self, completer: PySide6.QtWidgets.QCompleter) -> None: ...
+    #     def setCursorMoveStyle(self, style: PySide6.QtCore.Qt.CursorMoveStyle) -> None: ...
+    #     def setCursorPosition(self, arg__1: int) -> None: ...
+    #     def setDragEnabled(self, b: bool) -> None: ...
+    #     def setEchoMode(self, arg__1: PySide6.QtWidgets.QLineEdit.EchoMode) -> None: ...
+    #     def setFrame(self, arg__1: bool) -> None: ...
+    #     def setInputMask(self, inputMask: str) -> None: ...
+    def setMaxLength(self, length: int) -> None:
+        """
+        Set the maximum length of the text in the line edit.
+
+        Args:
+            length: The maximum length of the text in the line edit.
+        <br>
+        """
+
+    #     def setModified(self, arg__1: bool) -> None: ...
+    def setPlaceholderText(self, text: str) -> None:
+        """
+        Set the placeholder text displayed in the line edit when it is empty. The placeholder text is displayed in gray.
+
+        Args:
+            text (str): The placeholder text.
+        <br>
+        """
+
+    def setReadOnly(self, read_only: bool) -> None:
+        """
+        Set the line edit to read-only. If the line edit is read-only, the user cannot edit the text.
+
+        Args:
+            read_only: True to set the line edit to read-only, False otherwise.
+        <br>
+        """
+
+    #     def setSelection(self, arg__1: int, arg__2: int) -> None: ...
+    def setText(self, text: str) -> None:
+        """
+        Set the content of the line edit to the specified text.
+
+        Args:
+            text (str): The text to set in the line edit.
+        <br>
+        """
+
+    #     @overload
+    #     def setTextMargins(self, left: int, top: int, right: int, bottom: int) -> None: ...
+    #     @overload
+    #     def setTextMargins(self, margins: PySide6.QtCore.QMargins) -> None: ...
+    #     def setValidator(self, arg__1: PySide6.QtGui.QValidator) -> None: ...
+    #     def sizeHint(self) -> PySide6.QtCore.QSize: ...
+    def text(self) -> str:
+        """
+        Get the text in the line edit.
+
+        Returns:
+            The text in the line edit.
+        <br>
+        """
+
+    #     def textMargins(self) -> PySide6.QtCore.QMargins: ...
+    #     def timerEvent(self, arg__1: PySide6.QtCore.QTimerEvent) -> None: ...
+    def undo(self) -> None:
+        """
+        Undo the last operation in the line edit.
+
+        <br>
+        <br>
+        """
+
+
+#     def validator(self) -> PySide6.QtGui.QValidator: ...
+
+
+class QFileDialog:
+    """
+
+    <hr>
+
+    `QFileDialog` provides a dialog that allows users to select files or directories.
+    <hr>
+
+    <h3>Methods</h3>
+    <ul>
+        <li><a href="#code.QtWidgets.QFileDialog.getSaveFileName"><code>getSaveFileName</code></a></li>
+    </ul>
+
+    <br>
+
+    **Examples**
+    <hr>
+
+    ```py
+    from PySide6 import QtWidgets
+    from PySide6.QtCore import Slot
+
+
+    app = QtWidgets.QApplication()
+    window = QtWidgets.QMainWindow()
+
+    @Slot()
+    def save_file():
+        # Get the filename selected by the user
+        file_name, _ = QtWidgets.QFileDialog.getSaveFileName(filter="CSV files (*.csv)")
+
+        # Save the data to this file
+        with open(file_name, "w") as file:
+            file.write(data)
+
+    data = "1,2,3,4,5"
+    button = QtWidgets.QPushButton("Save File")
+    # A main window always requires a central widget
+    window.setCentralWidget(button)
+    button.clicked.connect(save_file)
+
+    window.show()
+    app.exec()
+    ```
+    The above example shows the shortest working code to save data to a CSV file.
+    Running the code above will display a window with a [QPushButton](QPushButton.md) that allows the user to save the data (`"1,2,3,4,5"`) to a CSV file.
+    <hr>
+    <br>
+    """
+
+    #     currentChanged           : ClassVar[Signal] = ... # currentChanged(QString)
+    #     currentUrlChanged        : ClassVar[Signal] = ... # currentUrlChanged(QUrl)
+    #     directoryEntered         : ClassVar[Signal] = ... # directoryEntered(QString)
+    #     directoryUrlEntered      : ClassVar[Signal] = ... # directoryUrlEntered(QUrl)
+    #     fileSelected             : ClassVar[Signal] = ... # fileSelected(QString)
+    #     filesSelected            : ClassVar[Signal] = ... # filesSelected(QStringList)
+    #     filterSelected           : ClassVar[Signal] = ... # filterSelected(QString)
+    #     urlSelected              : ClassVar[Signal] = ... # urlSelected(QUrl)
+    #     urlsSelected             : ClassVar[Signal] = ... # urlsSelected(QList<QUrl>)
+
+    #     class AcceptMode(enum.Enum):
+
+    #         AcceptOpen               : QFileDialog.AcceptMode = ... # 0x0
+    #         AcceptSave               : QFileDialog.AcceptMode = ... # 0x1
+
+    #     class DialogLabel(enum.Enum):
+
+    #         LookIn                   : QFileDialog.DialogLabel = ... # 0x0
+    #         FileName                 : QFileDialog.DialogLabel = ... # 0x1
+    #         FileType                 : QFileDialog.DialogLabel = ... # 0x2
+    #         Accept                   : QFileDialog.DialogLabel = ... # 0x3
+    #         Reject                   : QFileDialog.DialogLabel = ... # 0x4
+
+    #     class FileMode(enum.Enum):
+
+    #         AnyFile                  : QFileDialog.FileMode = ... # 0x0
+    #         ExistingFile             : QFileDialog.FileMode = ... # 0x1
+    #         Directory                : QFileDialog.FileMode = ... # 0x2
+    #         ExistingFiles            : QFileDialog.FileMode = ... # 0x3
+
+    #     class Option(enum.Flag):
+
+    #         ShowDirsOnly             : QFileDialog.Option = ... # 0x1
+    #         DontResolveSymlinks      : QFileDialog.Option = ... # 0x2
+    #         DontConfirmOverwrite     : QFileDialog.Option = ... # 0x4
+    #         DontUseNativeDialog      : QFileDialog.Option = ... # 0x8
+    #         ReadOnly                 : QFileDialog.Option = ... # 0x10
+    #         HideNameFilterDetails    : QFileDialog.Option = ... # 0x20
+    #         DontUseCustomDirectoryIcons: QFileDialog.Option = ... # 0x40
+
+    #     class ViewMode(enum.Enum):
+
+    #         Detail                   : QFileDialog.ViewMode = ... # 0x0
+    #         List                     : QFileDialog.ViewMode = ... # 0x1
+
+    #     @overload
+    #     def __init__(self, parent: PySide6.QtWidgets.QWidget, f: PySide6.QtCore.Qt.WindowType) -> None: ...
+    #     @overload
+    #     def __init__(self, parent: Optional[PySide6.QtWidgets.QWidget] = ..., caption: str = ..., directory: str = ..., filter: str = ...) -> None: ...
+
+    #     def accept(self) -> None: ...
+    #     def acceptMode(self) -> PySide6.QtWidgets.QFileDialog.AcceptMode: ...
+    #     def changeEvent(self, e: PySide6.QtCore.QEvent) -> None: ...
+    #     def defaultSuffix(self) -> str: ...
+    #     def directory(self) -> PySide6.QtCore.QDir: ...
+    #     def directoryUrl(self) -> PySide6.QtCore.QUrl: ...
+    #     def done(self, result: int) -> None: ...
+    #     def fileMode(self) -> PySide6.QtWidgets.QFileDialog.FileMode: ...
+    #     def filter(self) -> PySide6.QtCore.QDir.Filter: ...
+    #     @staticmethod
+    #     def getExistingDirectory(parent: Optional[PySide6.QtWidgets.QWidget] = ..., caption: str = ..., dir: str = ..., options: PySide6.QtWidgets.QFileDialog.Option = ...) -> str: ...
+    #     @staticmethod
+    #     def getExistingDirectoryUrl(parent: Optional[PySide6.QtWidgets.QWidget] = ..., caption: str = ..., dir: Union[PySide6.QtCore.QUrl, str] = ..., options: PySide6.QtWidgets.QFileDialog.Option = ..., supportedSchemes: Sequence[str] = ...) -> PySide6.QtCore.QUrl: ...
+    #     @staticmethod
+    #     def getOpenFileName(parent: PySide6.QtWidgets.QWidget, caption: Optional[str] = ..., dir: str = ..., filter: str = ..., selectedFilter: str = ..., options: PySide6.QtWidgets.QFileDialog.Option = ...) -> Tuple[str, str]: ...
+    #     @staticmethod
+    #     def getOpenFileNames(parent: PySide6.QtWidgets.QWidget, caption: Optional[str] = ..., dir: str = ..., filter: str = ..., selectedFilter: str = ..., options: PySide6.QtWidgets.QFileDialog.Option = ...) -> Tuple[List[str], str]: ...
+    #     @staticmethod
+    #     def getOpenFileUrl(parent: PySide6.QtWidgets.QWidget, caption: Optional[str] = ..., dir: Union[PySide6.QtCore.QUrl, str] = ..., filter: str = ..., selectedFilter: str = ..., options: PySide6.QtWidgets.QFileDialog.Option = ..., supportedSchemes: Sequence[str] = ...) -> Tuple[PySide6.QtCore.QUrl, str]: ...
+    #     @staticmethod
+    #     def getOpenFileUrls(parent: PySide6.QtWidgets.QWidget, caption: Optional[str] = ..., dir: Union[PySide6.QtCore.QUrl, str] = ..., filter: str = ..., selectedFilter: str = ..., options: PySide6.QtWidgets.QFileDialog.Option = ..., supportedSchemes: Sequence[str] = ...) -> Tuple[List[PySide6.QtCore.QUrl], str]: ...
+    @staticmethod
+    def getSaveFileName(
+        caption: Optional[str] = None, dir: str = None, filter: str = None
+    ) -> Tuple[str, str]:
+        """
+        Opens a dialog for saving a file. The dialog is displayed as a modal
+        dialog and returns the selected file name and filter.
+
+        Args:
+            caption (str): The dialog caption.
+            dir (str): The initial directory.
+            filter (str): The file filter. Generally, this is a string like
+                "Image files (*.png *.jpg)" or "Text files (*.txt);;CSV files (*.csv)",
+                where multiple filters are separated by two semicolons.
+
+        Returns:
+            A tuple containing the selected file name and filter.
+        <br>
+        <br>
+        """
+
+
+#     @staticmethod
+#     def getSaveFileUrl(parent: PySide6.QtWidgets.QWidget, caption: Optional[str] = ..., dir: Union[PySide6.QtCore.QUrl, str] = ..., filter: str = ..., selectedFilter: str = ..., options: PySide6.QtWidgets.QFileDialog.Option = ..., supportedSchemes: Sequence[str] = ...) -> Tuple[PySide6.QtCore.QUrl, str]: ...
+#     def history(self) -> List[str]: ...
+#     def iconProvider(self) -> PySide6.QtGui.QAbstractFileIconProvider: ...
+#     def itemDelegate(self) -> PySide6.QtWidgets.QAbstractItemDelegate: ...
+#     def labelText(self, label: PySide6.QtWidgets.QFileDialog.DialogLabel) -> str: ...
+#     def mimeTypeFilters(self) -> List[str]: ...
+#     def nameFilters(self) -> List[str]: ...
+#     @overload
+#     def open(self) -> None: ...
+#     @overload
+#     def open(self, receiver: PySide6.QtCore.QObject, member: bytes) -> None: ...
+#     def options(self) -> PySide6.QtWidgets.QFileDialog.Option: ...
+#     def proxyModel(self) -> PySide6.QtCore.QAbstractProxyModel: ...
+#     def restoreState(self, state: Union[PySide6.QtCore.QByteArray, bytes]) -> bool: ...
+#     @staticmethod
+#     def saveFileContent(fileContent: Union[PySide6.QtCore.QByteArray, bytes], fileNameHint: str = ...) -> None: ...
+#     def saveState(self) -> PySide6.QtCore.QByteArray: ...
+#     def selectFile(self, filename: str) -> None: ...
+#     def selectMimeTypeFilter(self, filter: str) -> None: ...
+#     def selectNameFilter(self, filter: str) -> None: ...
+#     def selectUrl(self, url: Union[PySide6.QtCore.QUrl, str]) -> None: ...
+#     def selectedFiles(self) -> List[str]: ...
+#     def selectedMimeTypeFilter(self) -> str: ...
+#     def selectedNameFilter(self) -> str: ...
+#     def selectedUrls(self) -> List[PySide6.QtCore.QUrl]: ...
+#     def setAcceptMode(self, mode: PySide6.QtWidgets.QFileDialog.AcceptMode) -> None: ...
+#     def setDefaultSuffix(self, suffix: str) -> None: ...
+#     @overload
+#     def setDirectory(self, directory: str) -> None: ...
+#     @overload
+#     def setDirectory(self, directory: Union[PySide6.QtCore.QDir, str]) -> None: ...
+#     def setDirectoryUrl(self, directory: Union[PySide6.QtCore.QUrl, str]) -> None: ...
+#     def setFileMode(self, mode: PySide6.QtWidgets.QFileDialog.FileMode) -> None: ...
+#     def setFilter(self, filters: PySide6.QtCore.QDir.Filter) -> None: ...
+#     def setHistory(self, paths: Sequence[str]) -> None: ...
+#     def setIconProvider(self, provider: PySide6.QtGui.QAbstractFileIconProvider) -> None: ...
+#     def setItemDelegate(self, delegate: PySide6.QtWidgets.QAbstractItemDelegate) -> None: ...
+#     def setLabelText(self, label: PySide6.QtWidgets.QFileDialog.DialogLabel, text: str) -> None: ...
+#     def setMimeTypeFilters(self, filters: Sequence[str]) -> None: ...
+#     def setNameFilter(self, filter: str) -> None: ...
+#     def setNameFilters(self, filters: Sequence[str]) -> None: ...
+#     def setOption(self, option: PySide6.QtWidgets.QFileDialog.Option, on: bool = ...) -> None: ...
+#     def setOptions(self, options: PySide6.QtWidgets.QFileDialog.Option) -> None: ...
+#     def setProxyModel(self, model: PySide6.QtCore.QAbstractProxyModel) -> None: ...
+#     def setSidebarUrls(self, urls: Sequence[PySide6.QtCore.QUrl]) -> None: ...
+#     def setSupportedSchemes(self, schemes: Sequence[str]) -> None: ...
+#     def setViewMode(self, mode: PySide6.QtWidgets.QFileDialog.ViewMode) -> None: ...
+#     def setVisible(self, visible: bool) -> None: ...
+#     def sidebarUrls(self) -> List[PySide6.QtCore.QUrl]: ...
+#     def supportedSchemes(self) -> List[str]: ...
+#     def testOption(self, option: PySide6.QtWidgets.QFileDialog.Option) -> bool: ...
+#     def viewMode(self) -> PySide6.QtWidgets.QFileDialog.ViewMode: ...
