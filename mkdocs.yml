@@ -2,8 +2,8 @@ site_name: PySide6 Compact Documentation
 
 theme:
   name: material
-  logo: logo.svg
-  favicon: favicon.ico
+  logo: P6CD_logo_simple.svg
+  favicon: P6CD_logo_plain.svg
   features:
     - content.code.copy
     - content.code.annotate
