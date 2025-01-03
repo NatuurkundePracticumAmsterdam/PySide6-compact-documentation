@@ -43,7 +43,6 @@ class QWidget:
     <h3>Methods</h3>
 
     <ul>
-        <li><a href="#code.QtWidgets.QWidget.resize"><code>resize</code></a></li>
         <li><a href="#code.QtWidgets.QWidget.setLayout"><code>setLayout</code></a></li>
         <li><a href="#code.QtWidgets.QWidget.show"><code>show</code></a></li>
     </ul>
@@ -322,16 +321,16 @@ class QWidget:
     #     @overload
     #     def resize(self, arg__1: PySide6.QtCore.QSize) -> None: ...
 
-    def resize(self, w: int, h: int) -> None:
-        """
-        Resizes the widget to have a width of `w` pixels and a height of `h` pixels.
+    # def resize(self, w: int, h: int) -> None:
+    #     """
+    #     Resizes the widget to have a width of `w` pixels and a height of `h` pixels.
 
-        Args:
-            w (int): The width of the widget in pixels.
-            h (int): The height of the widget in pixels.
+    #     Args:
+    #         w (int): The width of the widget in pixels.
+    #         h (int): The height of the widget in pixels.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     #     def resizeEvent(self, event: PySide6.QtGui.QResizeEvent) -> None: ...
     #     def restoreGeometry(self, geometry: Union[PySide6.QtCore.QByteArray, bytes]) -> bool: ...
@@ -449,13 +448,13 @@ class QWidget:
     #     def setWindowState(self, state: PySide6.QtCore.Qt.WindowState) -> None: ...
     #     def setWindowTitle(self, arg__1: str) -> None: ...
     #     def sharedPainter(self) -> PySide6.QtGui.QPainter: ...
-    def show(self) -> None:
-        """
-        Shows the widget and its child widgets.
+    # def show(self) -> None:
+    #     """
+    #     Shows the widget and its child widgets.
 
-        <br>
-        <br>
-        """
+    #     <br>
+    #     <br>
+    #     """
 
 
 #     def showEvent(self, event: PySide6.QtGui.QShowEvent) -> None: ...
@@ -528,8 +527,6 @@ class QLayout:
 
     <ul>
         <li><a href="#code.QtWidgets.QLayout.addWidget"><code>addWidget</code></a></li>
-        <li><a href="#code.QtWidgets.QLayout.setSpacing"><code>setSpacing</code></a></li>
-        <li><a href="#code.QtWidgets.QLayout.spacing"><code>spacing</code></a></li>
 
     </ul>
 
@@ -620,27 +617,27 @@ class QLayout:
     #     def setGeometry(self, arg__1: PySide6.QtCore.QRect) -> None: ...
     #     def setMenuBar(self, w: PySide6.QtWidgets.QWidget) -> None: ...
     #     def setSizeConstraint(self, arg__1: PySide6.QtWidgets.QLayout.SizeConstraint) -> None: ...
-    def setSpacing(self, space: int) -> None:
-        """
-        Sets the spacing between the items in the layout to `space`.
+    # def setSpacing(self, space: int) -> None:
+    #     """
+    #     Sets the spacing between the items in the layout to `space`.
 
-        Args:
-            space (int): The spacing between the items in the layout.
+    #     Args:
+    #         space (int): The spacing between the items in the layout.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     #     def sizeConstraint(self) -> PySide6.QtWidgets.QLayout.SizeConstraint: ...
-    def spacing(self) -> int:
-        """
-        Gets the spacing between the items in the layout.
+    # def spacing(self) -> int:
+    #     """
+    #     Gets the spacing between the items in the layout.
 
-        Returns:
-            The spacing between the items in the layout.
+    #     Returns:
+    #         The spacing between the items in the layout.
 
-        <br>
-        <br>
-        """
+    #     <br>
+    #     <br>
+    #     """
 
 
 #     def takeAt(self, index: int) -> PySide6.QtWidgets.QLayoutItem: ...
@@ -976,6 +973,7 @@ class QHBoxLayout:
     <h3>Methods</h3>
     <ul>
         <li><a href="#code.QtWidgets.QHBoxLayout.addLayout"><code>addLayout</code></a></li>
+        <li><a href="#code.QtWidgets.QHBoxLayout.addWidget"><code>addWidget</code></a></li>
     </ul>
 
     <br>
@@ -1015,6 +1013,16 @@ class QHBoxLayout:
         <br>
         """
 
+    def addWidget(self, w: PySide6.QtWidgets.QWidget) -> None:
+        """
+        Adds the widget `w` to the layout.
+
+        Args:
+            w (PySide6.QtWidgets.QWidget): The widget to add to the layout.
+
+        <br>
+        """
+
     # @overload
     # def __init__(self) -> None: ...
     # @overload
@@ -1034,6 +1042,7 @@ class QVBoxLayout:
     <h3>Methods</h3>
     <ul>
         <li><a href="#code.QtWidgets.QVBoxLayout.addLayout"><code>addLayout</code></a></li>
+        <li><a href="#code.QtWidgets.QVBoxLayout.addWidget"><code>addWidget</code></a></li>
     </ul>
 
     <br>
@@ -1071,6 +1080,16 @@ class QVBoxLayout:
         <br>
         """
 
+    def addWidget(self, w: PySide6.QtWidgets.QWidget) -> None:
+        """
+        Adds the widget `w` to the layout.
+
+        Args:
+            w (PySide6.QtWidgets.QWidget): The widget to add to the layout.
+
+        <br>
+        """
+
     @overload
     def __init__(self) -> None: ...
     @overload
@@ -1084,8 +1103,7 @@ class QFormLayout:
     ![](layouts/form_layout.png)
 
     `QFormLayout` is a layout manager that arranges widgets in a two-column layout. The left column
-    contains labels, and the right column contains widgets. This layout can also be achieved using
-    [`QGridLayout`](QGridLayout.md) but `QFormLayout` provides a more convenient way to create
+    contains labels, and the right column contains widgets. `QFormLayout` provides a more convenient way to create
     form-like layouts.
 
     <hr>
@@ -1093,12 +1111,7 @@ class QFormLayout:
     <h3>Methods</h3>
     <ul>
         <li><a href="#code.QtWidgets.QFormLayout.addRow"><code>addRow</code></a></li>
-        <li><a href="#code.QtWidgets.QFormLayout.horizontalSpacing"><code>horizontalSpacing</code></a></li>
-        <li><a href="#code.QtWidgets.QFormLayout.sethorizontalSpacing"><code>setHorizontalSpacing</code></a></li>
-        <li><a href="#code.QtWidgets.QFormLayout.verticalSpacing"><code>verticalSpacing</code></a></li>
-        <li><a href="#code.QtWidgets.QFormLayout.setVerticalSpacing"><code>setVerticalSpacing</code></a></li>
-        <li><a href="#code.QtWidgets.QFormLayout.removeRow"><code>removeRow</code></a></li>
-        <li><a href="#code.QtWidgets.QFormLayout.rowCount"><code>rowCount</code></a></li>
+        <li><a href="#code.QtWidgets.QFormLayout.addWidget"><code>addWidget</code></a></li>
     </ul>
 
     <br>
@@ -1110,18 +1123,8 @@ class QFormLayout:
     label = QtWidgets.QLabel("Name:")
     line_edit = QtWidgets.QLineEdit()
     layout.addRow(label, line_edit)
-
-    print(layout.rowCount())
     ```
-    `1`
-    ```py
-    spin_box = QtWidgets.QSpinBox()
-    layout.addRow("age", spinbox)
-
-    layout.removeRow(0)
-    print(layout.rowCount())
-    ```
-    `1`
+    The above example creates a form layout that contains the first row of the example image of the form layout.
     <hr>
     <br>
 
@@ -1183,15 +1186,15 @@ class QFormLayout:
     # def getWidgetPosition(self, widget: PySide6.QtWidgets.QWidget) -> object: ...
     # def hasHeightForWidth(self) -> bool: ...
     # def heightForWidth(self, width: int) -> int: ...
-    def horizontalSpacing(self) -> int:
-        """
-        Get the horizontal spacing between the items in the layout.
+    # def horizontalSpacing(self) -> int:
+    #     """
+    #     Get the horizontal spacing between the items in the layout.
 
-        Returns:
-            The horizontal spacing between the items in the layout.
+    #     Returns:
+    #         The horizontal spacing between the items in the layout.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # @overload
     # def insertRow(self, row: int, label: PySide6.QtWidgets.QWidget, field: PySide6.QtWidgets.QLayout) -> None: ...
@@ -1223,46 +1226,46 @@ class QFormLayout:
     # def labelForField(self, field: PySide6.QtWidgets.QWidget) -> PySide6.QtWidgets.QWidget: ...
     # def minimumSize(self) -> PySide6.QtCore.QSize: ...
     # @overload
-    def removeRow(
-        self, row: int | PySide6.QtWidgets.QWidget | PySide6.QtWidgets.QLayout
-    ) -> None:
-        """
-        Remove the row from the layout. The row can be specified by the row number, the widget, or the layout.
+    # def removeRow(
+    #     self, row: int | PySide6.QtWidgets.QWidget | PySide6.QtWidgets.QLayout
+    # ) -> None:
+    #     """
+    #     Remove the row from the layout. The row can be specified by the row number, the widget, or the layout.
 
-        Args:
-            row (int | PySide6.QtWidgets.QWidget | PySide6.QtWidgets.QLayout): The row to remove.
+    #     Args:
+    #         row (int | PySide6.QtWidgets.QWidget | PySide6.QtWidgets.QLayout): The row to remove.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # @overload
     # def removeRow(self, row: int) -> None: ...
     # @overload
     # def removeRow(self, widget: PySide6.QtWidgets.QWidget) -> None: ...
 
-    def rowCount(self) -> int:
-        """
-        Get the number of rows in the layout.
+    # def rowCount(self) -> int:
+    #     """
+    #     Get the number of rows in the layout.
 
-        Returns:
-            The number of rows in the layout.
+    #     Returns:
+    #         The number of rows in the layout.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def rowWrapPolicy(self) -> PySide6.QtWidgets.QFormLayout.RowWrapPolicy: ...
     # def setFieldGrowthPolicy(self, policy: PySide6.QtWidgets.QFormLayout.FieldGrowthPolicy) -> None: ...
     # def setFormAlignment(self, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
     # def setGeometry(self, rect: PySide6.QtCore.QRect) -> None: ...
-    def setHorizontalSpacing(self, spacing: int) -> None:
-        """
-        Set the horizontal spacing between the items in the layout.
+    # def setHorizontalSpacing(self, spacing: int) -> None:
+    #     """
+    #     Set the horizontal spacing between the items in the layout.
 
-        Args:
-            spacing (int): The horizontal spacing between the items in the layout.
+    #     Args:
+    #         spacing (int): The horizontal spacing between the items in the layout.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def setItem(self, row: int, role: PySide6.QtWidgets.QFormLayout.ItemRole, item: PySide6.QtWidgets.QLayoutItem) -> None: ...
     # def setLabelAlignment(self, alignment: PySide6.QtCore.Qt.AlignmentFlag) -> None: ...
@@ -1275,15 +1278,15 @@ class QFormLayout:
     # def setRowVisible(self, widget: PySide6.QtWidgets.QWidget, on: bool) -> None: ...
     # def setRowWrapPolicy(self, policy: PySide6.QtWidgets.QFormLayout.RowWrapPolicy) -> None: ...
     # def setSpacing(self, arg__1: int) -> None: ...
-    def setVerticalSpacing(self, spacing: int) -> None:
-        """
-        Set the vertical spacing between the items in the layout.
+    # def setVerticalSpacing(self, spacing: int) -> None:
+    #     """
+    #     Set the vertical spacing between the items in the layout.
 
-        Args:
-            spacing (int): The vertical spacing between the items in the layout.
+    #     Args:
+    #         spacing (int): The vertical spacing between the items in the layout.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def setWidget(self, row: int, role: PySide6.QtWidgets.QFormLayout.ItemRole, widget: PySide6.QtWidgets.QWidget) -> None: ...
     # def sizeHint(self) -> PySide6.QtCore.QSize: ...
@@ -1295,14 +1298,24 @@ class QFormLayout:
     # def takeRow(self, row: int) -> PySide6.QtWidgets.QFormLayout.TakeRowResult: ...
     # @overload
     # def takeRow(self, widget: PySide6.QtWidgets.QWidget) -> PySide6.QtWidgets.QFormLayout.TakeRowResult: ...
-    def verticalSpacing(self) -> int:
+    # def verticalSpacing(self) -> int:
+    #     """
+    #     Get the vertical spacing between the items in the layout.
+
+    #     Returns:
+    #         The vertical spacing between the items in the layout.
+
+    #     <br>
+    #     <br>
+    #     """
+
+    def addWidget(self, w: PySide6.QtWidgets.QWidget) -> None:
         """
-        Get the vertical spacing between the items in the layout.
+        Adds the widget `w` to the layout.
 
-        Returns:
-            The vertical spacing between the items in the layout.
+        Args:
+            w (PySide6.QtWidgets.QWidget): The widget to add to the layout.
 
-        <br>
         <br>
         """
 
@@ -1689,7 +1702,6 @@ class QTextEdit:
 
     <h3>Signals</h3>
     <ul>
-        <li><code>cursorPositionChanged</code>: Emitted when the cursor position changes.</li>
         <li><code>textChanged</code>: Emitted when the text changes.</li>
     </ul>
 
@@ -1698,26 +1710,11 @@ class QTextEdit:
         <li><a href="#code.QtWidgets.QTextEdit.clear"><code>clear</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.copy"><code>copy</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.paste"><code>paste</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.redo"><code>redo</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.undo"><code>undo</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.cut"><code>cut</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.append"><code>append</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.setPlaceholderText"><code>setPlaceholderText</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.placeholderText"><code>placeholderText</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.setReadOnly"><code>setReadOnly</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.isReadOnly"><code>isReadOnly</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.setFontItalic"><code>setFontItalic</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.setFontUnderline"><code>setFontUnderline</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.setFontWeight"><code>setFontWeight</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.setFontPointSize"><code>setFontPointSize</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.setText"><code>setText</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.setHtml"><code>toHtml</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.setMarkdown"><code>setMarkdown</code></a></li>
         <li><a href="#code.QtWidgets.QTextEdit.toPlainText"><code>toPlainText</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.toHtml"><code>toHtml</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.toMarkdown"><code>toMarkdown</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.zoomIn"><code>zoomIn</code></a></li>
-        <li><a href="#code.QtWidgets.QTextEdit.zoomOut"><code>zoomOut</code></a></li>
     </ul>
 
     <br>
@@ -1726,22 +1723,11 @@ class QTextEdit:
     <hr>
     ``` py
     text_edit = QtWidgets.QTextEdit()
-    text_edit.setHtml("<b>Hello, World!</b>")
+    text_edit.setText("Hello, World!")
 
     print(text_edit.toPlainText())
-    print(text_edit.toHtml())
     ```
     `Hello, World!` <br>
-    `<b>Hello, World!</b>`
-    ``` py
-    text_edit.setMarkdown("**Hello, World!**")
-
-    print(text_edit.toPlainText())
-    print(text_edit.Markdown())
-    ```
-    `Hello, World!` <br>
-    `**Hello, World!**` <br> <br>
-    The above code shows how to set the text of a `QTextEdit` widget using HTML and Markdown and how to get the text in plain text, HTML, and Markdown formats.
 
     <hr>
     <br>
@@ -1751,7 +1737,7 @@ class QTextEdit:
     # currentCharFormatChanged: ClassVar[Signal] = (
     #    ...
     # )  currentCharFormatChanged(QTextCharFormat)
-    cursorPositionChanged: ClassVar[Signal] = ...  # cursorPositionChanged()
+    # cursorPositionChanged: ClassVar[Signal] = ...  # cursorPositionChanged()
     # redoAvailable: ClassVar[Signal] = ...  # redoAvailable(bool)
     # selectionChanged: ClassVar[Signal] = ...  # selectionChanged()
     textChanged: ClassVar[Signal] = ...  # textChanged()
@@ -1835,12 +1821,12 @@ class QTextEdit:
     # @overload
     # def cursorRect(self, cursor: PySide6.QtGui.QTextCursor) -> PySide6.QtCore.QRect: ...
     # def cursorWidth(self) -> int: ...
-    def cut(self) -> None:
-        """
-        Cut any selected text to the clipboard.
+    # def cut(self) -> None:
+    #     """
+    #     Cut any selected text to the clipboard.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def doSetTextCursor(self, cursor: PySide6.QtGui.QTextCursor) -> None: ...
     # def document(self) -> PySide6.QtGui.QTextDocument: ...
@@ -1880,15 +1866,15 @@ class QTextEdit:
     # def insertFromMimeData(self, source: PySide6.QtCore.QMimeData) -> None: ...
     # def insertHtml(self, text: str) -> None: ...
     # def insertPlainText(self, text: str) -> None: ...
-    def isReadOnly(self) -> bool:
-        """
-        Check if the text edit is read-only.
+    # def isReadOnly(self) -> bool:
+    #     """
+    #     Check if the text edit is read-only.
 
-        Returns:
-            bool: True if the text edit is read-only, False otherwise.
+    #     Returns:
+    #         bool: True if the text edit is read-only, False otherwise.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def isUndoRedoEnabled(self) -> bool: ...
     # def keyPressEvent(self, e: PySide6.QtGui.QKeyEvent) -> None: ...
@@ -1917,23 +1903,23 @@ class QTextEdit:
         <br>
         """
 
-    def placeholderText(self) -> str:
-        """
-        Get the placeholder text of the text edit.
+    # def placeholderText(self) -> str:
+    #     """
+    #     Get the placeholder text of the text edit.
 
-        Returns:
-            str: The placeholder text of the text edit.
+    #     Returns:
+    #         str: The placeholder text of the text edit.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def print_(self, printer: PySide6.QtGui.QPagedPaintDevice) -> None: ...
-    def redo(self) -> None:
-        """
-        Redo the last operation.
+    # def redo(self) -> None:
+    #     """
+    #     Redo the last operation.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def resizeEvent(self, e: PySide6.QtGui.QResizeEvent) -> None: ...
     # def scrollContentsBy(self, dx: int, dy: int) -> None: ...
@@ -1955,70 +1941,70 @@ class QTextEdit:
     #     self, selections: Sequence[PySide6.QtWidgets.QTextEdit.ExtraSelection]
     # ) -> None: ...
     # def setFontFamily(self, fontFamily: str) -> None: ...
-    def setFontItalic(self, b: bool) -> None:
-        """
-        Set the italic font style of the text edit. All text added to the text edit after a call with `True` will be displayed in italic.
+    # def setFontItalic(self, b: bool) -> None:
+    #     """
+    #     Set the italic font style of the text edit. All text added to the text edit after a call with `True` will be displayed in italic.
 
-        Args:
-            b (bool): True to set the font style to italic, False otherwise.
+    #     Args:
+    #         b (bool): True to set the font style to italic, False otherwise.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
-    def setFontPointSize(self, s: float) -> None:
-        """
-        Set the font size of the text edit. All text added to the text edit after a call with a specific size will be displayed with that size.
+    # def setFontPointSize(self, s: float) -> None:
+    #     """
+    #     Set the font size of the text edit. All text added to the text edit after a call with a specific size will be displayed with that size.
 
-        Args:
-            s (float): The font size to set.
+    #     Args:
+    #         s (float): The font size to set.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
-    def setFontUnderline(self, b: bool) -> None:
-        """
-        Set the underline font style of the text edit. All text added to the text edit after a call with `True` will be displayed with an underline.
+    # def setFontUnderline(self, b: bool) -> None:
+    #     """
+    #     Set the underline font style of the text edit. All text added to the text edit after a call with `True` will be displayed with an underline.
 
-        Args:
-            b (bool): True to set the font style to underline, False otherwise.
+    #     Args:
+    #         b (bool): True to set the font style to underline, False otherwise.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
-    def setFontWeight(self, w: int) -> None:
-        """
-        Set the font weight of the text edit. Font weight is a numerical value that determines the thickness of the characters in the text edit.
-        All text added to the text edit after a call with a specific weight will be displayed with that weight.
+    # def setFontWeight(self, w: int) -> None:
+    #     """
+    #     Set the font weight of the text edit. Font weight is a numerical value that determines the thickness of the characters in the text edit.
+    #     All text added to the text edit after a call with a specific weight will be displayed with that weight.
 
-        Args:
-            w (int): The font weight to set.
+    #     Args:
+    #         w (int): The font weight to set.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
-    def setHtml(self, text: str) -> None:
-        """
-        Set the text edit contents to the specified HTML text.
+    # def setHtml(self, text: str) -> None:
+    #     """
+    #     Set the text edit contents to the specified HTML text.
 
-        Args:
-            text (str): The HTML text to set.
+    #     Args:
+    #         text (str): The HTML text to set.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def setLineWrapColumnOrWidth(self, w: int) -> None: ...
     # def setLineWrapMode(
     #     self, mode: PySide6.QtWidgets.QTextEdit.LineWrapMode
     # ) -> None: ...
-    def setMarkdown(self, markdown: str) -> None:
-        """
-        Set the text edit contents to the specified Markdown text.
+    # def setMarkdown(self, markdown: str) -> None:
+    #     """
+    #     Set the text edit contents to the specified Markdown text.
 
-        Args:
-            markdown (str): The Markdown text to set.
+    #     Args:
+    #         markdown (str): The Markdown text to set.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def setOverwriteMode(self, overwrite: bool) -> None: ...
     def setPlaceholderText(self, placeholderText: str) -> None:
@@ -2089,30 +2075,30 @@ class QTextEdit:
     # def textColor(self) -> PySide6.QtGui.QColor: ...
     # def textCursor(self) -> PySide6.QtGui.QTextCursor: ...
     # def textInteractionFlags(self) -> PySide6.QtCore.Qt.TextInteractionFlag: ...
-    # def timerEvent(self, e: PySide6.QtCore.QTimerEvent) -> None: ...
-    def toHtml(self) -> str:
-        """
-        Get the text edit contents as HTML text.
+    # # def timerEvent(self, e: PySide6.QtCore.QTimerEvent) -> None: ...
+    # def toHtml(self) -> str:
+    #     """
+    #     Get the text edit contents as HTML text.
 
-        Returns:
-            str: The text edit contents as HTML text.
+    #     Returns:
+    #         str: The text edit contents as HTML text.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
-    def toMarkdown(self) -> str:
-        """
-        Get the text edit contents as Markdown text.
+    # def toMarkdown(self) -> str:
+    #     """
+    #     Get the text edit contents as Markdown text.
 
-        Returns:
-            str: The text edit contents as Markdown text.
+    #     Returns:
+    #         str: The text edit contents as Markdown text.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     def toPlainText(self) -> str:
         """
-        Get the text edit contents as plain text. For example if the text edit contains the HTML text `<b>bold</b>`, the returned text will be `bold`.
+        Get the text edit contents as plain text.
 
         Returns:
             str: The text edit contents as plain text.
@@ -2120,36 +2106,36 @@ class QTextEdit:
         <br>
         """
 
-    def undo(self) -> None:
-        """
-        Undo the last operation in the text edit.
+    # def undo(self) -> None:
+    #     """
+    #     Undo the last operation in the text edit.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def wheelEvent(self, e: PySide6.QtGui.QWheelEvent) -> None: ...
     # def wordWrapMode(self) -> PySide6.QtGui.QTextOption.WrapMode: ...
-    def zoomIn(self, r: int) -> None:
-        """
-        Zoom in the text edit by the specified range.
+    # def zoomIn(self, r: int) -> None:
+    #     """
+    #     Zoom in the text edit by the specified range.
 
-        Args:
-            r (int): The range to zoom in by.
+    #     Args:
+    #         r (int): The range to zoom in by.
 
-        <br>
-        """
+    #     <br>
+    #     """
 
     # def zoomInF(self, range: float) -> None: ...
-    def zoomOut(self, r: int) -> None:
-        """
-        Zoom out the text edit by the specified range.
+    # def zoomOut(self, r: int) -> None:
+    #     """
+    #     Zoom out the text edit by the specified range.
 
-        Args:
-            r (int): The range to zoom out by.
+    #     Args:
+    #         r (int): The range to zoom out by.
 
-        <br>
-        <br>
-        """
+    #     <br>
+    #     <br>
+    #     """
 
 
 class QCheckBox:

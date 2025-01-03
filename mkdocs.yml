@@ -62,16 +62,13 @@ nav:
     - 3. Connecting widgets to a function: tutorial/connecting_widgets_to_a_function.md
   - API Reference: 
     - Overview: QtWidgets/index.md
-    - QtWidgets/QApplication.md
-    - QtWidgets/QLayout.md
-    - QtWidgets/QWidget.md
-
+  
     - QLayouts:
       - QtWidgets/QHBoxLayout.md
       - QtWidgets/QVBoxLayout.md
-      - QtWidgets/QGridLayout.md
       - QtWidgets/QFormLayout.md
     - QWidgets:
+      - QtWidgets/QApplication.md
       - QtWidgets/QMainWindow.md
       - QtWidgets/QGroupBox.md
       - QtWidgets/QTextEdit.md
