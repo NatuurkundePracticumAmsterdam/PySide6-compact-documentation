@@ -42,6 +42,29 @@ source myenv/bin/activate
 pip install pyside6
 ```
 
+## uv 
+If you use [`uv`](https://docs.astral.sh/uv/) for project management, you can install PySide6 using the commands below. 
+
+1. Create a uv project. 
+``` bash 
+uv init myproject --package
+cd myproject
+```
+2. Activate the environment: <br> </br>
+  Windows :material-microsoft-windows::
+```
+myproject\Scripts\activate
+```
+Unix:material-linux: / macOS:material-apple::
+```bash
+source myproject/bin/activate
+```
+
+3. Add PySide6 to the project's `pyproject.toml` file. 
+```bash
+uv add pyside6
+```
+
 ## Poetry
 
 If you use [`poetry`](https://python-poetry.org/), you can install PySide6 using the commands below. Also with `poetry` it is best practice to use a virtual environment. This virtual environment can be either a `venv` or `conda` environment. 
