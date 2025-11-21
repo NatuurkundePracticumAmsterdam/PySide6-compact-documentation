@@ -15,8 +15,11 @@
         <link rel="next" href="../../QtWidgets/">
       
       
+        
+      
+      
       <link rel="icon" href="../../P6CD_logo_plain.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
@@ -24,7 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,21 +51,23 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../assets/hl_color.css">
-    
-      <link rel="stylesheet" href="../../assets/syntax_color.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-    
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -108,16 +116,54 @@
       </div>
     </div>
     
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -149,6 +195,7 @@
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -169,9 +216,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../.." class="md-tabs__link">
         
+  
   
     
   
@@ -186,9 +235,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../Installation_Guide/" class="md-tabs__link">
         
+  
   
     
   
@@ -202,6 +253,7 @@
         
   
   
+  
     
   
   
@@ -210,6 +262,7 @@
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
+  
   
   Tutorial
 
@@ -223,11 +276,13 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href="../../QtWidgets/" class="md-tabs__link">
           
+  
   
   API Reference
 
@@ -279,9 +334,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -299,9 +361,16 @@
       <a href="../../Installation_Guide/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Installation Guide
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -317,6 +386,7 @@
   
   
   
+    
     
     
     
@@ -339,9 +409,16 @@
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Tutorial
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -350,7 +427,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Tutorial
+            
+  
+    Tutorial
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -364,9 +445,16 @@
       <a href="../" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Introduction
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -385,9 +473,16 @@
       <a href="../creating_a_simple_window/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Creating a simple window
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -406,9 +501,16 @@
       <a href="../adding_widgets_to_a_window/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2. Adding widgets to a window
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -434,9 +536,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     3. Connecting widgets to a function
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -445,9 +554,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3. Connecting widgets to a function
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -468,7 +584,9 @@
         <li class="md-nav__item">
   <a href="#creating-a-slot-function" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating a slot function
+      
+        Creating a slot function
+      
     </span>
   </a>
   
@@ -477,7 +595,9 @@
         <li class="md-nav__item">
   <a href="#connecting-the-slot-function-to-a-widget" class="md-nav__link">
     <span class="md-ellipsis">
-      Connecting the slot function to a widget
+      
+        Connecting the slot function to a widget
+      
     </span>
   </a>
   
@@ -486,7 +606,9 @@
         <li class="md-nav__item">
   <a href="#final-result" class="md-nav__link">
     <span class="md-ellipsis">
-      Final Result
+      
+        Final Result
+      
     </span>
   </a>
   
@@ -517,6 +639,7 @@
     
     
     
+    
       
       
         
@@ -533,9 +656,16 @@
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     API Reference
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -544,7 +674,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            API Reference
+            
+  
+    API Reference
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -558,9 +692,16 @@
       <a href="../../QtWidgets/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Overview
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -579,9 +720,16 @@
       <a href="../../QtWidgets/QApplication/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QApplication
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -600,9 +748,16 @@
       <a href="../../QtWidgets/QLayout/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QLayout
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -621,9 +776,16 @@
       <a href="../../QtWidgets/QWidget/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QWidget
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -638,6 +800,7 @@
   
   
   
+    
     
     
     
@@ -657,9 +820,16 @@
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     QLayouts
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -668,7 +838,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
-            QLayouts
+            
+  
+    QLayouts
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -682,9 +856,16 @@
       <a href="../../QtWidgets/QHBoxLayout/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QHBoxLayout
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -703,9 +884,16 @@
       <a href="../../QtWidgets/QVBoxLayout/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QVBoxLayout
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -724,9 +912,16 @@
       <a href="../../QtWidgets/QGridLayout/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QGridLayout
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -745,9 +940,16 @@
       <a href="../../QtWidgets/QFormLayout/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QFormLayout
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -773,6 +975,7 @@
     
     
     
+    
       
       
         
@@ -789,9 +992,16 @@
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     QWidgets
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -800,7 +1010,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
-            QWidgets
+            
+  
+    QWidgets
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -814,9 +1028,16 @@
       <a href="../../QtWidgets/QMainWindow/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QMainWindow
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -835,9 +1056,16 @@
       <a href="../../QtWidgets/QGroupBox/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QGroupBox
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -856,9 +1084,16 @@
       <a href="../../QtWidgets/QTextEdit/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QTextEdit
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -877,9 +1112,16 @@
       <a href="../../QtWidgets/QLineEdit/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QLineEdit
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -898,9 +1140,16 @@
       <a href="../../QtWidgets/QFileDialog/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QFileDialog
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -919,9 +1168,16 @@
       <a href="../../QtWidgets/QCheckBox/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QCheckBox
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -940,9 +1196,16 @@
       <a href="../../QtWidgets/QLabel/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QLabel
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -961,9 +1224,16 @@
       <a href="../../QtWidgets/QComboBox/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QComboBox
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -982,9 +1252,16 @@
       <a href="../../QtWidgets/QSpinBox/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QSpinBox
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1003,9 +1280,16 @@
       <a href="../../QtWidgets/QDoubleSpinBox/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QDoubleSpinBox
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1024,9 +1308,16 @@
       <a href="../../QtWidgets/QPushButton/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     QPushButton
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1077,7 +1368,9 @@
         <li class="md-nav__item">
   <a href="#creating-a-slot-function" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating a slot function
+      
+        Creating a slot function
+      
     </span>
   </a>
   
@@ -1086,7 +1379,9 @@
         <li class="md-nav__item">
   <a href="#connecting-the-slot-function-to-a-widget" class="md-nav__link">
     <span class="md-ellipsis">
-      Connecting the slot function to a widget
+      
+        Connecting the slot function to a widget
+      
     </span>
   </a>
   
@@ -1095,7 +1390,9 @@
         <li class="md-nav__item">
   <a href="#final-result" class="md-nav__link">
     <span class="md-ellipsis">
-      Final Result
+      
+        Final Result
+      
     </span>
   </a>
   
@@ -1111,9 +1408,11 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
+
 
 
   <h1>3. Connecting widgets to a function</h1>
@@ -1124,7 +1423,7 @@
 <h2 id="creating-a-slot-function">Creating a slot function</h2>
 <p>The slot function doesn't take any arguments. To handle this, we can group all the widgets together with all slot functions in a single class. This way, we can access the widgets inside the slot function through the <code>self</code> reference. Assuming that the following code is inside a class in which a <a href="../../QtWidgets/QLabel/"><code>QLabel</code></a> widget is defined as <code>self.label</code>, we can define a slot function as follows:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@Slot</span><span class="p">()</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">def</span> <span class="nf">change_label_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">change_label_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Hello, PySide6!&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <p>In the code above, we use the <code>@Slot()</code> decorator to indicate that the function is a slot. So, if we want to connect this slot function to the signal of the <code>QPushButton</code> in our <code>simple_gui.py</code> file, we first need to change up our code quite a bit. We can put all the code in a class that inherits from <a href="../../QtWidgets/QMainWindow/"><code>QMainWindow</code></a> and let's call it <code>UserInterface</code>: </p>
@@ -1157,8 +1456,8 @@
 <span class="normal"><a href="#__codelineno-1-24">24</a></span>
 <span class="normal"><a href="#__codelineno-1-25">25</a></span>
 <span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">PySide6</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="n">Slot</span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">PySide6</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtWidgets</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slot</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">()</span>
@@ -1218,12 +1517,12 @@
 <span class="normal"><a href="#__codelineno-2-29">29</a></span>
 <span class="normal"><a href="#__codelineno-2-30">30</a></span>
 <span class="normal"><a href="#__codelineno-2-31">31</a></span>
-<span class="normal"><a href="#__codelineno-2-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">PySide6</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="n">Slot</span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">PySide6</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtWidgets</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slot</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="hll"><span class="k">class</span> <span class="nc">UserInterface</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
-</span></span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="hll">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="hll"><span class="k">class</span><span class="w"> </span><span class="nc">UserInterface</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+</span></span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="hll">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span></span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="hll">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span> <span class="c1"># (1)</span>
 </span></span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>        <span class="c1"># Setting the central widget </span>
@@ -1264,7 +1563,7 @@
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="n">label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Hello, User! Please click the button.&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>
-<p>We only execute the code if the script is run as the main program, not as an imported module. This is a common Python idiom <img alt="😉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f609.svg" title=":wink:" />.</p>
+<p>We only execute the code if the script is run as the main program, not as an imported module. This is a common Python idiom <img alt="😉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f609.svg" title=":wink:" />.</p>
 </li>
 <li>
 <p>Equivalent lines in the <strong>without class</strong> case are:
@@ -1324,12 +1623,12 @@
 <span class="normal"><a href="#__codelineno-8-36">36</a></span>
 <span class="normal"><a href="#__codelineno-8-37">37</a></span>
 <span class="normal"><a href="#__codelineno-8-38">38</a></span>
-<span class="normal"><a href="#__codelineno-8-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">PySide6</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="n">Slot</span>
+<span class="normal"><a href="#__codelineno-8-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">PySide6</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtWidgets</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slot</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="k">class</span> <span class="nc">UserInterface</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserInterface</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a>        <span class="c1"># Setting the central widget </span>
@@ -1354,7 +1653,7 @@
 </span></span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="hll">        <span class="n">button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">change_label_text</span><span class="p">)</span>
 </span></span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="hll">
 </span></span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="hll">    <span class="nd">@Slot</span><span class="p">()</span>
-</span></span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="hll">    <span class="k">def</span> <span class="nf">change_label_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="hll">    <span class="k">def</span><span class="w"> </span><span class="nf">change_label_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span></span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Hello, PySide6!&quot;</span><span class="p">)</span>
 </span></span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33"></a>
 </span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34"></a>
@@ -1471,10 +1770,13 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.footer", "navigation.sections"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.footer", "navigation.sections"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
