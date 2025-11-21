@@ -4,7 +4,7 @@ hide:
   - navigation
 ---
 
-The only prerequisite for installing PySide6 is having Python installed on your system. PySide6 can be installed using the Python package manager `conda`, `pip`, or `poetry`.
+The only prerequisite for installing PySide6 is having Python installed on your system. PySide6 can be installed using the Python package manager `conda`, `pip`, `uv` or `poetry`.
 
 ## Conda
 
@@ -47,7 +47,7 @@ If you use [`uv`](https://docs.astral.sh/uv/) for project management, you can in
 
 1. Create a uv project. 
 ``` bash 
-uv init myproject --package
+uv init myproject
 cd myproject
 ```
 2. Activate the environment: <br> </br>
